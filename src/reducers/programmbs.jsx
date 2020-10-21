@@ -1,5 +1,5 @@
 import { SHOW_PROGRAMMBS, UPDATE_REVISION_PROGRAMMBS, ERROR_EDIT_REVISION, SUCCESSFULL_EDIT_REVISION, SUCCESSFULL_APPROVE_PROJECT, ERROR_APPROVE_PROJECT } from "constants/actionTypes";
-import { LOAD_FORM_PROGRAMMBS } from "constants/actionTypes";
+import { LOAD_FORM_PROGRAMMBS, RESET_SHOW_PROGRAMMBS } from "constants/actionTypes";
 import { HIDE_REVISION_ALERT, ERROR_SEND_REVISION_PROJECT, SUCCESSFULL_SEND_REVISION_PROJECT, ACTIVE_TAB } from "constants/actionTypes";
 
 const initialState = { 
@@ -12,7 +12,7 @@ const initialState = {
     product5: "",
     product6: "",
     product7: "",
-    process1: [" ", " ", " ", " ", " ", " "],
+    process1: [" "],
     process2: "",
     process3: "",
     process4: "",
@@ -198,6 +198,17 @@ export const programmbsReducer = (state = initialState, action) => {
       case ACTIVE_TAB:
         return Object.assign({}, state, {
           activeTab: action.key
+        });
+
+      case RESET_SHOW_PROGRAMMBS:
+        return Object.assign({}, state, {
+          programmbs: Object.assign(state.programmbs, {
+            ["paperwork4"]: {},
+            ["paperwork5"]: {},
+            ["paperwork6"]: {},
+            ["paperwork7"]: {},
+            ["paperwork8"]: {}
+          })
         });
     }
 

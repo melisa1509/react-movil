@@ -14,3 +14,9 @@ export const adjustCoordinates = (coordinates) => {
     var adjust_coordinates = parseInt(arrayCoordinates[0], 10) - 115;
     return adjust_coordinates + "," + arrayCoordinates[1];
 }
+
+export const adjustDate = value => {
+    let date = new Date(value)
+    date.setMinutes(date.getMinutes() + date.getTimezoneOffset())
+    return date;
+}

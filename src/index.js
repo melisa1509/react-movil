@@ -4,12 +4,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { Provider } from 'react-redux';
 
-import AuthLayout from "layouts/Auth.jsx";
-import RtlLayout from "layouts/RTL.jsx";
-import AmbassadorStudent from 'views/AmbassadorStudent/Index.jsx';
-import ReactTable from "views/Tables/ReactTables.jsx";
-import Age from 'views/Age/Age.jsx';
-import Login from 'views/Login/Login.jsx';
+//Student
 import Student from 'views/Student/Index.jsx';
 import NewStudent from 'views/Student/New/New.jsx';
 import ShowStudent from 'views/Student/Show/Show.jsx';
@@ -17,6 +12,29 @@ import EditStudent from 'views/Student/Edit/Edit.jsx';
 import PreEvaluationStudent from 'views/Student/PreEvaluation/New.jsx';
 import PostEvaluationStudent from 'views/Student/PostEvaluation/New.jsx';
 import StudentChangePassword  from 'views/Student/ChangePassword/ChangePassword.jsx';
+
+//Ambassador
+import Ambassador from 'views/Ambassador/Index.jsx'
+import ShowAmbassador from 'views/Ambassador/Show/Show.jsx';
+import EditAmbassador from 'views/Ambassador/Edit/Edit.jsx';
+import NewAmbassador from 'views/Ambassador/New/New.jsx';
+import AmbassadorChangePassword  from 'views/Ambassador/ChangePassword/ChangePassword.jsx';
+import AmbassadorStudent from 'views/AmbassadorStudent/Index.jsx';
+import AmbassadorStudentAssignMentor from 'views/AmbassadorStudent/AssignMentor/Index.jsx';
+import AmbassadorStudentConfirmMentor from 'views/AmbassadorStudent/AssignMentor/Confirm.jsx';
+
+//general
+import ReactTable from "views/Tables/ReactTables.jsx";
+import Reports from 'views/Reports/Index.jsx';
+import AuthLayout from "layouts/Auth.jsx";
+import RtlLayout from "layouts/RTL.jsx";
+
+//Login
+import Login from 'views/Login/Login.jsx';
+import Age from 'views/Age/Age.jsx';
+import App from 'views/Age/App.jsx';
+
+//Group
 import Group from 'views/Group/Index.jsx';
 import ShowGroup from 'views/Group/Show/Show.jsx';
 import EditGroup from 'views/Group/Edit/Edit.jsx';
@@ -25,8 +43,11 @@ import GroupAmbassadors from 'views/Group/New/ListAmbassador/Index.jsx';
 import ProjectProgress from 'views/Group/Progress/Index.jsx';
 import UploadImage from 'views/Group/Participants/Index.jsx';
 import StudentGroup from 'views/Group/Participants/Index.jsx';
-import App from 'views/Age/App.jsx';
+
+//Course
 import CourseNew from 'views/Course/New/New.jsx';
+
+//Programmbs
 import ProgramMbs from 'views/Programmbs/Show/Show.jsx';
 import NewProgramMbs from 'views/Programmbs/New/Show.jsx';
 import NewPlanProgramMbs from 'views/Programmbs/New/NewPlan.jsx';
@@ -58,6 +79,8 @@ import EditQualityProgramMbs from 'views/Programmbs/Edit/EditQuality.jsx';
 import EditServiceProgramMbs from 'views/Programmbs/Edit/EditService.jsx';
 import EditHistoryProgramMbs from 'views/Programmbs/Edit/EditHistory.jsx';
 import ProgramMbsFile from 'views/Programmbs/ShowFile/Show.jsx';
+
+//Programsa
 import ProgramSa from 'views/Programsa/Show/Show.jsx';
 import NewProgramSa from 'views/Programsa/New/Show.jsx';
 import EditProgramSa from 'views/Programsa/Edit/Show.jsx';
@@ -66,40 +89,48 @@ import EditGenerateProgramSa from 'views/Programsa/Edit/EditGenerate.jsx';
 import EditFacilitateProgramSa from 'views/Programsa/Edit/EditFacilitate.jsx';
 import EditGraduateProgramSa from 'views/Programsa/Edit/EditGraduate.jsx';
 import EditSupportProgramSa from 'views/Programsa/Edit/EditSupport.jsx';
+
+//user
 import User from 'views/User/Show/Show.jsx';
 import UserEdit  from 'views/User/Edit/Edit.jsx';
 import UserChangePassword  from 'views/User/ChangePassword/ChangePassword.jsx';
+import newPassword from 'views/User/NewPassword/ChangePassword.jsx';
+import UserNewPassword  from 'views/User/NewPassword/ChangePassword/ChangePassword.jsx';
+
+//Profile
 import Profile  from 'views/Profile/Show/Show.jsx';
 import ProfileEdit  from 'views/Profile/Edit/Edit.jsx';
 import ProfileEditPassword  from 'views/Profile/ChangePassword/ChangePassword.jsx';
-import Ambassador from 'views/Ambassador/Index.jsx'
-import ShowAmbassador from 'views/Ambassador/Show/Show.jsx';
-import EditAmbassador from 'views/Ambassador/Edit/Edit.jsx';
-import NewAmbassador from 'views/Ambassador/New/New.jsx';
-import AmbassadorChangePassword  from 'views/Ambassador/ChangePassword/ChangePassword.jsx';
+
+//certificate
 import CertificateGroup from 'views/Certificate/Group/Index.jsx';
 import CertificateList from 'views/Certificate/Student/Index.jsx';
+
+//Dashboard
 import Dashboard from 'views/Dashboard/Index.jsx';
 import DashboardStudent from 'views/Dashboard/Student/Index.jsx';
 import AssignMentor from 'views/Dashboard/AssignMentor/Index.jsx';
 import ConfirmMentor from 'views/Dashboard/AssignMentor/Confirm.jsx';
-import AmbassadorStudentAssignMentor from 'views/AmbassadorStudent/AssignMentor/Index.jsx';
-import AmbassadorStudentConfirmMentor from 'views/AmbassadorStudent/AssignMentor/Confirm.jsx';
 import ClearPendingDashboard from 'views/Dashboard/AssignMentor/Clear.jsx';
-import Reports from 'views/Reports/Index.jsx';
+
+//code
 import ListCode from 'views/Code/Index.jsx';
 import ShowCode from 'views/Code/Show/Show.jsx';
 import EditCode from 'views/Code/Edit/Edit.jsx';
+
+//Administrator
 import ListAdmin from 'views/Administrator/Index.jsx';
 import NewAdmin from 'views/Administrator/New/New.jsx';
 import ShowAdmin from 'views/Administrator/Show/Show.jsx';
 import EditAdmin from 'views/Administrator/Edit/Edit.jsx';
 import AdminPassword from 'views/Administrator/ChangePassword/ChangePassword.jsx';
+
+//Register
 import Register from 'views/Register/Index.jsx';
 import RegisterStudent from 'views/Register/Participants/New.jsx';
 import RegisterEvaluation from 'views/Register/PreEvaluation/New.jsx';
-import newPassword from 'views/User/NewPassword/ChangePassword.jsx';
-import UserNewPassword  from 'views/User/NewPassword/ChangePassword/ChangePassword.jsx';
+
+import NewCourse from 'views/Course/New/New.jsx';
 import { store } from 'store/index.jsx';
 
 import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
@@ -125,7 +156,12 @@ ReactDOM.render(
   <Provider store={store}>
       <Router history={hist}>
         <Switch>
-          <Route path="/ambassadorstudent" component={AmbassadorStudent} exact />
+          <Route path="/rtl" component={RtlLayout} />
+          <Route path="/auth" component={AuthLayout} />
+          <Route path="/table" component={ReactTable} />
+          <Route path="/age" component={Age} />
+          <Route path="/login" component={Login} />
+          <Route path="/app" component={App} />
           <Route path="/student" component={Student} exact />
           <Route path="/student/new/:id" component={NewStudent} exact />
           <Route path="/student/show/:id" component={ShowStudent} exact />
@@ -133,12 +169,6 @@ ReactDOM.render(
           <Route path="/student/preevaluation" component={PreEvaluationStudent} exact />
           <Route path="/student/postevaluation" component={PostEvaluationStudent} exact />
           <Route path="/student/editpassword/:id" component={StudentChangePassword} exact /> 
-          <Route path="/rtl" component={RtlLayout} />
-          <Route path="/auth" component={AuthLayout} />
-          <Route path="/table" component={ReactTable} />
-          <Route path="/age" component={Age} />
-          <Route path="/login" component={Login} />
-          <Route path="/app" component={App} />
           <Route path="/course/new" component={CourseNew} />
           <Route path="/programmbs/new" component={NewProgramMbs} exact/>
           <Route path="/programmbs/new/plan" component={NewPlanProgramMbs} exact/>
@@ -179,6 +209,7 @@ ReactDOM.render(
           <Route path="/programsa/edit/facilitate/:id" component={EditFacilitateProgramSa} exact/>
           <Route path="/programsa/edit/graduate/:id" component={EditGraduateProgramSa} exact/>
           <Route path="/programsa/edit/support/:id" component={EditSupportProgramSa} exact/>
+          <Route path="/user/newpassword/:id" component={UserNewPassword} exact /> 
           <Route path="/user/show/:id" component={User} exact /> 
           <Route path="/user/edit/:id" component={UserEdit} exact /> 
           <Route path="/user/editpassword/:id" component={UserChangePassword} exact /> 
@@ -193,6 +224,7 @@ ReactDOM.render(
           <Route path="/group/progress/:id" component={ProjectProgress} exact /> 
           <Route path="/group/student/:id" component={StudentGroup} exact /> 
           <Route path="/group/uploadImage/:id" component={UploadImage} exact /> 
+          <Route path="/ambassadorstudent" component={AmbassadorStudent} exact />
           <Route path="/ambassador" component={Ambassador} exact /> 
           <Route path="/ambassador/show/:id" component={ShowAmbassador} exact /> 
           <Route path="/ambassador/edit/:id" component={EditAmbassador} exact /> 
@@ -211,6 +243,7 @@ ReactDOM.render(
           <Route path="/code" component={ListCode} exact />
           <Route path="/code/show/:id" component={ShowCode} exact />
           <Route path="/code/edit/:id" component={EditCode} exact />
+          <Route path="/course/new" component={NewCourse} exact />
           <Route path="/admin" component={ListAdmin} exact />
           <Route path="/admin/new" component={NewAdmin} exact />
           <Route path="/admin/show/:id" component={ShowAdmin} exact />
@@ -220,7 +253,6 @@ ReactDOM.render(
           <Route path="/register/new/:id" component={RegisterStudent} exact /> 
           <Route path="/register/evaluation" component={RegisterEvaluation} exact /> 
           <Route path="/password" component={newPassword} exact /> 
-          <Route path="/user/newpassword/:id" component={UserNewPassword} exact /> 
           <Redirect from="/" to="/login" />
         </Switch>
       </Router>,

@@ -3,6 +3,7 @@ import { BASE_URL } from 'constants/urlTypes';
 import { jsonToArray } from "assets/functions/general.jsx";
 import { dashboardStudent } from "actions/studentActions.jsx";
 import { ACTIVE_TAB } from 'constants/actionTypes';
+import { RESET_SHOW_PROGRAMMBS } from 'constants/actionTypes';
 
 export const getShowProgrammbs = key => {
     return (dispatch) => {
@@ -267,6 +268,7 @@ export const sendRevisionProject = (redirect) => {
 export const activeTab = key => ({ type: ACTIVE_TAB, key: key });
 export const loadFormProgrammbs = data => ({ type: LOAD_FORM_PROGRAMMBS, data });
 export const hideRevisionAlert = () => ({ type: HIDE_REVISION_ALERT })
+export const resetShowProgrammbs = () => ({ type: RESET_SHOW_PROGRAMMBS })
 
 export const redirectDashboard = redirect => { 
     return (dispatch, getState) => {

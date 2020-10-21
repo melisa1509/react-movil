@@ -5,6 +5,7 @@ import { EDIT_GROUP, NEW_GROUP, DELETE_GROUP, GROUP_PROGRAM } from "constants/ac
 import { UPLOAD_IMAGE } from "constants/actionTypes";
 import { GET_PROJECT_PROGRESS } from "constants/actionTypes";
 import { MBS_IMAGE_ALERT , DELETE_IMAGE_ALERT} from "constants/actionTypes";
+import { adjustDate } from "assets/functions/general.jsx";
 
 const initialState = { 
   show_group: {
@@ -57,6 +58,9 @@ export const groupReducer = (state = initialState, action) => {
         else{
           group.number_students_graduated = "1";
         }
+        group.start_date = adjustDate(group.start_date);
+        group.final_date = adjustDate(group.final_date);
+        group.graduation_date = adjustDate(group.graduation_date);
         
         return Object.assign({}, state, {
           data: group

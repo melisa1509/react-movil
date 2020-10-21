@@ -4,7 +4,7 @@ import { translate } from 'react-switch-lang';
 // react component for creating dynamic tables
 import ReactTable from "react-table";
 import { connect } from "react-redux";
-import { getShowProgrammbs } from "actions/programmbsActions.jsx";
+import { getShowProgrammbs, resetShowProgrammbs } from "actions/programmbsActions.jsx";
 import { store } from "store";
 
 
@@ -70,6 +70,10 @@ class ShowForm extends React.Component {
       this.props.dispatchShowProgrammbs(this.props.match.params.id);
     }
 
+    componentWillUnmount(){
+      this.props.dispatchResetShowProgrammbs();
+    }
+
 
     render() {
         const { classes, programmbs, active } = this.props;
@@ -131,6 +135,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToPropsActions = dispatch => ({
   dispatchShowProgrammbs: key => dispatch(getShowProgrammbs(key)), 
+  dispatchResetShowProgrammbs: () => dispatch(resetShowProgrammbs())
 });
 
 const ShowFormComponent = translate(withStyles(style)(ShowForm));
