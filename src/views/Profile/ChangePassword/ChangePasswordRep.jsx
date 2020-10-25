@@ -37,7 +37,6 @@ class ChangePasswordRep extends React.Component {
     return (
         <>
          <br/><br/>
-          <Card>
             <CardHeader color="info">
             <center>
              <h4 className={classes.cardTitle}>{t("title_edit_password")}</h4>
@@ -46,7 +45,6 @@ class ChangePasswordRep extends React.Component {
             <CardBody>
                 <ChangePasswordForm  />  
             </CardBody>
-          </Card>
         </>
     );
   }

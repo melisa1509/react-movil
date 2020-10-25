@@ -19,6 +19,7 @@ import FutureAmbassadorTable from './FutureAmbassadorTable.jsx';
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import { translate } from 'react-switch-lang';
 import EmbassadorTable from "./EmbassadorTable.jsx";
+import DashboardAmbassador from "./DashboardAmbassador.jsx";
 
 
 const styles = {
@@ -38,12 +39,16 @@ class IndexRep extends React.Component {
     let { t } = this.props;
     const login = "es";
     let rol=false
-    if(active_user.roles == "ROLE_EMBASSADOR"){
+    if(active_user.roles == "ROLE_EMBASSADOR" || active_user.roles == "ROLE_STUDENT_EMBASSADOR"){
       rol=true
     }
     return (
       <div>
           <br/><br/><br/><br/>
+          {rol ?
+                <DashboardAmbassador />      
+             : ""
+          }
           <Card>
             <CardHeader color="info">
                 <h4 className={classes.cardTitle}>{t("title_student_list_revision")}</h4>

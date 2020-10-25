@@ -25,7 +25,9 @@ const initialState = {
   report_ambassador:{
     MBS:[]
   },
-  global_numbers:[],
+  global_numbers:{
+    global_groups: 0
+  },
   report_global_map:{
     topNumbers:[],
     vectorMap:[]

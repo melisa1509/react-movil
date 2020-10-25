@@ -38,8 +38,8 @@ class IndexRep extends React.Component {
       rol=true
     }
     return (
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={12}>
+      <div>
+          <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
                 { rol ? <h4 className={classes.cardTitle}>{t("title_student_list") +" "+ t("title_paper_documentation")}</h4> :<h4 className={classes.cardTitle}>{t("title_student_list")}</h4>}
@@ -48,8 +48,7 @@ class IndexRep extends React.Component {
                 {rol ? <IndexAmbassador  /> : <IndexTable  /> }   
             </CardBody>
           </Card>          
-        </GridItem>
-      </GridContainer>
+      </div>
     );
   }
 }

@@ -17,6 +17,12 @@ export const deleteSuccessful=(redirect) => {
         dispatch({ type: DELETE_SUCCESSFUL})
     }
 }
+export const deleteSuccessfulRedirect=(redirect) => {
+    return(dispatch)=> { 
+        dispatch({ type: DELETE_SUCCESSFUL})
+        redirect.push( "/login");
+    }
+}
 export const successfulDelete =() => ({ type: SUCCESSFUL_DELETE})
 export const errorRequiredFields =() => ({ type: ERROR_REQUIRED_FIELDS})
 export const successRequiredFields =() => ({ type: SUCCESS_REQUIRED_FIELDS})

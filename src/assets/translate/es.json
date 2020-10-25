@@ -33,6 +33,7 @@
     "button_post_evaluation":            "Post",
     "button_project_progress":           "Progreso Proyectos",
     "button_return_to_list":             "Regresar al Listado",
+    "button_return":                     "Regresar",
     "button_register":                   "Registrarme",
     "button_remove_row":                 "Eliminar Fila",
     "button_save":                       "Guardar",
@@ -50,6 +51,7 @@
     "button_create_group":               "Crear nuevo Grupo",
     
 
+    "label_month":                      "Mes",
     "label_lastName":                   "Apellido",
     "label_email":                      "Correo",
     "label_chose_language":             "Elegir idioma",
@@ -215,8 +217,10 @@
     "link_username":                    "Usuario",
     "link_user_profile":                "Perfil de Usuario",
     "link_ambassadors":                 "Embajadores",
+    "link_ambassador":                  "Embajador",
     "link_codes":                       "Codigo",
     "link_success_story":               "Historias de Éxito",
+    "link_success_stories":             "Historias de Éxito",
     "link_generate_groups_question1":   "https://interweavesolutions.org/galeria-de-medios",
     "link_generate_groups_question3":   "https://interweavesolutions.org/recursos-embajadores",
 
@@ -757,7 +761,8 @@
             "modality2":                 "En Línea",
             "program1":                  "Maestría de Negocios",
             "program2":                  "Embajador de Éxito",
-            "program3":                  "Maestría + Embajador"
+            "program3":                  "Maestría + Embajador",
+            "program4":                  "Maestría de Negocios Junior"
         }
 
 

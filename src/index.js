@@ -93,7 +93,7 @@ import EditSupportProgramSa from 'views/Programsa/Edit/EditSupport.jsx';
 //user
 import User from 'views/User/Show/Show.jsx';
 import UserEdit  from 'views/User/Edit/Edit.jsx';
-import UserChangePassword  from 'views/User/ChangePassword/ChangePassword.jsx';
+import UserChangePassword  from 'views/User/NewPassword/ChangePassword/ChangePassword.jsx';
 import newPassword from 'views/User/NewPassword/ChangePassword.jsx';
 import UserNewPassword  from 'views/User/NewPassword/ChangePassword/ChangePassword.jsx';
 

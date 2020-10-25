@@ -65,7 +65,7 @@
   "button_next":                       "Next",
   "button_continue_editing":           "Continue Editing",
 
-
+  "label_month":                      "Month",
   "label_choose_language":            "Choose Language",
   "label_successful_delete":          "Successful Delete",   
   "label_choose_country":             "Choose Country",
@@ -275,6 +275,7 @@
   "link_ambassadors":                 "Ambassadors",
   "link_codes":                       "Codes",
   "link_success_story":               "Success Story",
+  "link_success_stories":             "Success Stories",
   "link_evaluations":                 "Evaluation",
   "link_generate_groups_question1":   "https://www.interweavesolutions.org/media-gallery/",
   "link_generate_groups_question3":   "https://www.interweavesolutions.org/success-ambassador-resources/",       
@@ -498,6 +499,7 @@
   "question_support3":                 "3. Why do you want to be a Success Ambassador?",
 
   "th_actions":                "Actions",
+  "th_id":                     "ID",
   "th_country":                "Country",
   "th_code":                   "Code",
   "th_ambassador_mentor":      "Success Ambassador",

@@ -237,7 +237,14 @@ class LoginForm extends React.Component {
                         <center>{t("label_forgot_password")}</center>
                     </a>
                   </div>
-                  
+                  <div>
+                    <center>
+                        <a href="/register">{t("button_sign_up")}</a>
+                      <span>
+                      {"\n"}
+                      </span>
+                    </center>
+                  </div>                  
               <GridContainer justify="center">
                   <GridItem xs={12} sm={12} md={12}>
                       { loginError ? <Danger><h6 className={classes.infoText}>Invalid Credentials</h6></Danger>: ""}

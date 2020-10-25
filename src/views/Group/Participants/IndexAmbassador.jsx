@@ -357,15 +357,20 @@ class IndexTable extends React.Component {
                 {
                   Header: t("th_name"),
                   accessor: "full_name",
+                  sortable: false,
                   width:250
                 },
                 {
                   Header: t("th_evaluation"),
                   accessor: "evaluation",
+                  sortable: false,
+                  width:250
                 },
                 {
                   Header: t("th_projects"),
                   accessor: "projects",
+                  sortable: false,
+                  width:150
                 },
                 {
                   Header: t("th_actions"),
@@ -376,7 +381,7 @@ class IndexTable extends React.Component {
                 {
                   Header: "",
                   id: 'all',
-                  width: 0,
+                  width: 20,
                   resizable: false,
                   sortable: false,
 

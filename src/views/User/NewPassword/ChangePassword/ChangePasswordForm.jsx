@@ -25,7 +25,7 @@ import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSel
 
 import { verifyChange, compare } from "assets/validation/index.jsx";
 import { editPassword } from "actions/studentActions.jsx";
-import { deleteSuccessful } from "actions/generalActions.jsx";
+import { deleteSuccessfulRedirect } from "actions/generalActions.jsx";
 import { errorRequiredFields } from "actions/generalActions.jsx";
 import { successRequiredFields } from "actions/generalActions.jsx";
 import { dismatchPassword } from "actions/generalActions.jsx";
@@ -201,7 +201,7 @@ const mapDispatchToPropsActions = dispatch => ({
   dispatchErrorRequiredFields:() => dispatch(errorRequiredFields()),
   dispatchSuccessRequiredFields:() => dispatch(successRequiredFields()),
   dispatchDismatchPassword:() => dispatch(dismatchPassword()),
-  dispatchDeleteSuccessful: (key) => dispatch(deleteSuccessful(key))
+  dispatchDeleteSuccessful: (key) => dispatch(deleteSuccessfulRedirect(key))
 });
 
 const ChangePasswordFormComponent = translate(withStyles(style)(ChangePasswordForm));

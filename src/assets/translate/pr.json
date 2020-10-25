@@ -65,7 +65,7 @@
     "button_next":                       "Próximo",
     "button_continue_editing":           "Continuar editando",
   
-  
+    "label_month":                      "Mês",
     "label_choose_language":            "Mudar idioma",
     "label_successful_delete":          "Exclusão bem sucedida",   
     "label_choose_country":             "Escolha o País",
@@ -275,6 +275,7 @@
     "link_ambassadors":                 "Embaixadores",
     "link_codes":                       "Códigos",
     "link_success_story":               "Histórias de Sucesso",
+    "link_success_stories":             "Histórias de Sucesso",
     "link_evaluations":                 "Avaliação",
     "link_generate_groups_question1":   "https://www.interweavesolutions.org/media-gallery/",
     "link_generate_groups_question3":   "https://www.interweavesolutions.org/success-ambassador-resources/",        
@@ -486,6 +487,7 @@
     "question_support3":                 "3. Por que você quer ser um Embaixador de Sucesso?",
   
     "th_actions":                "Ações",
+    "th_id":                     "ID",
     "th_country":                "País",
     "th_code":                   "Código",
     "th_ambassador_mentor":      "Embaixador de Sucesso",
