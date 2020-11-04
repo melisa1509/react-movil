@@ -205,6 +205,7 @@
 
     "link_admins":                      "Administradores",
     "link_administrator":               "Administration",
+    "link_ambassador_student":          "Avanzar a Estudiante Embajador",
     "link_certificates":                "Certificados",
     "link_dashboard":                   "Dashboard",
     "link_groups":                      "Grupos",
@@ -216,6 +217,7 @@
     "link_reports":                     "Reportes",
     "link_username":                    "Usuario",
     "link_user_profile":                "Perfil de Usuario",
+    "link_student":                     "Estudiante",
     "link_ambassadors":                 "Embajadores",
     "link_ambassador":                  "Embajador",
     "link_codes":                       "Codigo",
@@ -273,6 +275,7 @@
     "title_project_manager":            "Project Manager", 
     "title_program_use_mbs":            "Como usar este Programa",
     "title_program_mbs":                "Maestria de Negocios en la calle",
+    "title_program_mbs_junior":         "Maestria de Negocios en la calle Junior",
     "title_pre_evaluation":             "Formulario de Pre Evaluación",
     "title_quality_life":               "Calidad de Vida", 
     "title_wheel_quality_life":         "Rueda de Calidad de Vida",

@@ -257,7 +257,7 @@
   "label_save_error":                  "An error has occurred. Reload the page, type something and try saving again. If the problem persists, contact the administrator.",
   
   "link_administrator":               "Administrator",
-  "link_ambassador_student":          "Assign Mentor",
+  "link_ambassador_student":          "Advance to Student Ambassador",
   "link_ambassador":                  "Ambassador",
   "link_admins":                      "Administrators",
   "link_certificates":                "Certificates",
@@ -266,7 +266,7 @@
   "link_logout":                      "Logout",
   "link_management":                  "Administrator",
   "link_participants":                "Participants",
-  "link_program_mbs":                 "MBS Programme",
+  "link_program_mbs":                 "MBS Program",
   "link_program_ambassador":          "Success Ambassador",
   "link_reports":                     "Reports",
   "link_username":                    "Email address",
