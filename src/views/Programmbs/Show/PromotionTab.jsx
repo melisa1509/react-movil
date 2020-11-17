@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import cx from "classnames";
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -80,15 +81,16 @@ class PromotionTab extends React.Component {
               {t("question_promotion5")}
             </SuccessBold>
             <br/>
-            {programmbs.promotion5 === "Error:4null" ?
-            <a
-                href={"https://myplatform.interweavesolutions.org/file/" + programmbs.promotion5}
-                target="_blank"
-                className={anchor}
-            >
-                {t("label_download_file")}
-            </a>
-            :""}
+            {
+                  programmbs.promotion5 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.promotion5}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }
             <br/>
             <RevisionForm name="revisionpromotion" labelText={t("label_revision_promotion")+ " *"} />
             <br/>

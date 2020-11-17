@@ -51,7 +51,7 @@ class PriceTab extends React.Component {
                 />
                 <br/>
                 <Field
-                  labelText={active_user.studentgroup.group.program === "option.program1" ? t("question_price2") : t("question_price2_junior")}
+                  labelText={active_user.studentgroup.group.program === "option.program4" ? t("question_price2_junior") : t("question_price2")}
                   component={CustomInputRedux}
                   name="price2"
                   success

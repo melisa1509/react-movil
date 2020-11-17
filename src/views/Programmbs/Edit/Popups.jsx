@@ -16,7 +16,7 @@ import AdminHeader from "views/Header/AdminHeader.jsx";
 import mainPageStyle from "assets/jss/material-kit-react/views/mainPage.jsx";
 import sweetAlertStyle from "assets/jss/material-dashboard-pro-react/views/sweetAlertStyle.jsx";
 
-import { hideRevisionAlert, redirectDashboard, sendProject } from "actions/programmbsActions.jsx";
+import { hideRevisionAlert, redirectDashboard, sendProject, sendPostEvaluation } from "actions/programmbsActions.jsx";
 
 const styles = {
     ...mainPageStyle,
@@ -39,11 +39,16 @@ class Popups extends React.Component {
   redirectDashboard(){
     this.props.dispatchRedirectDashboard(this.props.history);
   }
-  handleSendProject(){
-    this.props.dispatchSendProject(this.props.history);
+  handleSendPostEvaluation(active_user){
+    if(active_user.evaluation.postquestion1 === undefined){
+      this.props.dispatchSendPostEvaluation(this.props.history);
+    }
+    else{
+      this.props.dispatchSendProject(this.props.history);
+    }    
   }
   render() {
-    const { classes, progressmbs, sendRevisionProjectSuccessfull, sendRevisionProjectError, editRevisionSuccessfull, editRevisionError, approveProjectError, approveProjectSuccessfull, t } = this.props;
+    const { active_user, progressmbs, sendRevisionProjectSuccessfull, sendRevisionProjectError, editRevisionSuccessfull, editRevisionError, approveProjectError, approveProjectSuccessfull, t } = this.props;
     let state = progressmbs === undefined ? false : progressmbs.complete;
     return (
         <>
@@ -53,7 +58,7 @@ class Popups extends React.Component {
                   success
                   showCancel={state ? true : false}
                   style={{ display: "block", marginTop: "-100px" }}
-                  onConfirm={state ? () => this.handleSendProject() : () => this.hideAlert()}
+                  onConfirm={state ? () => this.handleSendPostEvaluation(active_user) : () => this.hideAlert()}
                   onCancel={() => this.hideAlert()}
                   confirmBtnText={ state ? t("button_send_revision") : t("button_continue")}
                   cancelBtnText={t("button_continue_editing")}
@@ -66,7 +71,7 @@ class Popups extends React.Component {
                   >                  
                   { state ?
                     <h4>{t("label_project_complete")}</h4>:
-                    <h4>{t("label_save_success_revision")}</h4>
+                    <h4>{t("label_save_success")}</h4>
                   }
               </SweetAlert>
             : ""}
@@ -88,7 +93,7 @@ class Popups extends React.Component {
               <SweetAlert
                   success
                   style={{ display: "block", marginTop: "-100px" }}
-                  onConfirm={() => this.handleSendProject()}
+                  onConfirm={() => this.handleSendPostEvaluation(active_user)}
                   onCancel={() => this.hideAlert()}
                   confirmBtnText={t("button_send_revision")}
                   confirmBtnCssClass={
@@ -160,14 +165,16 @@ const mapStateToProps = state => ({
   approveProjectSuccessfull: state.programmbsReducer.approveProjectSuccessfull,
   sendRevisionProjectError: state.programmbsReducer.sendRevisionProjectError,
   sendRevisionProjectSuccessfull: state.programmbsReducer.sendRevisionProjectSuccessfull,
-  progressmbs: state.studentReducer.dashboard_student.progressMbs
+  progressmbs: state.studentReducer.dashboard_student.progressMbs,
+  active_user: state.loginReducer.active_user
     
 });
 
 const mapDispatchToPropsActions = dispatch => ({
   dispatchHideRevisionAlert: () => dispatch( hideRevisionAlert() ),
   dispatchRedirectDashboard: param => dispatch( redirectDashboard(param) ),
-  dispatchSendProject: param => dispatch( sendProject(param)),
+  dispatchSendPostEvaluation: param => dispatch( sendPostEvaluation(param)),
+  dispatchSendProject: param => dispatch( sendProject(param))
 });
 
 const PopupsComponent = translate(withStyles(styles)(Popups));

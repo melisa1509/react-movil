@@ -39,7 +39,7 @@ class PlanTab extends React.Component {
             <br/>
             <form>
                 <Field
-                  labelText={active_user.studentgroup.group.program === "option.program1" ? t("question_plan1") : t("question_plan1_junior")}
+                  labelText={active_user.studentgroup.group.program === "option.program4" ? t("question_plan1_junior") : t("question_plan1")}
                   component={CustomInputRedux}
                   name="plan1"
                   success
@@ -53,7 +53,7 @@ class PlanTab extends React.Component {
                 />
                 <br/>
                 <Field
-                  labelText={active_user.studentgroup.group.program === "option.program1" ? t("question_plan2") : t("question_plan2_junior")}
+                  labelText={active_user.studentgroup.group.program === "option.program4" ? t("question_plan2_junior") : t("question_plan2")}
                   component={CustomInputRedux}
                   name="plan2"
                   success

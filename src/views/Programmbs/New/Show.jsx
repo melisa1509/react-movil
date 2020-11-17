@@ -60,7 +60,7 @@ class Show extends React.Component {
                       this.props.classes.button + " " + this.props.classes.success
                   }
                   >
-                  <h4>{t("label_save_success_revision")}</h4>
+                  <h4>{t("label_save_success")}</h4>
               </SweetAlert>
             : ""}
             {editRevisionError ? 
@@ -88,7 +88,7 @@ class Show extends React.Component {
                       this.props.classes.button + " " + this.props.classes.success
                   }
                   >
-                  <h4>{t("label_save_success_revision")}</h4>
+                  <h4>{t("label_save_success")}</h4>
               </SweetAlert>
             : ""}
             {sendRevisionProjectError ? 

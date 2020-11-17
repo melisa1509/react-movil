@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { getShowProgrammbs } from "actions/programmbsActions.jsx";
 import { editRevisionProgrammbs, approveProject, sendRevisionProject } from "actions/programmbsActions.jsx";
 import moment from "moment";
+import { BASE_URL } from 'constants/urlTypes';
 
 
 // @material-ui/core components
@@ -93,12 +94,12 @@ class ShowForm extends React.Component {
                   </MutedText>
                 <br/>                  
                   <p className={classes.right}>
-                    <a
-                      href={"https://myplatform.interweavesolutions.org/file/" + programmbs.filestudent}
+                  <a
+                      href={BASE_URL +  "/web/file/"  + programmbs.filestudent}
                       target="_blank"
                     >
-                      {t("label_download_file")}
-                    </a>{" "}
+                        {t("label_download_file")}
+                    </a>
                   </p>
               </center>
               <RevisionForm name="revisionplan" labelText={t("label_corrections")} />

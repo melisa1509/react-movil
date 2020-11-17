@@ -25,12 +25,13 @@ import en from 'assets/translate/en.json';
 import fr from 'assets/translate/fr.json';
 import es from 'assets/translate/es.json';
 import pr from 'assets/translate/pr.json';
+import pt from 'assets/translate/pt.json';
 import {
   setTranslations,
   setDefaultLanguage,
 } from 'react-switch-lang';
 
-setTranslations({ en, fr, es, pr });
+setTranslations({ en, fr, es, pr, pt });
 
 
 class AdminHeaderLinks extends React.Component {
@@ -239,26 +240,11 @@ class AdminHeaderLinks extends React.Component {
                   <ListItem className={classes.listItem}>
                   <Link to={'/dashboard/student'} className={classes.dropdownLink}>
             
-                        <School color="danger" className={classes.icons} /> {t("link_program_mbs")}
-                  
-                  </Link>
-                  </ListItem>
-                 
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/dashboard/student'} className={classes.dropdownLink}>
-            
                         <LibraryBooks color="danger" className={classes.icons} /> {t("link_program_ambassador")}
                         
                   </Link>
                   </ListItem>                
                   
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/ambassador'} className={classes.dropdownLink}>
-                  
-                        <SupervisorAccount color="danger" className={classes.icons} /> {t("link_ambassadors")}
-                  
-                  </Link>
-                  </ListItem>
                 
                   <ListItem className={classes.listItem}>
                   <Link to={'/certificate'} className={classes.dropdownLink}>
@@ -321,38 +307,6 @@ class AdminHeaderLinks extends React.Component {
                   </Link>
                   </ListItem>                      
                   
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/ambassador'} className={classes.dropdownLink}>
-                  
-                        <SupervisorAccount color="danger" className={classes.icons} /> {t("link_ambassadors")}
-                  
-                  </Link>
-                  </ListItem>
-                
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/certificate'} className={classes.dropdownLink}>
-                  
-                        <School color="danger" className={classes.icons} /> {t("link_certificates")}
-                  
-                  </Link>
-                  </ListItem>                 
-                
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/group'} className={classes.dropdownLink}>
-            
-                        <Stars color="danger" className={classes.icons} /> {t("link_groups")}
-                        
-                  </Link>
-                  </ListItem>
-
-                  <ListItem className={classes.listItem}>
-                  <Link to={'/student'} className={classes.dropdownLink}>
-            
-                        <HowToReg color="danger" className={classes.icons} /> {t("link_participants")}
-                        
-                  </Link>
-                  </ListItem>
-                
                   <ListItem className={classes.listItem}>
                   <Link onClick={this.logoutUser} className={classes.dropdownLink}>
                   

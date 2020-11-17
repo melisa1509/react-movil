@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import cx from "classnames";
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -88,15 +89,16 @@ class ServiceTab extends React.Component {
               {t("question_service6")}
             </SuccessBold>
             <br/>
-            {programmbs.service6  === "Error:4null" ? 
-            <a
-                href={"https://myplatform.interweavesolutions.org/file/" + programmbs.service6}
-                target="_blank"
-                className={anchor}
-            >
-                {t("label_download_file")}
-            </a>
-            : ""}
+            {
+                  programmbs.service6 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.service6}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }
             <br/>
             <RevisionForm name="revisionservice" labelText={t("label_revision_service")+ " *"} />
             <br/>

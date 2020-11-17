@@ -35,7 +35,7 @@ class IndexRep extends React.Component {
     const { classes, styles, active_user } = this.props;
     let { t } = this.props;
     let rol=false
-    if(active_user.roles == "ROLE_EMBASSADOR"){
+    if(active_user.roles == "ROLE_EMBASSADOR" || active_user.roles == "ROLE_STUDENT_EMBASSADOR"){
       rol=true
     }
     const login = "es";

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import cx from "classnames";
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -55,15 +56,16 @@ class HistoryTab extends React.Component {
               {t("question_history2")}
             </SuccessBold>
             <br/>
-            {programmbs.history2  === "Error:4null" ? 
-            <a
-                href={"https://myplatform.interweavesolutions.org/file/" + programmbs.history2}
-                target="_blank"
-                className={anchor}
-            >
-                {t("label_download_file")}
-            </a>
-            : ""}
+            {
+                  programmbs.history2 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.history2}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }
             <br/>
             <SuccessBold>
               {t("question_history4")}

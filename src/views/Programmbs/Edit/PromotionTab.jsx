@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import { Field, reduxForm } from 'redux-form';
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -97,6 +98,17 @@ class PromotionTab extends React.Component {
                     rows: 7,
                   }}
                 />
+                <br/>
+                {
+                  programmbs.promotion5 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.promotion5}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }                
                 <br/>
                 <InputLabel className={classes.label}>
                     <SuccessLabel className={classes.label}>{t("question_promotion5")}</SuccessLabel>

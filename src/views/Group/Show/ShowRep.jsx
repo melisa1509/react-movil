@@ -33,7 +33,7 @@ class ShowRep extends React.Component {
   render() {
     const { classes, styles, active_user } = this.props;
     let rol=false
-    if(active_user.roles == "ROLE_EMBASSADOR"){
+    if(active_user.roles == "ROLE_EMBASSADOR" || active_user.roles == "ROLE_STUDENT_EMBASSADOR"){
       rol=true
     }
     let { t } = this.props;

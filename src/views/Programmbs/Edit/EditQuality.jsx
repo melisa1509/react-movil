@@ -56,7 +56,7 @@ class Edit extends React.Component {
         >
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
-                <ShowRep active={7}/>
+                <ShowRep active={6}/>
               </GridItem>
             </GridContainer>
         </div>

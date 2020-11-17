@@ -7,9 +7,7 @@ import { connect } from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Card from "components/Card/Card.jsx";
+import Danger from "components/Typography/Danger.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import IndexTable from './IndexTable.jsx';
@@ -48,22 +46,25 @@ class IndexRep extends React.Component {
             </CardHeader>
             <CardBody>
                 <center><h3 className={classes.cardTitleCenter} >{t("title_program_mbs")}</h3></center>
+                {dashboard_student.progressMbs.submitted === "state.revision" ? <center><Danger><h5 className={classes.infoText}>{t("label_success_revision")}</h5></Danger></center>: ""}
+                {dashboard_student.progressMbs.submitted === "state.approved" ? <center><Danger><h5 className={classes.infoText}>{t("message_approved_project")}</h5></Danger></center>: ""}
                 <p>{t("label_program_mbs_starting")}</p>
                 <br/>
                 <IndexTable  />      
             </CardBody>
         <br/>
         {
-          dashboard_student.progressSa.student_ambassador === false ? 
+          dashboard_student.progressSa.student_ambassador === true ? 
             <>
               <CardHeader color="success">
                   <h4 className={classes.cardTitle}>{t("title_progress_dashboard")}</h4>
               </CardHeader>
               <CardBody>
                   <center><h3 className={classes.cardTitleCenter} >{t("title_program_sa")}</h3></center>
+                  {dashboard_student.progressSa.submitted === "state.revision" ? <center><Danger><h5 className={classes.infoText}>{t("label_success_revision")}</h5></Danger></center>: ""}
                   <p>{t("label_program_sa_starting")}</p>
                   <br/>
-                  <IndexTableSa  />      
+                  {dashboard_student.progressMbs.submitted !== "state.approved" ? <center><Danger><h5 className={classes.infoText}>{t("label_restricted_access")}</h5></Danger></center>: <IndexTableSa  />}      
               </CardBody>
             </>          
           :""
@@ -78,7 +79,8 @@ IndexRep.propTypes = {
 };
 
 const mapStateToProps = state => ({ 
-  dashboard_student: state.studentReducer.dashboard_student
+  dashboard_student: state.studentReducer.dashboard_student,
+  active_user: state.loginReducer.active_user
 });
 
 const mapDispatchToPropsActions = dispatch => ({
