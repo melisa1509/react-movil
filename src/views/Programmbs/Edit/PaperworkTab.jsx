@@ -219,55 +219,12 @@ class PaperworkTab extends React.Component {
       p4_array_state = ["0", "1", "3", "4", "5","0", "1", "3", "4", "5","0", "1", "3", "4", "5"];
     }
        
-    let arrayPaperwork4 = programmbs.paperwork4.p4_array.map((prop, key) => {
-      return(
-        {value: prop, key: key }
-      )
-    })    
     
-    const numColumsPaperwork4 = arrayPaperwork4.length / 5;
-    const rowsPaperwork4 = [];
     const widthColumsPaperwork4 = ["10%", "45%", "15%", "15%", "15%"];
-    let start4 = 0;
-    let end4 = 4;
-    for (let index = 0; index <= numColumsPaperwork4; index++) {
-      rowsPaperwork4.push({start: start4, end: end4});
-      start4 = start4 + 5;
-      end4 = end4 + 5;
-    }
-
-    const arrayPaperwork5 = programmbs.paperwork5.p5_array.map((prop, key) => {
-      return(
-        {value: prop, key: key }
-      )
-    })
-    const numColumsPaperwork5 = arrayPaperwork5.length / 2;
-    const rowsPaperwork5 = [];
+    
     const widthColumsPaperwork5 = ["70%", "30%"];  
-    let start5 = 0;
-    let end5 = 1;
-    for (let index = 0; index <= numColumsPaperwork5; index++) {
-      rowsPaperwork5.push({start: start5, end: end5});
-      start5 = start5 + 2;
-      end5 = end5 + 2;
-    }
-
-
-    const arrayPaperwork6 = programmbs.paperwork6.p6_array.map((prop, key) => {
-      return(
-        {value: prop, key: key }
-      )
-    })
-    const numColumsPaperwork6 = arrayPaperwork6.length / 2;
-    const rowsPaperwork6 = [];
-    const widthColumsPaperwork6 = ["70%", "30%"];
-    let start6 = 0;
-    let end6 = 1;
-    for (let index = 0; index <= numColumsPaperwork6; index++) {
-      rowsPaperwork6.push({start: start6, end: end6});
-      start6 = start6 + 2;
-      end6 = end6 + 2;
-    }
+    
+    const widthColumsPaperwork6 = ["70%", "30%"];    
    
 
     const titlePaperwork7 = [];

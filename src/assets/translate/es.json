@@ -49,6 +49,9 @@
     "button_certificates":               "Certificados",
     "button_signin":                     "Iniciar Sesión",
     "button_create_group":               "Crear nuevo Grupo",
+    "button_previous":                   "Anterior",
+    "button_next":                       "Siguiente",
+    "button_continue_editing":           "Continuar Editando",
     
 
     "label_month":                      "Mes",
@@ -133,7 +136,8 @@
     "label_start_classes":              "Fecha de Inicio de Clases",
     "label_success_update":             "La aprobación del proyecto ha sido completada con Éxito.",
     "label_user_alredy_exist":          "Ya existe un usuario con el mismo correo electrónico. Por favor contacte al administrador.",
-    "label_total_income":               "Saldo de Caja Final",
+    "label_total_income":               "Total Ingresos",
+    "label_total_expenses":             "Total Gastos",
     "label_welcome_mbs":                "Hola y bienvenido a nuestra plataforma de éxito! Nos emociona que haya decidido tomar nuestro curso de Maestría de Negocios en la Calle (MBS) y sabemos que el programa cambiará su vida. Quisimos diseñar una herramienta con el fin de ayudarle a progresar dentro del programa, un lugar en el que puede crear y guardar su plan de negocio, de vida personal/familiar, y del proyecto de servicio comunitario. Podrá crear sus formularios de papeleo, rueda de calidad de vida, subir fotos de sus actividades, y mucho más. Cuando todo esté listo, solo tiene que enviar su proyecto en el tiempo debido y luego recibirás su certificado MBS de su embajador de Éxito! Si tiene cualquier pregunta o duda, estamos para ayudar a team@interweavesolutions.org. ¡Gracias!",
     "label_whatsapp":                   "Whatsapp",
     "label_save_success":               "Actualizacion Exitosa!",
@@ -370,6 +374,7 @@
     "question_process1":                 "¿Cuál es el Diagrama de procesos dentro de su negocio?",
     "question_process2":                 "¿Qué ha hecho para mejorar el proceso de su negocio?",
     "question_process3":                 "Teniendo en cuenta lo que ha aprendido en el curso ¿Qué acciones tomará para mejorar constantemente y agregar valor a su negocio?",
+    "question_process4":                 "¿Cómo puede trabajar en su negocio, no solo para su negocio?",
     "question_price1":                   "¿Cuál es el precio de su producto (s)? ¿Por qué cobra ese precio?",
     "question_price2":                   "¿Cuáles son los precios de sus 3 principales competidores? ",
     "question_price3":                   "¿Está tomando en cuenta todos los costos que intervienen en el precio final de su producto o servicio?",
