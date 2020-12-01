@@ -261,7 +261,7 @@ class EditForm extends React.Component {
                       </Button>
                       </Link>
                       {" "}
-                      <Link to={"/admin/editpassword/" +  show_administrator.id}>
+                      <Link to={"/student/editpassword/" +  show_administrator.id}>
                       <Button color="warning" size="sm" onClick={this.deleteClick}>
                       {t("button_change_password")}
                       </Button>

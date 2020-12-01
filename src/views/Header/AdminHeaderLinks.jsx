@@ -24,14 +24,13 @@ import { getActiveUser, logoutUser } from "actions/loginActions.jsx";
 import en from 'assets/translate/en.json';
 import fr from 'assets/translate/fr.json';
 import es from 'assets/translate/es.json';
-import pr from 'assets/translate/pr.json';
 import pt from 'assets/translate/pt.json';
 import {
   setTranslations,
   setDefaultLanguage,
 } from 'react-switch-lang';
 
-setTranslations({ en, fr, es, pr, pt });
+setTranslations({ en, fr, es, pt });
 
 
 class AdminHeaderLinks extends React.Component {

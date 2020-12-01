@@ -122,7 +122,7 @@ class LanguageSelect extends React.Component {
                                 root: classes.selectMenuItem,
                                 selected: classes.selectMenuItemSelected
                             }}
-                            value="pr"
+                            value="pt"
                         >
                             {t("label_portuguese")}
                         </MenuItem>
