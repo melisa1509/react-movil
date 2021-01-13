@@ -13,7 +13,7 @@ import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import mainPageStyle from "assets/jss/material-kit-react/views/mainPage.jsx";
 import LoginRep from "./LoginRep.jsx";
 import { setDefaultLanguage } from 'react-switch-lang';
-import PerfectScrollbar from 'react-perfect-scrollbar';
+import LanguageDropdown from 'components/LanguageNavBar/LanguageDropdown.jsx';
 
 
 const styles = {
@@ -23,7 +23,7 @@ const styles = {
 
 var userLang = navigator.language || navigator.userLanguage; 
 var lang = userLang.split("-");
-setDefaultLanguage(lang[0]);
+setDefaultLanguage("en");
 
 class Login extends React.Component {
   constructor(props) {
@@ -38,8 +38,8 @@ class Login extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
-      <PerfectScrollbar>
       <div>
+        
         <div
           className={classes.main}
           style={{
@@ -48,6 +48,7 @@ class Login extends React.Component {
             backgroundColor: "#fff"
           }}
         >
+          <LanguageDropdown/>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
@@ -57,7 +58,6 @@ class Login extends React.Component {
           </div>
         </div>
       </div>
-      </PerfectScrollbar>
     );
   }
 }

@@ -41,8 +41,9 @@
   "button_send_revision":              "Submit for revision",
   "button_send":                       "Send",
   "button_send_correction":            "Sent for correction",
-  "button_sign_in":                    "Sing in ",
-  "button_sign_up":                    "Sing Up",
+  "button_sign_in":                    "Sign in ",
+  "button_sign_up":                    "Sign Up",
+
   "button_show_all_list":              "Show All List",
   "button_upload_file":                "Upload File",
   "button_upload_image":               "Upload Image",
@@ -64,6 +65,7 @@
   "button_previous":                   "Previous",
   "button_next":                       "Next",
   "button_continue_editing":           "Continue Editing",
+
 
   "label_month":                      "Month",
   "label_choose_language":            "Choose Language",

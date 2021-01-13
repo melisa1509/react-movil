@@ -7,13 +7,11 @@ import PerfectScrollbarStyle from 'react-perfect-scrollbar/dist/css/styles.css';
 import Footer from "views/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 
 
 import mainPageStyle from "assets/jss/material-kit-react/views/mainPage.jsx";
 import IndexRep from "./IndexRep.jsx";
-import AdminHeader from "views/Header/AdminHeader.jsx";
-import PerfectScrollbar from 'react-perfect-scrollbar';
+import LanguageDropdown from 'components/LanguageNavBar/LanguageDropdown.jsx';
 
 
 const styles = {
@@ -26,7 +24,7 @@ class Index extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
-      <div>
+      <div>        
         <div
           className={classes.main}
           style={{
@@ -35,6 +33,7 @@ class Index extends React.Component {
             backgroundColor: "#fff"
           }}
         >
+          <LanguageDropdown/>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
                 <IndexRep generalStyles={styles}/>
