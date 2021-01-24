@@ -114,9 +114,10 @@ export const getActiveUser = ( redirect ) => {
 export const logoutUser = ( redirect ) => {
     return (dispatch ) => {        
             dispatch ({ type: LOGOUT_USER });  
-            redirect.push('/login');            
-    }
-    
+            redirect.push('/login');
+            window.location.reload(true);                        
+
+    }    
 }
 
 export const cleanState = () => ({ type: LOGOUT_USER })

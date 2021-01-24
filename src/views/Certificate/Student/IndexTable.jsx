@@ -239,7 +239,12 @@ class IndexTable extends React.Component {
                         </Button>
                         {" "}
                       </Link>{" "}
-                      <Button color="warning" size="sm">
+                      <Button 
+                        color="warning" 
+                        size="sm"
+                        href={"https://api.interweavesolutions.org/certificate/attendance/list/" + this.props.match.params.id}
+                        target="_blank"
+                      >
                       {t("button_download_all_attendance_certificates")}
                       </Button>
                       {" "}

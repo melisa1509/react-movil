@@ -52,6 +52,8 @@
     "button_previous":                   "Anterior",
     "button_next":                       "Siguiente",
     "button_continue_editing":           "Continuar Editando",
+    "button_story":                      "Historia",
+    
     
 
     "label_month":                      "Mes",
@@ -195,6 +197,7 @@
     "label_final_date":                  "Fecha Final",
     "label_improve":                     "Mejoró",
     "label_worsen":                      "Empeoró",
+    "label_success_story":               "Listado de Historias de Exito",
     "label_wrong_date_difference":       "La fecha de Graduación deber ser como mínimo 15 días después de la fecha final de clases.",
     "label_interweave_local":            "Nombre del Embajador",
     "label_wrong_revision":              "No es posible enviar su proyecto ha revisión debido a que no ha completado el 100% de información en la plataforma. A continuación podra observar su porcentaje de avance en cada una de las secciones.",
@@ -232,7 +235,7 @@
     "link_ambassador":                  "Embajador",
     "link_codes":                       "Codigo",
     "link_success_story":               "Historias de Éxito",
-    "link_success_stories":             "Historias de Éxito",
+    "link_success_stories":               "Historias de Éxito",
     "link_generate_groups_question1":   "https://interweavesolutions.org/galeria-de-medios",
     "link_generate_groups_question3":   "https://interweavesolutions.org/recursos-embajadores",
 
