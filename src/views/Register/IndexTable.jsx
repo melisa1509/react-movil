@@ -77,10 +77,6 @@ class IndexTable extends React.Component {
     const data = group_list.map((prop, key) => {
       return {
         id: key, 
-        id_group:prop.id,
-        full_name: prop.name,
-        modality:t(prop.modality),
-        AmbassadorMentor: prop.embassador.first_name + " " + prop.embassador.last_name,
         actions: (
           <div className="actions-left">
             <Link to={"/register/new/" + prop.id}>
@@ -93,7 +89,12 @@ class IndexTable extends React.Component {
             </Link>
             {" "}
           </div>
-        )
+        ),
+        full_name: prop.name,
+        modality:t(prop.modality),
+        AmbassadorMentor: prop.embassador.first_name + " " + prop.embassador.last_name,
+        id_group:prop.id
+        
       };
     });
     
@@ -122,10 +123,17 @@ class IndexTable extends React.Component {
               loading={loading}
               columns={[
                 {
-                  Header: t("th_id"),
-                  accessor: "id_group",
+                  Header: t("th_group"),
+                  accessor: "full_name",
+                  width:220,
                   sortable: false,
-                  width:70
+                },
+                {
+                  Header: t("th_actions"),
+                  accessor: "actions",
+                  width:100,
+                  sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("th_embassador_mentor"),
@@ -134,24 +142,18 @@ class IndexTable extends React.Component {
                   sortable: false
                 },
                 {
-                  Header: t("th_group"),
-                  accessor: "full_name",
-                  width:270,
-                  sortable: false,
-                },
-                {
                   Header: t("th_modality"),
                   accessor: "modality",
                   width:130,
                   sortable: false
                 },
                 {
-                  Header: t("th_actions"),
-                  accessor: "actions",
-                  width:130,
+                  Header: t("th_id"),
+                  accessor: "id_group",
                   sortable: false,
-                  filterable: false
+                  width:70
                 },
+                
                 {
                   Header: "",
                   id: 'all',
