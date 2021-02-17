@@ -8,7 +8,7 @@ import { setDefaultLanguage, getDefaultLanguage, getLanguage, setLanguage } from
 
 import usFlag from "assets/img/flags/US.png";
 import esFlag from "assets/img/flags/ES.png";
-import ptFlag from "assets/img/flags/PT.png";
+import brFlag from "assets/img/flags/BR.png";
 import frFlag from "assets/img/flags/FR.png";
 import { ContactSupportOutlined } from '@material-ui/icons';
 
@@ -40,7 +40,7 @@ class Dropdown extends React.Component {
             selectedLanguage = <span><img src={frFlag} alt="..."/>{" " + t('label_french')}</span>;
             break;
         case 'pt':
-            selectedLanguage = <span><img src={ptFlag} alt="..."/>{" " + t('label_portuguese')}</span>;
+            selectedLanguage = <span><img src={brFlag} alt="..."/>{" " + t('label_portuguese')}</span>;
             break;
        
     }
@@ -55,7 +55,7 @@ class Dropdown extends React.Component {
                     <Link to={route} onClick={() => this.handleLanguage('en')}><span><img src={usFlag} alt="..."/>{" " + t('label_english')}</span></Link>,
                     <Link to={route} onClick={() => this.handleLanguage('es')}><span><img src={esFlag} alt="..."/>{" " + t('label_spanish')}</span></Link>,
                     <Link to={route} onClick={() => this.handleLanguage('fr')}><span><img src={frFlag} alt="..."/>{" " + t('label_french')}</span></Link>,
-                    <Link to={route} onClick={() => this.handleLanguage('pt')}><span><img src={ptFlag} alt="..."/>{" " + t('label_portuguese')}</span></Link>,         
+                    <Link to={route} onClick={() => this.handleLanguage('pt')}><span><img src={brFlag} alt="..."/>{" " + t('label_portuguese')}</span></Link>,         
                 ]}
             />
         </div>
