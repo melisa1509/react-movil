@@ -93,7 +93,7 @@ class FacilitateGroupsTab extends React.Component {
             </MutedText>
             <br/>
             <SuccessBold>
-              {t("question_rule1")}
+              {t("question_rule2")}
             </SuccessBold>
             <br/>
             <MutedText>

@@ -14,7 +14,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import IndexTable from './IndexTable.jsx';
 import IndexAmbassador from './IndexAmbassador.jsx';
-import MBSTable from './MBSTable.jsx';
+import IndexAmbassadorOnline from './IndexAmbassadorOnline.jsx';
 
 import { getCertificateList } from "actions/certificateActions.jsx";
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
@@ -42,12 +42,23 @@ class IndexRep extends React.Component {
           <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
-                { rol ? <h4 className={classes.cardTitle}>{t("title_student_list") +" "+ t("title_paper_documentation")}</h4> :<h4 className={classes.cardTitle}>{t("title_student_list")}</h4>}
+                { rol ? <h4 className={classes.cardTitle}>{t("title_student_list") +" "+ t("title_paper_documentation") + " / "+ t("state_project_mbs") + " " + t("state.without_starting")}</h4> :<h4 className={classes.cardTitle}>{t("title_student_list")}</h4>}
             </CardHeader>
             <CardBody>
                 {rol ? <IndexAmbassador  /> : <IndexTable  /> }   
             </CardBody>
+          </Card>
+          <br/>    
+          {rol ?
+          <Card>
+            <CardHeader color="info">
+                <h4 className={classes.cardTitle}>{t("title_student_list") +" "+ t("title_online_documentation")}</h4>
+            </CardHeader>
+            <CardBody>
+                 <IndexAmbassadorOnline />
+            </CardBody>
           </Card>          
+          :""}      
       </div>
     );
   }

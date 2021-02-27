@@ -101,43 +101,49 @@ class SATable extends React.Component {
                 {
                   Header: t("th_name"),
                   accessor: "name",
-                  width: 180,
+                  width: 220,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("title_mision"),
                   accessor: "mision",
-                  width: 120,
+                  width: 144,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("title_generate_groups"),
                   accessor: "generate",
                   width: 144,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("title_rules"),
                   accessor: "facilitate",
                   width: 144,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("title_graduate_groups"),
                   accessor: "graduate",
                   width: 144,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: t("title_support_groups"),
                   accessor: "support",
                   width: 144,
                   sortable: false,
+                  filterable: false
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 0,
+                  width: 20,
                   resizable: false,
                   sortable: false,
                   

@@ -20,7 +20,7 @@ import CustomInput from 'components/CustomInput/CustomInput.jsx';
 import { Link } from "react-router-dom";
 
 
-class IndexTable extends React.Component {
+class IndexAmbassadorOnlineTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,15 +58,19 @@ class IndexTable extends React.Component {
     
   }
 
-  componentDidMount() {
-    this.props.dispatchGetCertificateList(this.props.match.params.id);
-  }
+ 
 
  
   render() {
     const { certificate_list } = this.props;
     let { t } = this.props;
-    const data = certificate_list.map((prop, key) => {
+
+    let project_mbs = certificate_list.filter(prop => prop.student.programmbs != undefined );
+    let online_requirements = project_mbs.filter(prop => prop.student.programmbs.modality != "option.modality1" );
+
+    const data = online_requirements.map((prop, key) => {
+
+
     let state="";
     let labelButton = t('button_mbs');
     let colorButton = "success";
@@ -195,21 +199,21 @@ class IndexTable extends React.Component {
                 {
                   Header: t("th_status"),
                   accessor: "status",
-                  width: 200,
+                  width: 250,
                   sortable: false,
                   filterable: false
                 },
                 {
                   Header: t("th_projects"),
                   accessor: "projects",
-                  width: 220,
+                  width: 250,
                   sortable: false,
                   filterable: false
                 },
                 {
                   Header: t("th_actions"),
                   accessor: "actions",
-                  width: 220,
+                  width: 250,
                   sortable: false,
                   filterable: false
                 },
@@ -217,8 +221,8 @@ class IndexTable extends React.Component {
                   Header: "",
                   id: 'all',
                   width: 20,
-                  resizable: false,
                   sortable: false,
+                  filterable: false,
 
                   getProps: () => {
                     return {
@@ -277,9 +281,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToPropsActions = dispatch => ({
-  dispatchGetCertificateList: (key) => dispatch( getCertificateList(key))
 });
 
-const IndexTableComponent = translate(IndexTable);
-export default withRouter(connect(mapStateToProps, mapDispatchToPropsActions)(IndexTableComponent));
+const IndexAmbassadorOnlineTableComponent = translate(IndexAmbassadorOnlineTable);
+export default withRouter(connect(mapStateToProps, mapDispatchToPropsActions)(IndexAmbassadorOnlineTableComponent));
 

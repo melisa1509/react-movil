@@ -40,12 +40,14 @@
     "button_savefile":                   "Save File",
     "button_send_revision":              "Submit for revision",
     "button_send":                       "Send",
-    "button_send_correction":            "Sent for correction",
+    "button_send_correction":            "Submit for correction",
     "button_sign_in":                    "Sign in ",
     "button_sign_up":                    "Sign Up",
     "button_statistics":                 "Statistics",
     "button_updates":                    "Updates",
     "button_create_grant":               "Create Grant",
+    "button_reject":                     "Grant not approved",
+    "button_grant_approved":             "Grant Approved",
 
     "button_show_all_list":              "Show All List",
     "button_upload_file":                "Upload File",
@@ -69,6 +71,8 @@
     "button_next":                       "Next",
     "button_continue_editing":           "Continue Editing",
     "button_evaluation":                 "Personal Evaluation",
+    "button_application":                "Application",
+    "button_applications":               "Applications",
 
 
     "label_month":                      "Month",
@@ -274,7 +278,23 @@
     "label_title":                       "Title",
     "label_active":                      "Active",
     "label_inactive":                    "Inactive",
-    "label_success_ambassador_code":      "Success Ambassador Certificate Code",
+    "label_success_ambassador_code":     "Success Ambassador Certificate Code",
+    "label_application":                 "Application",
+    "label_administrator":               "Administrator",
+    "label_grant_corrections":           "Updates or Comments",
+    "label_grant_file":                  "Upload File 1 / Video 1 (Max size 60 Mb)",
+    "label_grant_file2":                 "Upload File 2 / Video 2 (Max size 60 Mb)",
+    "label_grant_success_revision":      "Your application has been submitted successfully. You will receive a confirmation email once it has been reviewed.",
+    "label_grant_updates":               "What progress have you made in the past month in your area because of the grant you received ?",
+    "label_deadline_applications":       "Deadline for applications",
+    "label_deadline":                    "Deadline",
+    "label_available":                   "Available",
+    "label_unavailable":                 "Not Available",
+    "label_grant_application_approved":  "Congratulations! Grant Application Approved!",
+    "label_total_amount_approved":       "Total Amount Approved",
+    "label_sent_correction_successful":  "Corrections Sent",
+    "label_sent_reject_successful":      "Grant Not Approved",
+    "label_sent_approved_successful":    "Grant Approved",
     
 
     
@@ -427,6 +447,8 @@
     "title_edit_grant":                 "Edit Grant",
     "title_grant_application":          "Grant Application",
     "title_grant_overview":             "Grant Overview",
+    "title_grant_application_list":     "Grant Application List",
+    "title_grant_ambassador_list_revision" : "Grant Applications Revision Ready",
 
     "message_approved_project" :         "Congratulations! Your Project has been approved.",
 
@@ -591,6 +613,8 @@
     "th_amount":                 "Amount",
     "th_administrator":          "Administrator",
     "th_title":                  "Title",
+    "th_state":                  "State",
+    "th_last_update":            "Last Update",
 
     "en":                        "English",
     "fr":                        "French",
@@ -854,7 +878,10 @@
         "draft":                      "Draft",
         "publish":                    "Publish",
         "active":                     "Active",
-        "inactive":                   "Inactive"    
+        "inactive":                   "Inactive", 
+        "reject":                     "Not Approved",
+        "available":                  "Available",
+        "not_available":              "Not available"    
     }, 
 
     "option":{

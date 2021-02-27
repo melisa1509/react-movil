@@ -669,7 +669,6 @@ class QualitylifeTab extends React.Component {
                 </GridItem>
           </GridContainer>
 
-            <RevisionForm name="revisionquality" labelText={t("label_revision_quality")+ " *"}/>
             <Controls/>
             <ControlNavigation previous={"paperwork"} next={"service"} />
           </CardBody>

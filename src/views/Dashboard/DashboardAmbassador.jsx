@@ -113,7 +113,7 @@ class DashboardAmbassador extends React.Component {
               </CardIcon>
                 <p className={classes.cardCategory}>{t("link_success_stories")}</p>
                 <br/>
-                <Muted><h3>{0}</h3></Muted>
+                <Muted><h3>{dashboard_ambassador.global_stories}</h3></Muted>
             </CardHeader>            
           </Card>
           </Link>
