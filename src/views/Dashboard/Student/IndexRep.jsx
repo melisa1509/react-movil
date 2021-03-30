@@ -54,7 +54,7 @@ class IndexRep extends React.Component {
             </CardBody>
         <br/>
         {
-          dashboard_student.progressSa.student_ambassador === true ? 
+          active_user.roles.includes("ROLE_STUDENT_EMBASSADOR") ? 
             <>
               <CardHeader color="success">
                   <h4 className={classes.cardTitle}>{t("title_progress_dashboard")}</h4>

@@ -22,13 +22,17 @@ import Card from "components/Card/Card.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import Muted from "components/Typography/Muted.jsx"
+import { ArrowLeftTwoTone } from "@material-ui/icons";
 
 
 const styles = {
   cardIconTitle:{
     ...cardTitle,
     marginTop: "15px",
-    marginBottom: "10px"
+    marginBottom: "10px",
+  },
+  cardCategory:{
+    textAlign: "left"
   },
     ...dashboardStyle,
 };
@@ -58,10 +62,16 @@ class IndexTable extends React.Component {
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>account_balance</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}><Muted><h5>{t("title_plan") + " " + dashboard_student.progressMbs.plan}</h5></Muted></p>
-                <br/>
-            </CardHeader>            
+              </CardIcon>    
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                  <Muted><h5>{t("title_plan") + " " + dashboard_student.progressMbs.plan}</h5></Muted>
+                  <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>
           </div>
           </Link>
         </GridItem>
@@ -72,9 +82,15 @@ class IndexTable extends React.Component {
               <CardIcon color="success">
                 <Icon>domain</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}><Muted><h5>{t("title_product") + " " + dashboard_student.progressMbs.product}</h5></Muted></p>
-              <br/>              
-            </CardHeader>             
+            </CardHeader>   
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                   <Muted><h5>{t("title_product") + " " + dashboard_student.progressMbs.product}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>           
           </div>
           </Link>
         </GridItem>
@@ -85,10 +101,16 @@ class IndexTable extends React.Component {
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>timeline</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}><Muted><h5>{t("title_process") + " " + dashboard_student.progressMbs.process}</h5></Muted></p>
-                <br/>                
-            </CardHeader>            
+              </CardIcon>                            
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_process") + " " + dashboard_student.progressMbs.process}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>           
           </div>
           </Link>
         </GridItem>
@@ -98,10 +120,16 @@ class IndexTable extends React.Component {
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
                 <Icon>monetization_on</Icon>
-              </CardIcon>
-              <p className={classes.cardCategory}><Muted><h5>{t("title_price") + " " + dashboard_student.progressMbs.price}</h5></Muted></p>
-              <br/>              
-            </CardHeader>           
+              </CardIcon>                           
+            </CardHeader> 
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_price") + " " + dashboard_student.progressMbs.price}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>          
           </div>
           </Link>
         </GridItem>
@@ -112,9 +140,15 @@ class IndexTable extends React.Component {
               <CardIcon color="danger">
                 <Icon>record_voice_over</Icon>
               </CardIcon>
-                <p className={classes.cardCategory}><Muted><h5>{t("title_promotion") + " " + dashboard_student.progressMbs.promotion}</h5></Muted></p>
-                <br/>                
-            </CardHeader>            
+            </CardHeader>    
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_promotion") + " " + dashboard_student.progressMbs.promotion}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>        
           </div>
           </Link>
         </GridItem>
@@ -125,9 +159,15 @@ class IndexTable extends React.Component {
               <CardIcon color="info">
                 <Icon>file_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}><Muted><h5>{t("title_paperwork") + " " + dashboard_student.progressMbs.paperwork}</h5></Muted></p>
-              <br/>              
-            </CardHeader>             
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_paperwork") + " " + dashboard_student.progressMbs.paperwork}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>           
           </div>
           </Link>
         </GridItem>
@@ -138,9 +178,15 @@ class IndexTable extends React.Component {
               <CardIcon color="warning">
                 <Icon>accessibility_new</Icon>
               </CardIcon>
-                <p className={classes.cardCategory}><Muted><h5>{t("title_quality_life") + " " + dashboard_student.progressMbs.quality}</h5></Muted></p>
-                <br/>
-            </CardHeader>            
+            </CardHeader>
+            <GridContainer>
+             <GridItem xs={12} sm={12} md={12} lg={12}>
+                <CardHeader>
+                <Muted><h5>{t("title_quality_life") + " " + dashboard_student.progressMbs.quality}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>            
           </div>
           </Link>
         </GridItem>
@@ -151,9 +197,15 @@ class IndexTable extends React.Component {
               <CardIcon color="success">
                 <Icon>pan_tool</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}><Muted><h5>{t("title_service") + " " + dashboard_student.progressMbs.service}</h5></Muted></p>
-              <br/>              
-            </CardHeader>           
+            </CardHeader>  
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={12} lg={12}>
+                <CardHeader>
+                <Muted><h5>{t("title_service") + " " + dashboard_student.progressMbs.service}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>         
           </div>
           </Link>
         </GridItem>

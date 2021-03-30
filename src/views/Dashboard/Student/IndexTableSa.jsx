@@ -49,68 +49,87 @@ class IndexTableSa extends React.Component {
       <GridContainer>
         <GridItem xs={6} sm={6} md={6} lg={6}>
         <Link to={dashboard_student.progressSa.state === "new" ? "/programsa/new" : "/programsa/edit/mision/" + dashboard_student.progressSa.id} className={classes.dropdownLink} >
-          <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>account_balance</Icon>
               </CardIcon>
-                <p className={classes.cardCategory}>{t("title_mision")}</p>
-                <br/>
-                <Muted><h3>{dashboard_student.progressSa.mision}</h3></Muted>
-            </CardHeader>            
-          </Card>
+            </CardHeader>
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_mision") + " " + dashboard_student.progressSa.mision}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>            
           </Link>
         </GridItem>
         <GridItem xs={6} sm={6} md={6} lg={6}>
         <Link to={dashboard_student.progressSa.state === "new" ? "/programsa/new" : "/programsa/edit/generate/" + dashboard_student.progressSa.id} className={classes.dropdownLink} >
-          <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
                 <Icon>supervised_user_circle</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>{t("title_generate_groups")}</p>
-              <Muted><h3>{dashboard_student.progressSa.generate}</h3></Muted>
-            </CardHeader>             
-          </Card>
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_generate_groups") + " " + dashboard_student.progressSa.generate}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>           
           </Link>
         </GridItem>
         <GridItem xs={6} sm={6} md={6} lg={6}>
         <Link to={dashboard_student.progressSa.state === "new" ? "/programsa/new" : "/programsa/edit/facilitate/" + dashboard_student.progressSa.id} className={classes.dropdownLink} >
-          <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>list_alt</Icon>
               </CardIcon>
-                <p className={classes.cardCategory}>{t("title_rules")}</p>
-                <Muted><h3>{dashboard_student.progressSa.facilitate}</h3></Muted>
-            </CardHeader>            
-          </Card>
+            </CardHeader>
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_rules") + " " + dashboard_student.progressSa.facilitate}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>            
           </Link>
         </GridItem>
         <GridItem xs={6} sm={6} md={6} lg={6}>
         <Link to={dashboard_student.progressSa.state === "new" ? "/programsa/new" : "/programsa/edit/graduate/" + dashboard_student.progressSa.id} className={classes.dropdownLink} >
-          <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
                 <Icon>school</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>{t("title_graduate_groups")}</p>
-              <Muted><h3>{dashboard_student.progressSa.graduate}</h3></Muted>
-            </CardHeader>           
-          </Card>
+            </CardHeader>     
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_graduate_groups") + " " + dashboard_student.progressSa.graduate}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>      
           </Link>
         </GridItem>
         <GridItem xs={6} sm={6} md={6} lg={6}>
         <Link to={dashboard_student.progressSa.state === "new" ? "/programsa/new" : "/programsa/edit/support/" + dashboard_student.progressSa.id} className={classes.dropdownLink} >
-          <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>airplay</Icon>
               </CardIcon>
-                <p className={classes.cardCategory}>{t("title_support_groups")}</p>
-                <Muted><h3>{dashboard_student.progressSa.support}</h3></Muted>
-            </CardHeader>            
-          </Card>
+            </CardHeader>   
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                <Muted><h5>{t("title_support_groups") + " " + dashboard_student.progressSa.support}</h5></Muted>
+                   <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>         
           </Link>
         </GridItem>        
       </GridContainer>

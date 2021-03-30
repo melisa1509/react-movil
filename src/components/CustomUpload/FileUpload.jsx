@@ -19,7 +19,9 @@ class FileUpload extends React.Component {
 
     uploadFile = ({ target: { files } }) =>{
       let data = new FormData();
-      data.append( 'file', files[0] )
+      for (let index = 0; index < files.length; index++) {
+        data.append( 'file[]', files[index] );
+       }
   
       const options = {
         onUploadProgress: (progressEvent) => {
@@ -48,7 +50,7 @@ class FileUpload extends React.Component {
         const {uploadPercentage} = this.state;
         return (
             <div>
-                <input type="file" onChange={this.uploadFile} />
+                <input type="file" onChange={this.uploadFile} multiple />
                 <input type="hidden" value={input.value} onChange={input.onChange} />
                 { uploadPercentage > 0 &&
                 <div>
