@@ -8,7 +8,8 @@ const initialState = {
     first_name: "",
     last_name: "",
     language: "en",
-    roles: ["ROLE_ADMIN"]
+    roles: [],
+    evaluation:{},
   }
 }
 

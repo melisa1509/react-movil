@@ -63,6 +63,18 @@
         "button_previous":                   "Précédent",
         "button_next":                       "Suivant",
         "button_continue_editing":           "Continuer à éditer",
+        "button_statistics":                 "Statistiques",
+        "button_updates":	             "Mises à Jour",
+        "button_create_grant":	             "Créer une Bourse",
+        "button_reject":                     "Bourse non Approuvée",
+        "button_grant_approved":	     "Bourse Approuvée",
+        "button_evaluation":                 "Évaluation Personnelle",
+        "button_application":                "Application",
+        "button_applications":   	     "Applications",
+        "button_apply":        	             "Appliquer",
+        "button_groups":	             "Groupes",
+        "button_save_groups":    	     "Sauvegarder les Groupes Sélectionnés",
+
 
 
         "label_month":                      "Mois",
@@ -252,6 +264,46 @@
         "label_ending_balance":              "Solde de Trésorerie final",
         "label_update_error":                "Erreur de mise à jour, veuillez contacter l'administrateur",
         "label_save_error":                  "Une erreur s'est produite. Rechargez la page, tapez quelque chose et réessayez de sauvegarder. Si le problème persiste, contactez l'administrateur.",
+        "label_process_step_1":   	     "Étape 1",
+        "label_process_step_2":	             "Étape 2",
+        "label_process_step_3":	             "Étape 3",
+        "label_process_step_4":	             "Étape 4",
+        "label_process_step_5":	             "Étape 5",
+        "label_process_step_6":  	     "Étape 6",
+        "label_send_for_revision":  	     "Soumettre pour Révision",
+        "label_success_story":	             "Liste des Histoires de Réussite",
+        "label_amount":	                     "Montant",
+        "label_date":	                     "Date",
+        "label_number_students":	     "Nombre de Participants",
+        "label_title":	                     "Titre",
+        "label_active":	                     "Actif",
+        "label_inactive":	             "Inactif",
+        "label_success_ambassador_code":     "Code du Certificat d'Ambassadeur du Succès",
+        "label_application":	             "Application",
+        "label_administrator":	             "Administrateur",
+        "label_grant_corrections":	     "Mises à Jour ou Commentaires",
+        "label_grant_file":	             "Télécharger le Fichier 1 / Vidéo 1 (taille maximale 60 Mb)",
+        "label_grant_file2":	             "Télécharger le Fichier 2 / Vidéo 2 (taille maximale 60 Mb)",
+        "label_grant_success_revision":      "Votre candidature a été soumise avec succès. Vous recevrez un email de confirmation une fois qu'elle aura été examinée.",
+        "label_grant_updates":	             "Quels progrès avez-vous réalisés au cours du dernier mois dans votre région grâce à la bourse que vous avez reçue ?",
+        "label_deadline_applications":	     "Délai pour les Applications",
+        "label_deadline":	             "Délai",
+        "label_available":	             "Disponible",
+        "label_unavailable":	             "Non Disponible",
+        "label_grant_application_approved":  "Félicitations ! Demande de Bourse Approuvée !",
+        "label_total_amount_approved":	     "Montant Total Approuvé",
+        "label_sent_correction_successful":  "Corrections Envoyées",
+        "label_sent_reject_successful":	     "Bourse Non Approuvée",
+        "label_sent_approved_successful":    "Bourse Approuvée",
+        "label_admin_coments":	             "Commentaires ou Corrections de l'Administrateur",
+        "label_updates":	             "Mises à Jour des Bourses",
+        "label_type_grant":	             "Type",
+        "label_start_up":	             "Démarrage",
+        "label_schollarship":	             "Bourse d'Études",
+        "label_choose_type": 	             "Choisir le Type",
+        "label_choose_state":  	             "Choisir le Statut",
+        "label_number_participants_trained": "Nombre de Participants Formés",
+
 
        "link_administrator":               "Administrateur",
        "link_ambassador_student":          "Assigner Mentor",
@@ -276,6 +328,15 @@
        "link_evaluations":                 "Évaluation",
        "link_generate_groups_question1":   "https://www.interweavesolutions.org/fr/galerie-des-medias/",
        "link_generate_groups_question3":   "https://www.interweavesolutions.org/fr/ressources/",
+       "link_grants":	                   "Bourses",
+       "link_list":	                   "Liste",
+       "link_statistics":	           "Statistiques",
+       "link_total_amount":	           "Montant Total",
+       "link_applications":	           "Applications",
+       "link_countries":	           "Pays",
+       "link_graduates":	           "Diplômés",
+       "link_reports_ambassador":	   "Statistiques des Ambassadeurs du Succès",
+
 
        "option_quality5":                    "5_ Je suis très heureux dans ce domaine de ma vie_",
        "option_quality4":                    "4_ Normalement, je suis heureux dans ce domaine de ma vie_",
@@ -288,6 +349,8 @@
        "option_program2":                    "Ambassadeur du Succès",
        "option_program3":                    "MBS et Ambassadeur du Succès",
        "option_program4":                    "Maîtrise en Administration des Affaires dans la Rue Junior",
+      
+
   
   
         "state_development":                "en cours",
@@ -296,6 +359,9 @@
         "state_revision":                   "en cours de révision",   
         "state_project_mbs":                "Projet MBS",
         "state_without_starting":           "pas encore commencé",
+        "state_active":	                    "Actif",
+        "state_inactive":	            "Inactif",
+
        
         "title_student_list":               "Liste des Participants",
         "title_course_list":                "Liste des Cours ",
@@ -392,6 +458,19 @@
         "title_support_groups":             "Maintenir les Groupes", 
         "title_register_participants":      "Enregistrer les Participants",
         "title_student_list_future_ambassador_revision":   "Potentiel Groupe Assignation d'Ambassadeurs du Succès",
+        "title_show_grant":	            "Bourse",
+        "title_new_grant":	            "Nouvelle Bourse",
+        "title_grant_list":	            "Liste des Bourses",
+        "title_edit_grant":	            "Modifier la Bourse",
+        "title_grant_application":	    "Application de Bourse",
+        "title_grant_overview":	            "Aperçu de la Bourse",
+        "title_grant_application_list":	    "Liste des Demandes de Bourses",
+        "title_grant_ambassador_list_revision":	"Les Demandes de Bourses Sont Prêtes à Être Révisées",
+        "title_global_statistic":	    "Statistiques Globales",
+        "title_approved_grant_applications":"Liste des Demandes de Bourses",
+        "title_groups_created":	            "Groupes Créés Grâce à Cette Bourse",
+        "title_grant_applications":	    "Mon Application de Bourse",
+
 
         "question_evaluation_question1":     "1. J'ai ma propre entreprise",
         "question_evaluation_question2":     "2. J'ai un plan pour améliorer ma vie familiale et personnelle.",
@@ -494,6 +573,14 @@
         "question_support1":                 "1. Comment allez-vous aider vos groupes à continuer à se rencontrer?",
         "question_support2":                 "2. Que devez-vous faire pour maintenir votre statut d'Ambassadeur qualifié?",
         "question_support3":                 "3. Pourquoi voulez-vous devenir un Ambassadeur du Succès?",
+        "question_grant":	             "Quel est votre besoin financier estimé ?",
+        "question_grant1":	             "Dans l'espace ci-dessous, veuillez donner un bref aperçu de votre expérience en tant qu'Ambassadeur du Succès (parlez-nous des groupes MBS que vous avez animés jusqu'à présent, y compris le nombre de participants et de diplômés, les subventions précédentes reçues d'Interweave, etc.)",
+        "question_grant2":	             "Dans l'espace ci-dessous, veuillez expliquer votre besoin de la bourse d'études d'Interweave, (y compris un résumé de vos efforts pour trouver un financement auprès des sources énumérées dans la lettre d'introduction) :",
+        "question_grant3":	             "Combien de participants allez-vous former dans ce groupe (Max 30) ?",
+        "question_grant4":	             "Combien les participants contribueront-ils pour leur propre participation ?",
+        "question_grant5":	             "Quelles sont les autres sources de financement dont vous disposez et quelle sera leur contribution ? (Partenariats ou contrats)",
+        "question_grant6":	             "MONTANT TOTAL DEMANDÉ À INTERWEAVE :",
+
 
         "th_actions":                "Actions",
         "th_id":                     "ID",
@@ -542,6 +629,28 @@
         "th_quality":                "Plan de Foyer",
         "th_service":                "Service",
         "th_graduates":              "Diplômés",
+        "th_date":	             "Dernière Connexion",
+        "th_date_grant":    	     "Date",
+        "th_amount":	             "Montant",
+        "th_administrator":	     "Administrateur",
+        "th_title":	             "Titre",
+        "th_state":	             "Statut",
+        "th_last_update":	     "Dernière Mise à Jour",
+        "th_applications":	     "Applications",
+        "th_groups":	             "Groupes",
+        "th_participants":	     "Participants",
+        "th_total_amount":	     "Montant Total",
+        "th_date_application":	     "Date de l'Application",
+        "th_program":	             "Programme",
+        "th_created_date":	     "Date de l'Application",
+        "th_type":	             "Type",
+
+
+        "en":	                     "Anglais",
+        "fr":	                     "Français",
+        "pt":	                     "Portugais",
+        "es":	                     "Espagnol",
+
 
 
         "ABW": "Aruba",
@@ -799,7 +908,15 @@
                 "approved":                   "approuvé",
                 "revision":                   "en cours de révision",
                 "draft":                      "Draft",
-                "publish":                    "Publish"    
+                "publish":                    "Publish",
+                "active":	              "Actif",
+                "inactive":	              "Inactif",
+                "reject":	              "Non Approuvé",
+                "available":                  "Disponible",
+                "not_available":	      "Non Disponible",
+                "startup":	              "Démarrage",
+                "schollarship":	              "Études"
+    
         }, 
         
         "option":{

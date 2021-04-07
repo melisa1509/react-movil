@@ -39,13 +39,11 @@ class Edit extends React.Component {
             backgroundColor: "#eee"
           }}
         >
-          <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
                 <EditRep generalStyles={styles}/>
               </GridItem>
             </GridContainer>
-          </div>
           <Footer blackFont />
         </div>
       </div>

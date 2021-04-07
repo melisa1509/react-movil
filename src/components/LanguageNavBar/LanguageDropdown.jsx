@@ -45,7 +45,7 @@ class Dropdown extends React.Component {
        
     }
       return (
-        <div style={{ textAlign:'right'}}>      
+        <div>      
             <CustomDropdown
                 buttonProps={{
                     color: "transparent"

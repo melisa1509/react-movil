@@ -88,6 +88,18 @@ function CustomTextarea({...props }) {
         </InputLabel>
       ) : null}
       <Input
+        onKeyDown={e => {
+          if (e.keyCode === 13) {
+            e.stopPropagation();
+            e.nativeEvent.stopImmediatePropagation();
+          };
+        }}
+        onKeyPress={e => {
+          if (e.keyCode === 13) {
+            e.stopPropagation();
+            e.nativeEvent.stopImmediatePropagation();
+          };
+        }}
         classes={{
           input: inputClasses,
           root: marginTop,

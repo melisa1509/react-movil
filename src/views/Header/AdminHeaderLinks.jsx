@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 
 // @material-ui/icons
-import { Apps, Message, Face, Dashboard, HowToReg, SupervisorAccount, TrackChanges, LibraryBooks, Person, Stars, School, Cancel, Group } from "@material-ui/icons";
+import { MonetizationOn, Face, Dashboard, HowToReg, SupervisorAccount, TrackChanges, LibraryBooks, Person, Stars, School, Cancel, Group } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
@@ -86,6 +86,14 @@ class AdminHeaderLinks extends React.Component {
                   
                         <Stars color="danger" className={classes.icons} /> {t("link_groups")}
                   
+                  </Link>
+                  </ListItem>
+
+                  <ListItem className={classes.listItem}>
+                  <Link to={'/grant'} className={classes.dropdownLink}>
+            
+                        <MonetizationOn color="danger" className={classes.icons} /> {t("link_grants")}
+                              
                   </Link>
                   </ListItem>
                  
@@ -172,6 +180,14 @@ class AdminHeaderLinks extends React.Component {
                   
                         <Stars color="danger" className={classes.icons} /> {t("link_groups")}
                   
+                  </Link>
+                  </ListItem>
+
+                  <ListItem className={classes.listItem}>
+                  <Link to={'/grant/ambassador'} className={classes.dropdownLink}>
+            
+                        <MonetizationOn color="danger" className={classes.icons} /> {t("link_grants")}
+                                    
                   </Link>
                   </ListItem>
                  

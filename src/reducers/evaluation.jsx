@@ -10,7 +10,22 @@ const initialState = {
     question2:"",
   },
   data:{
-   question1:"option1"
+    postquestion1:"option1",
+    postquestion2:"option1",
+    postquestion3:"option1",
+    postquestion4:"option1",
+    postquestion5:"option1",
+    postquestion6:"option1",
+    postquestion7:"option1",
+    postquestion8:"option1",
+    postquestion9:"option1",
+    question1:"option1",
+    question2:"option1",
+    question3:"option1",
+    question4:"option1",
+    question5:"option1",
+    question6:"option1",
+    question7:"option1"
   },
   evaluation_pre:{
     question1:"option2",

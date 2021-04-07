@@ -1,14 +1,16 @@
 import { STUDENT_LIST, SHOW_STUDENT, LOAD_FORM_STUDENT, DASHBOARD_STUDENT } from "constants/actionTypes";
 import { DELETE_STUDENT } from "constants/actionTypes";
 import { ERROR_EDIT_STUDENT } from "constants/actionTypes";
+import { SUCCESS_STORY } from "constants/actionTypes";
 import { EDIT_STUDENT } from "constants/actionTypes";
 import { NEW_STUDENT } from "constants/actionTypes";
 import { EDIT_PASSWORD_STUDENT } from "constants/actionTypes";
-import { GET_STUDENT_AMBASSADOR, EVALUATION_PRE, EVALUATION_POST, MBS_STUDENT_LIST } from "constants/actionTypes";
+import { GET_STUDENT_AMBASSADOR, EVALUATION_PRE, EVALUATION_POST, MBS_STUDENT_LIST} from "constants/actionTypes";
 
 const initialState = { 
   student_list: [], 
   student_ambassador_list:[],
+  success_story:[],
   mbs_student_list:[],
   loading: true,
   editError: false,
@@ -138,6 +140,12 @@ export const studentReducer = (state = initialState, action) => {
       case EVALUATION_POST:
         return Object.assign({}, state, {
           evaluation_post: action.payload,
+        });
+      
+      case SUCCESS_STORY:
+        return Object.assign({}, state, {
+          success_story: action.payload,
+          loading: false
         });
     }
     return state;

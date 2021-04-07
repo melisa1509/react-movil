@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { Provider } from 'react-redux';
+import history from './history'
 
 //Student
 import Student from 'views/Student/Index.jsx';
@@ -133,28 +134,26 @@ import RegisterEvaluation from 'views/Register/PreEvaluation/New.jsx';
 import NewCourse from 'views/Course/New/New.jsx';
 import { store } from 'store/index.jsx';
 
+//Grant
+import Grant from 'views/Grant/Index.jsx';
+import ShowGrant from 'views/Grant/Show/Show.jsx';
+import EditGrant from 'views/Grant/Edit/Edit.jsx';
+import NewGrant from 'views/Grant/New/New.jsx';
+import UpdateGrant from 'views/Grant/Update/Show.jsx';
+import GrantAmbassador from 'views/GrantAmbassador/Index.jsx';
+import NewGrantAmbassador from 'views/GrantAmbassador/New/New.jsx';
+import EditGrantAmbassador from 'views/GrantAmbassador/Edit/Edit.jsx';
+import ShowGrantAmbassador from 'views/GrantAmbassador/Show/Show.jsx';
+import ApplicationGrantAmbassador from 'views/Grant/Application/Index.jsx';
+import ShowGrantStatisticGroup from 'views/Grant/IndexTabs/StatisticTab/Groups/Index.jsx';
+
 import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
 
-const hist = createBrowserHistory();
 
-const defaultLanguage = "en";
-
-
-function getLanguage(variable) {
-   var query = window.location.search.substring(1);
-   var vars = query.split("&");
-   for (var i=0; i < vars.length; i++) {
-       var pair = vars[i].split("=");
-       if(pair[0] === variable) {
-           return pair[1];
-       }
-   }
-   return defaultLanguage;
-}
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={hist}>
+      <Router history={history}>
         <Switch>
           <Route path="/rtl" component={RtlLayout} />
           <Route path="/auth" component={AuthLayout} />
@@ -253,6 +252,17 @@ ReactDOM.render(
           <Route path="/register/new/:id" component={RegisterStudent} exact /> 
           <Route path="/register/evaluation" component={RegisterEvaluation} exact /> 
           <Route path="/password" component={newPassword} exact /> 
+          <Route path="/grant" component={Grant} exact /> 
+          <Route path="/grant/new" component={NewGrant} exact /> 
+          <Route path="/grant/show/:id" component={ShowGrant} exact /> 
+          <Route path="/grant/edit/:id" component={EditGrant} exact /> 
+          <Route path="/grant/update/:id/:grant" component={UpdateGrant} exact />
+          <Route path="/grant/ambassador" component={GrantAmbassador} exact />
+          <Route path="/grant/newambassador/:id" component={NewGrantAmbassador} exact />
+          <Route path="/grant/editambassador/:id/:ambassador" component={EditGrantAmbassador} exact />
+          <Route path="/grant/showambassador/:id/:ambassador" component={ShowGrantAmbassador} exact />
+          <Route path="/grant/application/:id" component={ApplicationGrantAmbassador} exact />
+          <Route path="/grant/statistic/group/:id" component={ShowGrantStatisticGroup} exact />
           <Redirect from="/" to="/login" />
         </Switch>
       </Router>,

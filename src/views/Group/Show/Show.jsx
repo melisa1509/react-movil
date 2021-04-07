@@ -43,13 +43,11 @@ class Show extends React.Component {
             backgroundColor: "#eee"
           }}
         >
-          <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={12}>
                 <ShowRep generalStyles={styles}/>
               </GridItem>
             </GridContainer>
-          </div>
           <Footer blackFont />
         </div>
       </div>

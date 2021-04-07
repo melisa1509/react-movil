@@ -63,7 +63,25 @@ class CustomInputForm extends React.Component {
   render() {
     const { classes, input } = this.props;
     return (       
-            <input type="text" className={ classes.inputTable + " " + classes.horizontalLeft } style={{ width: '100%' }}  onChange={input.onChange} value={input.value} />                       
+            <input 
+                onKeyDown={e => {
+                  if (e.keyCode === 13) {
+                    e.stopPropagation();
+                    e.nativeEvent.stopImmediatePropagation();
+                  };
+                }}
+                onKeyPress={e => {
+                  if (e.keyCode === 13) {
+                    e.stopPropagation();
+                    e.nativeEvent.stopImmediatePropagation();
+                  };
+                }}
+                type="text" 
+                className={ classes.inputTable + " " + classes.horizontalLeft } 
+                style={{ width: '100%' }}  
+                onChange={input.onChange} 
+                value={input.value} 
+            />                       
     );
   }
 }

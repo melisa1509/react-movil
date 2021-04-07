@@ -1,11 +1,12 @@
-import { STUDENT_LIST, SHOW_STUDENT, LOAD_FORM_STUDENT, DELETE_STUDENT, SUCCESSFUL_DELETE, EDIT_STUDENT, ERROR_EDIT_STUDENT, SUCCESSFULL_EDIT} from 'constants/actionTypes.jsx';
+import { STUDENT_LIST, SHOW_STUDENT, LOAD_FORM_STUDENT, DELETE_STUDENT, EDIT_STUDENT, ERROR_EDIT_STUDENT, SUCCESSFULL_EDIT} from 'constants/actionTypes.jsx';
 import { EDIT_PASSWORD_STUDENT, SUCCESSFULL_EDIT_CLEAN, DASHBOARD_STUDENT, NEW_STUDENT } from 'constants/actionTypes';
 import { GET_STUDENT_AMBASSADOR, SUCCESSFULL_NEW, EVALUATION_PRE, EVALUATION_POST, MBS_STUDENT_LIST} from 'constants/actionTypes';
 import { BASE_URL} from 'constants/urlTypes.jsx';
+import { SUCCESS_STORY } from 'constants/actionTypes';
 
 export const getStudentList = key => {
+    
     return (dispatch, getState) => {
-        const reduxState = getState();
         return fetch(BASE_URL + "/student/?callback=foo")
         .then(response => response.json())
         .then(json => {
@@ -172,16 +173,22 @@ export const editPassword = (params,key) => {
       });
   }
 }
-export const getStudentAmbassadorList =() => {
+export const getStudentAmbassadorList =(key) => {
     return (dispatch,getState) => {
 
+        var id ="";
         const reduxState = getState();
-      
+        if(reduxState.loginReducer.active_user.roles[0]=="ROLE_EMBASSADOR"){
+          id=reduxState.loginReducer.active_user.id;
+        }
+        else if(reduxState.loginReducer.active_user.roles[0]=="ROLE_ADMIN") {
+          id=key
+        }
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
       
             var urlencoded = new URLSearchParams();
-            urlencoded.append("id_ambassador", reduxState.loginReducer.active_user.id);
+            urlencoded.append("id_ambassador", id);
       
             var requestOptions = {
               method: 'POST',
@@ -275,5 +282,45 @@ export const evaluationPost = ()=> {
             dispatch ({ type: SUCCESSFULL_EDIT});  
         })
 
+    }
+};
+
+export const successStory = (key) => {
+    return (dispatch,getState) => {
+        const reduxState = getState();
+        var id ="";
+        var role = "";
+        if(reduxState.loginReducer.active_user.roles[0]=="ROLE_ADMIN" && key != undefined){
+          id= key;
+          role= "ROLE_EMBASSADOR"
+        }
+        else if(reduxState.loginReducer.active_user.roles[0]=="ROLE_ADMIN") {
+          id=reduxState.loginReducer.active_user.id
+          role="ROLE_ADMIN"
+        }
+        else if(reduxState.loginReducer.active_user.roles[0]=="ROLE_EMBASSADOR") {
+            id=reduxState.loginReducer.active_user.id
+            role="ROLE_EMBASSADOR"
+        }
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("id_ambassador",id);
+        urlencoded.append("role", role);
+       
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+        };
+
+        return fetch(BASE_URL + "/student/successstorylist", requestOptions)
+        .then(response => response.json())
+        .then(json => {
+            dispatch ({ type: SUCCESS_STORY, payload: json.data });  
+        })
     }
 };

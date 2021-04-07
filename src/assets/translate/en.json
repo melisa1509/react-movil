@@ -48,7 +48,6 @@
     "button_create_grant":               "Create Grant",
     "button_reject":                     "Grant not approved",
     "button_grant_approved":             "Grant Approved",
-
     "button_show_all_list":              "Show All List",
     "button_upload_file":                "Upload File",
     "button_upload_image":               "Upload Image",
@@ -73,6 +72,10 @@
     "button_evaluation":                 "Personal Evaluation",
     "button_application":                "Application",
     "button_applications":               "Applications",
+    "button_apply":                      "Apply",
+    "button_groups":                     "Groups",
+    "button_save_groups":                "Save Selected Groups",
+    "button_download_pdf":               "Download Pdf",
 
 
     "label_month":                      "Month",
@@ -116,7 +119,7 @@
     "label_authorization_code":         "Local Organization",
     "label_code_list_sa":               "Code List SA", 
     "label_code_list_MBS":              "Code List MBS",
-    "label_history":                    "History",
+    "label_history":                    "Success Story",
     "label_correction_comments":        "Correction Comments",
     "label_day":                        "Day",
     "label_days":                       "Days",
@@ -196,8 +199,7 @@
     "label_generateGroup3_option3":     "c. I have reviewed the Downloads, Tools, and Success Platform Videos, as well as all other resources that are available to me.",
     "label_upload_success":             "Upload Successful!",
     "label_search_records":             "Search",
-    "label_not_pending_revisions":      "No Pending Revisions",
-    "title_student_list_ambassador_revision" : "Ambassador Revisions Ready",
+    "label_not_pending_revisions":      "No Pending Revisions",    
     "label_revision_plan":              "Revise Plan",     
     "label_revision_product":           "Revise Product",
     "label_revision_process":           "Revise Process",
@@ -295,6 +297,14 @@
     "label_sent_correction_successful":  "Corrections Sent",
     "label_sent_reject_successful":      "Grant Not Approved",
     "label_sent_approved_successful":    "Grant Approved",
+    "label_admin_coments":               "Administrator Comments or Corrections",
+    "label_updates":                     "Grant Updates",
+    "label_type_grant":                  "Type",
+    "label_start_up":                    "Start Up",
+    "label_schollarship":                "Schollarship",
+    "label_choose_type":                 "Choose Type",
+    "label_choose_state":                "Choose State",
+    "label_number_participants_trained": "No. Participants Trained",
     
 
     
@@ -322,7 +332,13 @@
     "link_evaluations":                 "Evaluation",
     "link_generate_groups_question1":   "https://www.interweavesolutions.org/media-gallery/",
     "link_generate_groups_question3":   "https://www.interweavesolutions.org/success-ambassador-resources/", 
-    "link_grants":                      "Grants",      
+    "link_grants":                      "Grants",   
+    "link_list":                        "List",
+    "link_statistics":                  "Statistics",
+    "link_total_amount":                "Total Amount",
+    "link_applications":                "Applications",
+    "link_countries":                   "Countries",
+    "link_graduates":                   "Graduates",
     
     "option_quality5":                    "5. I am very happy with this area of my life.",
     "option_quality4":                    "4. Normally, I am happy with the area of my life.",
@@ -423,7 +439,7 @@
     "title_success_ambassador":         "Success Ambassador",
     "title_project_progress_mbs":       "MBS Project Progress",
     "title_project_progress_sa":        "Ambassador Project Progress",
-    "title_history":                    "History",
+    "title_history":                    "Success Story",
     "title_paper_documentation":        "Face to Face Requirements",
     "title_online_documentation":       "Online Requirements",
     "title_edit_admin":                 "Edit Admin",
@@ -449,6 +465,11 @@
     "title_grant_overview":             "Grant Overview",
     "title_grant_application_list":     "Grant Application List",
     "title_grant_ambassador_list_revision" : "Grant Applications Revision Ready",
+    "title_global_statistic":          "Global Statistics",
+    "title_approved_grant_applications":"Grant Applications List",
+    "title_groups_created":             "Groups created because of this grant",
+    "title_student_list_ambassador_revision" : "Ambassador Revisions Ready",
+    "title_grant_applications":         "My Grant Applications",
 
     "message_approved_project" :         "Congratulations! Your Project has been approved.",
 
@@ -615,6 +636,14 @@
     "th_title":                  "Title",
     "th_state":                  "State",
     "th_last_update":            "Last Update",
+    "th_applications":           "Applications",
+    "th_groups":                 "Groups",
+    "th_participants":           "Participants",
+    "th_total_amount":           "Total Amount",
+    "th_date_application":       "Date Application",
+    "th_program":                "Program",
+    "th_created_date":           "Date Application",
+    "th_type":                   "Type",
 
     "en":                        "English",
     "fr":                        "French",
@@ -881,7 +910,9 @@
         "inactive":                   "Inactive", 
         "reject":                     "Not Approved",
         "available":                  "Available",
-        "not_available":              "Not available"    
+        "not_available":              "Not available",
+        "startup":                    "Start Up",
+        "schollarship":               "Schollarship"    
     }, 
 
     "option":{

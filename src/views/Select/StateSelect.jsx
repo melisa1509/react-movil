@@ -10,6 +10,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
+import Success from "components/Typography/Success.jsx";
 
 
 // style for this view
@@ -60,7 +61,7 @@ class StateSelect extends React.Component {
                         htmlFor="simple-select"
                         className={classes.selectLabel}
                     >
-                        {t("label_state")}
+                        <Success>{t("label_state")}</Success>
                     </InputLabel>
                     <Select
                         MenuProps={{

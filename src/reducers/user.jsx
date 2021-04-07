@@ -14,6 +14,9 @@ const initialState = {
     last_name: "",
     country:"",
   },
+  active_user:{
+    roles:[]
+  }
 }
 
 export const userReducer = (state = initialState, action) => {

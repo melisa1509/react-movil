@@ -27,8 +27,8 @@ const initialState = {
   group_list: [],
   group_program: [],
   progress_list:{
-    progressMbs:[],
-    progressSa:[]
+    progressMbs:[" "],
+    progressSa:[" "]
   },
   loading: true,
   image_alert:false

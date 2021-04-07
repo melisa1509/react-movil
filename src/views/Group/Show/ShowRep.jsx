@@ -38,8 +38,8 @@ class ShowRep extends React.Component {
     }
     let { t } = this.props;
     return (
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={9}>
+      <>
+            <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
             <center>
@@ -50,8 +50,7 @@ class ShowRep extends React.Component {
               {rol ? <ShowAmbassador  /> : <ShowTable  /> }
             </CardBody>
           </Card>
-        </GridItem>
-      </GridContainer>
+      </>
     );
   }
 }

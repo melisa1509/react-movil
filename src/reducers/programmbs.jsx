@@ -1,6 +1,6 @@
 import { SHOW_PROGRAMMBS, UPDATE_REVISION_PROGRAMMBS, ERROR_EDIT_REVISION, SUCCESSFULL_EDIT_REVISION, SUCCESSFULL_APPROVE_PROJECT, ERROR_APPROVE_PROJECT } from "constants/actionTypes";
 import { LOAD_FORM_PROGRAMMBS, RESET_SHOW_PROGRAMMBS } from "constants/actionTypes";
-import { HIDE_REVISION_ALERT, ERROR_SEND_REVISION_PROJECT, SUCCESSFULL_SEND_REVISION_PROJECT, ACTIVE_TAB } from "constants/actionTypes";
+import { HIDE_REVISION_ALERT, ERROR_SEND_REVISION_PROJECT, SUCCESSFULL_SEND_REVISION_PROJECT, ACTIVE_TAB, DEFAULT_VALUES_PROGRAMMBS } from "constants/actionTypes";
 
 const initialState = { 
   programmbs:{
@@ -209,6 +209,12 @@ export const programmbsReducer = (state = initialState, action) => {
             ["paperwork7"]: {},
             ["paperwork8"]: {}
           })
+        });
+
+      case DEFAULT_VALUES_PROGRAMMBS:
+        var programmbs = initialState.programmbs;              
+        return Object.assign({}, state, {
+          programmbs: programmbs,
         });
     }
 

@@ -19,10 +19,12 @@ class FileUpload extends React.Component {
 
     uploadFile = ({ target: { files } }) =>{
       let data = new FormData();
-      for (let index = 0; index < files.length; index++) {
-        data.append( 'file[]', files[index] );
-       }
-  
+     
+
+     for (let index = 0; index < files.length; index++) {
+      data.append( 'file[]', files[index] );
+     }
+
       const options = {
         onUploadProgress: (progressEvent) => {
           const {loaded, total} = progressEvent;

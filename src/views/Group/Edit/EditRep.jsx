@@ -38,8 +38,8 @@ class EditRep extends React.Component {
       rol=true
     }
     return (
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={8}>
+      <>
+            <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
             <center>
@@ -50,8 +50,7 @@ class EditRep extends React.Component {
                 {rol ? <EditAmbassador  /> : <EditForm  /> }
             </CardBody>
           </Card>
-        </GridItem>
-      </GridContainer>
+      </>
     );
   }
 }

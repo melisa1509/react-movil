@@ -2,6 +2,7 @@ import {GROUP_LIST, GET_PROJECT_PROGRESS, MBS_IMAGE_ALERT, UPLOAD_IMAGE, DELETE_
 import { LOAD_FORM_GROUP, SHOW_GROUP, EDIT_GROUP, SUCCESSFULL_EDIT, NEW_GROUP, DELETE_GROUP, SUCCESSFULL_NEW, GROUP_PROGRAM} from 'constants/actionTypes';
 import { BASE_URL } from 'constants/urlTypes.jsx';
 import { SUCCESSFULL_REDIRECT } from 'constants/actionTypes';
+import { convertDate } from 'assets/functions/general.jsx';
 
 export const getGroupList= () => {
     return (dispatch, getState) => {
@@ -76,9 +77,9 @@ export const editGroup = ()=> {
 
         var urlencoded = new URLSearchParams();
         urlencoded.append("name", reduxState.form.groupform.values.name);
-        urlencoded.append("startDate", reduxState.form.groupform.values.start_date);
-        urlencoded.append("finalDate", reduxState.form.groupform.values.final_date);
-        urlencoded.append("graduationDate", reduxState.form.groupform.values.graduation_date);
+        urlencoded.append("startDate", convertDate(reduxState.form.groupform.values.start_date));
+        urlencoded.append("finalDate", convertDate(reduxState.form.groupform.values.final_date));
+        urlencoded.append("graduationDate", convertDate(reduxState.form.groupform.values.graduation_date));
         urlencoded.append("modality", reduxState.form.groupform.values.modality);
         urlencoded.append("program", reduxState.form.groupform.values.program);
         urlencoded.append("interweaveLocal", reduxState.form.groupform.values.interweave_local !== undefined ? reduxState.form.groupform.values.interweave_local : "" );
@@ -112,8 +113,8 @@ export const newGroup = ()=> {
     var urlencoded = new URLSearchParams();
     urlencoded.append("id_ambassador",reduxState.form.groupNewform.values.id_ambassador);
     urlencoded.append("name", reduxState.form.groupNewform.values.name);
-    urlencoded.append("startDate",reduxState.form.groupNewform.values.start_date);
-    urlencoded.append("finalDate", reduxState.form.groupNewform.values.final_date);
+    urlencoded.append("startDate",convertDate(reduxState.form.groupNewform.values.start_date));
+    urlencoded.append("finalDate", convertDate(reduxState.form.groupNewform.values.final_date));
     urlencoded.append("modality", reduxState.form.groupNewform.values.modality);
     urlencoded.append("program", reduxState.form.groupNewform.values.program);
     urlencoded.append("graduationDate",reduxState.form.groupNewform.values.graduation_date);

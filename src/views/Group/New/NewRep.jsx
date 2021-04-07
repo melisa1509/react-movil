@@ -61,8 +61,8 @@ class NewRep extends React.Component {
       number_students_graduated: 0
     }
     return (
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={8}>
+      <>
+            <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
             <center>
@@ -74,8 +74,7 @@ class NewRep extends React.Component {
                 {rol ? <NewAmbassador initialValues={initialValuesGroup} /> : <NewForm initialValues={initialValuesGroup} /> }  
             </CardBody>
           </Card>
-        </GridItem>
-      </GridContainer>
+      </>
     );
   }
 }
