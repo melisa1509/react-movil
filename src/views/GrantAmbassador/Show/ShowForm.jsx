@@ -15,7 +15,6 @@ import TextEditor from "components/TextEditor/TextEditor";
 import CustomInputReduxMod from 'components/CustomInput/CustomInputReduxMod.jsx';
 import FileUpload from "components/CustomUpload/FileUpload.jsx";
 import Table from "components/Table/Table.jsx";
-import SuccessBold from "components/Typography/SuccessBold.jsx";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -24,13 +23,16 @@ import Danger from "components/Typography/Danger.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import MutedText from "components/Typography/Muted.jsx";
+import SuccessBold from "components/Typography/SuccessBold.jsx";
+import MutedBold from "components/Typography/MutedBold.jsx";
+import InfoBold from "components/Typography/InfoBold.jsx";
 
 import { showGrant, showGrantAmbassador } from "actions/grantActions.jsx";
 import { sendCorrectionGrantAmbassador, sendApprovedGrantAmbassador, sendRejectGrantAmbassador } from "actions/grantActions"; 
 import { errorRequiredFields } from "actions/generalActions.jsx";
 import { successRequiredFields } from "actions/generalActions.jsx";
 import { deleteSuccessful } from "actions/generalActions.jsx";
-import { showDate } from "assets/functions/general.jsx";
+import { showDate, monthDate } from "assets/functions/general.jsx";
 
 // style for this view
 import sweetAlertStyle from "assets/jss/material-dashboard-pro-react/views/sweetAlertStyle.jsx";
@@ -117,9 +119,10 @@ class ShowForm extends React.Component {
                       striped
                       tableData={[
                         [<th>{t("label_administrator")}</th>,show_grant.administrator.first_name+ " "+ show_grant.administrator.last_name,],
-                        [<th>{t("label_deadline_applications")}</th>, showDate(grant_deadline)],
+                        [<th>{t("label_date")}</th>, monthDate(show_grant_ambassador.created_at)],
                         [<th>{t("label_language")}</th>, t(show_grant.language)],
                         [<th>{t("label_ambassador")}</th>, show_grant_ambassador.ambassador.first_name + " " + show_grant_ambassador.ambassador.last_name],
+                        [<th>{t("label_country")}</th>, t(show_grant_ambassador.ambassador.country)],
                         [<th>{t("question_grant6")}</th>, t(show_grant_ambassador.question6)],
                         
                       ]}
@@ -178,23 +181,53 @@ class ShowForm extends React.Component {
                   <MutedText>
                     {show_grant_ambassador.code}
                   </MutedText>
-                  <br/>
-                  <SuccessBold>
-                    {t("question_grant1")}
-                  </SuccessBold>
-                  <br/>
-                    <div dangerouslySetInnerHTML={{ __html: show_grant_ambassador.question1 }}></div>
-                  <br/>
-                  <SuccessBold>
-                    {t("question_grant2")}
-                  </SuccessBold>
-                  <br/>
-                    <div dangerouslySetInnerHTML={{ __html: show_grant_ambassador.question2 }}></div>
                 </GridItem>
               </GridContainer>
-              <center><h5 className={classes.cardTitleCenter} >{t("question_grant")}</h5></center>
+              <center><InfoBold><h4 className={classes.cardTitleCenter} >{t("label_grant_history")}</h4></InfoBold></center>
               <GridContainer >
                   <GridItem xs={12} sm={12} md={12}>
+                    <SuccessBold>
+                      {t("question_startup_grant3")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question3}
+                    </MutedText>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_startup_grant4")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question4}
+                    </MutedText>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_startup_grant5")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question5}
+                    </MutedText>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_startup_grant7")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question7}
+                    </MutedText>
+                    <br/>
+                    <center><InfoBold><h4 className={classes.cardTitleCenter} >{t("label_grant_present_need")}</h4></InfoBold></center>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_startup_grant12")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {t(show_grant_ambassador.question12)}
+                    </MutedText>
+                    <br/>
                     <SuccessBold>
                       {t("question_grant3")}
                     </SuccessBold>
@@ -204,19 +237,27 @@ class ShowForm extends React.Component {
                     </MutedText>
                     <br/>
                     <SuccessBold>
-                      {t("question_grant4")}
+                      {t("question_grant8")}
                     </SuccessBold>
                     <br/>
                     <MutedText>
-                      {show_grant_ambassador.question4}
+                      {show_grant_ambassador.question8}
                     </MutedText>
                     <br/>
                     <SuccessBold>
-                      {t("question_grant5")}
+                      {t("question_grant9")}
                     </SuccessBold>
                     <br/>
                     <MutedText>
-                      {show_grant_ambassador.question5}
+                      {show_grant_ambassador.question9}
+                    </MutedText>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_grant10")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question10}
                     </MutedText>
                     <br/>
                     <SuccessBold>
@@ -227,39 +268,45 @@ class ShowForm extends React.Component {
                       {show_grant_ambassador.question6}
                     </MutedText>
                     <br/>
+                    <br/><br/>
+                    <center><InfoBold><h4 className={classes.cardTitleCenter} >{t("label_grant_future_impact")}</h4></InfoBold></center>              
+                    <br/>
                     <SuccessBold>
-                      {t("label_grant_file")}
+                      {t("question_grant11")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question11}
+                    </MutedText>
+                    <br/>
+                    <SuccessBold>
+                      {t("question_grant13")}
+                    </SuccessBold>
+                    <br/>
+                    <MutedText>
+                      {show_grant_ambassador.question13}
+                    </MutedText>
+                    <br/>
+                    
+                    <SuccessBold>
+                        {t("label_grant_file")}
                     </SuccessBold>
                     <br/>
                     {
-                      show_grant_ambassador.file !== "undefined" ?
-                      <a
+                        show_grant_ambassador.file !== "undefined" && show_grant_ambassador.file !== undefined ?
+                        <a
                         href={BASE_URL +  "/web/file/"  + show_grant_ambassador.file}
                         target="_blank"
-                      >
-                          {t("label_download_file")}
-                      </a>:
-                      ""
-                    }
-                    <br/><br/>
-                    <SuccessBold>
-                      {t("label_grant_file2")}
-                    </SuccessBold>
-                    <br/>
-                    {
-                      show_grant_ambassador.file2 !== "undefined" ?
-                      <a
-                        href={BASE_URL +  "/web/file/"  + show_grant_ambassador.file2}
-                        target="_blank"
-                      >
-                          {t("label_download_file")}
-                      </a>:
-                      ""
+                        >
+                            {t("label_download_file")}
+                        </a>:
+                        ""
                     }
                     <br/>
                 </GridItem>
               </GridContainer>
               <br/>
+            
               <center><h5 className={classes.cardTitleCenter} >{t("label_admin_coments")}</h5></center>
               <GridContainer >
                 <GridItem xs={12} sm={12} md={4}>

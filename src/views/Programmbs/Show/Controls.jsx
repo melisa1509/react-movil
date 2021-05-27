@@ -58,11 +58,17 @@ class Controls extends React.Component {
  
 
   render() {
-    const { classes, programmbs } = this.props;
+    const { classes, active_user } = this.props;
     let { t } = this.props;
     return (
       <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={12}>            
+        {active_user.roles.includes("ROLE_ADMIN") || active_user.roles.includes("ROLE_LANGUAGE_ADMIN") ?  
+        <GridItem xs={12} sm={12} md={12}>
+            <GridContainer justify="center">
+                <Button color="warning" size="sm" onClick={this.loginClick}>
+                    {t("button_approve_this_section")}
+                </Button>
+            </GridContainer>
             <GridContainer justify="center" className={ classes.verticalSpace }>
                 <Button color="info" size="sm" onClick={this.handleSaveRevision}>
                     {t("button_save_revision")}
@@ -70,13 +76,19 @@ class Controls extends React.Component {
                 {" "}
                 <Button color="danger" size="sm" onClick={this.handleSendRevisionProject}>
                     {t("button_send_correction")}
-                </Button> 
-                {" "}              
+                </Button>
+                <Button color="defaul" size="sm" onClick={this.loginClick}>
+                    {t("button_certificate_attendance")}
+                </Button>
+                {" "}
                 <Button color="success" size="sm" onClick={this.handleApproveProject}>
                     {t("button_approved")}
-                </Button>                
+                </Button>
+                
             </GridContainer>
         </GridItem>
+        :""
+        }
       </GridContainer>
     );
   } 
@@ -87,6 +99,7 @@ Controls.propTypes = {
 };
 
 const mapStateToProps = state => ({ 
+  active_user: state.loginReducer.active_user
 });
 
 const mapDispatchToPropsActions = dispatch => ({

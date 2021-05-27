@@ -7,11 +7,11 @@ const initialState = {
     mision1: "",
     mision3: "",
     mision4: "",  
-    generate_groups1: {"option1": true},
+    generate_groups1: "",
     generate_groups2: "",
-    generate_groups3: {"option1": true},
+    generate_groups3: [""],
     generate_groups4: "",
-    generate_groups5: [""],
+    generate_groups5: "",
     generate_groups6: "",
     generate_groups7: "",   
     graduate1: "",
@@ -27,11 +27,12 @@ const initialState = {
     rule6: "",
     rule7: "",
     rule8: "",  
-    rule9: [""],
+    rule9: "",
     rule10: "",
     support1: "",
     support2: "",
     support3: "",
+    support4: "",
     state: "",
     statusmision: "",
     statusgraduate: "",
@@ -103,20 +104,7 @@ export const programsaReducer = (state = initialState, action) => {
         });
 
       case LOAD_FORM_PROGRAMSA:
-        var programsa = action.data;
-        programsa.generate_groups10 = programsa.generate_groups1;
-        programsa.generate_groups13 = programsa.generate_groups3;
-        var options = {};
-        programsa.generate_groups1.forEach(element => {
-          options[element] = true;
-        });
-        programsa.generate_groups1 = options;
-        var options3 = {};
-        programsa.generate_groups3.forEach(element => {
-          options3[element] = true;
-        });
-        programsa.generate_groups3 = options3;
-       
+            
         return Object.assign({}, state, {
           data: action.data
         });

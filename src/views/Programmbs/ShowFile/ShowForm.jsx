@@ -1,19 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { translate } from 'react-switch-lang';
+import { BASE_URL } from 'constants/urlTypes';
 // react component for creating dynamic tables
 import ReactTable from "react-table";
 import { connect } from "react-redux";
 import { getShowProgrammbs } from "actions/programmbsActions.jsx";
 import { editRevisionProgrammbs, approveProject, sendRevisionProject } from "actions/programmbsActions.jsx";
 import moment from "moment";
-import { BASE_URL } from 'constants/urlTypes';
 
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import SuccessBold from "components/Typography/SuccessBold.jsx";
-import MutedText from "components/Typography/Muted.jsx";
 
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -79,22 +77,16 @@ class ShowForm extends React.Component {
 
 
     render() {
-        const { classes, programmbs } = this.props;
+        const { classes, programmbs, active_user } = this.props;
         let { t } = this.props;
         return (
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={12}>
               <center>
-                <SuccessBold>
-                  {t("label_file_student")}
-                </SuccessBold>
-                <br/>
-                  <MutedText>
-                    { moment(programmbs.upload_date_student).format('MMM/DD/YYYY  HH:mm')  }
-                  </MutedText>
-                <br/>                  
+                  <h4 className={classes.cardTitleCenter} >{t("label_file_student")}</h4>
+                  <p>{ moment(programmbs.upload_date_student).format('MMM/DD/YYYY  HH:mm')  }</p>
                   <p className={classes.right}>
-                  <a
+                    <a
                       href={BASE_URL +  "/web/file/"  + programmbs.filestudent}
                       target="_blank"
                     >
@@ -117,17 +109,13 @@ class ShowForm extends React.Component {
                         </Button>
                         </Link>
                       </center>
+                      {active_user.roles.includes("ROLE_ADMIN") || active_user.roles.includes("ROLE_LANGUAGE_ADMIN") ?
                       <center>
-                        <Link to={"/profile/edit/"}> 
-                          <Button color="default" size="sm">
-                          {t("button_certificate_attendance")}
-                          </Button>
-                        </Link>
-                          {" "}
                         <Button color="success" size="sm" onClick={this.handleApproveProject}>
                             {t("button_approved")}
                         </Button>
                       </center>
+                      :""}
                   </GridItem>
               </GridContainer>
             </GridItem>
@@ -138,6 +126,7 @@ class ShowForm extends React.Component {
 
 const mapStateToProps = state => ({ 
       programmbs: state.programmbsReducer.programmbs,
+      active_user: state.loginReducer.active_user
       
 });
 

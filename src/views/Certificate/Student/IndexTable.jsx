@@ -8,6 +8,7 @@ import { translate } from 'react-switch-lang';
 import { withRouter } from 'react-router-dom';
 import { getCertificateList } from "actions/certificateActions.jsx";
 import { showGroup } from "actions/groupActions.jsx";
+import { showDate} from 'assets/functions/general.jsx';
 
 import Checkbox from "@material-ui/core/Checkbox";
 import Check from "@material-ui/icons/Check";
@@ -80,16 +81,18 @@ class IndexTable extends React.Component {
      let SAButton=false;
      let labelButton = t('button_certificate_mbs');
      let linkCertificate = "https://api.interweavesolutions.org/certificate/mbs/student/";
+     let date = t("label_unavailable");
      
         if (prop.group !== undefined){
           if(prop.group.program === "option.program4"){
             labelButton =  t('button_certificate_mbs_jr');
-            linkCertificate = "https://api.interweavesolutions.org/certificate/mbsjr/student/";
+            linkCertificate = "https://api.interweavesolutions.org/certificate/jr/student/";
           }          
         }
         if(prop.student.programmbs !== undefined){
           if(prop.student.programmbs.state == 'state.approved'){
             MBSButton=true;
+            date = showDate(prop.student.programmbs.approval_date);
           }
         }
         if(prop.student.programsa !== undefined){
@@ -113,6 +116,7 @@ class IndexTable extends React.Component {
         id: key, 
         full_name: prop.student.first_name + " " + prop.student.last_name,
         status:state,
+        date: date,
         MBScertificate: (
           <div className="actions-left">   
           {MBSButton 
@@ -174,36 +178,37 @@ class IndexTable extends React.Component {
                 {
                   Header: t("th_name"),
                   accessor: "full_name",
-                  width: 280,
                   resizable: false,
-                  sortable: false,
+                  width: 250,
                 },
                 {
                   Header: t("th_status"),
                   accessor: "status",
-                  width: 200,
                   resizable: false,
-                  sortable: false,
+                  width: 200,
+                },
+                {
+                  Header: t("th_approval_date"),
+                  accessor: "date",
+                  resizable: false,
+                  width: 150,
                 },
                 {
                   Header: t("th_certificate_mbs"),
                   accessor: "MBScertificate",
-                  width: 250,
-                  resizable: false,
-                  sortable: false,
+                  width: 200
                 },
                 {
                   Header: t("th_certificate_ambassador"),
                   accessor: "SAcertificate",
-                  width: 300,
-                  resizable: false,
-                  sortable: false,
+                  width: 250,
+                  filterable: false,
                 
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 20,
+                  width: 0,
                   resizable: false,
                   sortable: false,
 
@@ -239,8 +244,8 @@ class IndexTable extends React.Component {
                         </Button>
                         {" "}
                       </Link>{" "}
-                      <Button 
-                        color="warning" 
+                      <Button
+                        color="warning"
                         size="sm"
                         href={"https://api.interweavesolutions.org/certificate/attendance/list/" + this.props.match.params.id}
                         target="_blank"
@@ -287,8 +292,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToPropsActions = dispatch => ({
-  dispatchGetCertificateList: (key) => dispatch( getCertificateList(key)),
-  dispatchShowGroup: (key) => dispatch(showGroup(key))
+  dispatchGetCertificateList: (key) => dispatch( getCertificateList(key)),                 
+  dispatchShowGroup: (key) => dispatch( showGroup(key))
 });
 
 const IndexTableComponent = translate(IndexTable);

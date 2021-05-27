@@ -108,6 +108,14 @@ class SupportGroupsTab extends React.Component {
               {programsa.support3}
             </MutedText>
             <br/>
+            <SuccessBold>
+              {t("question_support4")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {programsa.support4}
+            </MutedText>
+            <br/>
             <RevisionForm name="revisionsupport" labelText={t("label_revision_support")} />
             <br/>
             <Controls/>

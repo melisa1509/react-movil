@@ -30,15 +30,7 @@ const styles = {
 
 
 class MisionTab extends React.Component {
-
-  addRown = () => {    
-    this.props.pushArray('programsa', "rule9", "");    
-  }
-
-  removeRow = () => {    
-    this.props.popArray('programsa', "rule9");          
-  }
-  
+ 
   render() {
     const { classes, programsa } = this.props;
     let { t } = this.props;
@@ -162,20 +154,19 @@ class MisionTab extends React.Component {
                   }}
                 />
                 <br/>
-                
-                <SuccessBold>
-                  {t("question_rule9")}
-                </SuccessBold>
-                {             
-                  <FieldArray name="rule9" component={RenderList} />               
-                }
-                <br/>
-                      <Button simple color="tumblr" onClick={this.removeRow}>
-                        <RemoveCircle/>{t("button_remove_row")}
-                      </Button>
-                      <Button simple color="twitter" onClick={this.addRown}>
-                        <AddCircle/>{t("button_add_row")}
-                      </Button>                      
+                <Field
+                  labelText={t("question_rule9")}
+                  component={CustomInputRedux}
+                  name="rule9"
+                  success
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                  inputProps={{
+                    multiline: true,
+                    rows: 7,
+                  }}
+                />                      
                 <br/>
                 <Field
                   labelText={t("question_rule10")}

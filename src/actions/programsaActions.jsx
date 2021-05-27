@@ -271,9 +271,9 @@ const getValuesForm =  (urlencoded, reduxState) =>{
     urlencoded.append("mision2", reduxState.form.programsa.values.mision2 !== undefined ? reduxState.form.programsa.values.mision2 : "");
     urlencoded.append("mision3", reduxState.form.programsa.values.mision3 !== undefined ? reduxState.form.programsa.values.mision3 : "");
     urlencoded.append("mision4", reduxState.form.programsa.values.mision4 !== undefined ? reduxState.form.programsa.values.mision4 : "");    
-    urlencoded.append("generateGroups1", jsonToArray(reduxState.form.programsa.values.generate_groups1 ));
+    urlencoded.append("generateGroups1", reduxState.form.programsa.values.generate_groups1 !== undefined ? reduxState.form.programsa.values.generate_groups1 : "");
     urlencoded.append("generateGroups2", reduxState.form.programsa.values.generate_groups2 !== undefined ? reduxState.form.programsa.values.generate_groups2 : "");
-    urlencoded.append("generateGroups3", jsonToArray(reduxState.form.programsa.values.generate_groups3 ));
+    urlencoded.append("generateGroups3", reduxState.form.programsa.values.generate_groups3 !== undefined ? reduxState.form.programsa.values.generate_groups3 : "");
     urlencoded.append("generateGroups4", reduxState.form.programsa.values.generate_groups4 !== undefined ? reduxState.form.programsa.values.generate_groups4 : "");
     urlencoded.append("generateGroups5", reduxState.form.programsa.values.generate_groups5 !== undefined ? reduxState.form.programsa.values.generate_groups5 : "");
     urlencoded.append("generateGroups6", reduxState.form.programsa.values.generate_groups6 !== undefined ? reduxState.form.programsa.values.generate_groups6 : "");
@@ -295,5 +295,6 @@ const getValuesForm =  (urlencoded, reduxState) =>{
     urlencoded.append("support1", reduxState.form.programsa.values.support1 !== undefined ? reduxState.form.programsa.values.support1 : "");
     urlencoded.append("support2", reduxState.form.programsa.values.support2 !== undefined ? reduxState.form.programsa.values.support2 : "");
     urlencoded.append("support3", reduxState.form.programsa.values.support3 !== undefined ? reduxState.form.programsa.values.support3 : "");
+    urlencoded.append("support4", reduxState.form.programsa.values.support4 !== undefined ? reduxState.form.programsa.values.support4 : "");
    
 }

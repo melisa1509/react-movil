@@ -10,6 +10,15 @@ const initialState = {
     language: "en",
     roles: [],
     evaluation:{},
+    studentgroup:{
+      group:{
+        program:"",
+        embassador:{
+          first_name:"",
+          last_name:""
+        }
+      }
+    },
   }
 }
 

@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Field, reduxForm } from 'redux-form';
 import { store } from "store";
+import Table from "components/Table/Table.jsx";
+import SweetAlert from "react-bootstrap-sweetalert";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -25,8 +27,10 @@ import { successRequiredFields } from "actions/generalActions.jsx";
 import { deleteSuccessful } from "actions/generalActions.jsx";
 import { showStudentRedirect  } from "actions/studentActions.jsx";
 import { verifyChange } from "assets/validation/index.jsx";
+import { showDate } from "assets/functions/general.jsx";
 import LanguageSelect from "views/Select/LanguageSelect.jsx";
 import CountrySelect from "views/Select/CountrySelect.jsx";
+import sweetAlertStyle from "assets/jss/material-dashboard-pro-react/views/sweetAlertStyle.jsx";
 
 // style for this view
 import validationFormsStyle from "assets/jss/material-dashboard-pro-react/views/validationFormsStyle.jsx";
@@ -50,7 +54,8 @@ const style = {
       color:"red"
     },
     ...customSelectStyle,
-    ...validationFormsStyle
+    ...validationFormsStyle,
+    ...sweetAlertStyle
 };
 
 
@@ -85,15 +90,15 @@ class NewForm extends React.Component {
         if (this.state.whatsappState === "") {
           this.setState({ whatsappState: "error" });
         }
-        if(this.state.usernameState === "error" || this.state.first_nameState === "error" || this.state.last_nameState === "error"){
+        if(this.state.usernameState === "error" || this.state.first_nameState === "error" || this.state.last_nameState === "error"&& this.state.cityState === "error"&& this.state.whatsappState === "error"){
           const stateRedux = store.getState();
           this.props.dispatchErrorRequiredFields();
         }
-        if(this.state.usernameState === "success" && this.state.first_nameState === "success"&& this.state.last_nameState === "success"){
+        if(this.state.usernameState === "success" && this.state.first_nameState === "success"&& this.state.last_nameState === "success"&& this.state.cityState === "success"&& this.state.whatsappState === "success"){
           const reduxState = store.getState();
           this.props.dispatchNewStudent();
           this.props.dispatchSuccessRequiredFields();
-          setTimeout(this.redirectStudent, 1500);
+          
         }
       }
 
@@ -108,7 +113,7 @@ class NewForm extends React.Component {
     
 
     render() {
-        const { classes, successfull_edit, editError, errorRequired, successRequired, show_student} = this.props;
+        const { classes, successfull_edit, editError, errorRequired, successRequired, new_student, error_new_user} = this.props;
         let { t } = this.props;
         return (
           <GridContainer justify="center">
@@ -124,6 +129,31 @@ class NewForm extends React.Component {
                         close
                         color="danger"
                       />
+                      : ""}
+                  </GridItem>
+              </GridContainer>
+              <GridContainer justify="center">
+                  <GridItem xs={12} sm={12} md={12}>
+                      { error_new_user ?      
+                        <SweetAlert
+                          style={{ display: "block", marginTop: "-100px", close:true }}
+                          onConfirm={() => this.deleteClick()}
+                          confirmBtnCssClass={
+                              this.props.classes.button + " " + this.props.classes.success
+                          }
+                          confirmBtnText={t("button_continue")}
+                          >
+                          <h6>{t("label_user_alredy_exist")}</h6>
+                          
+                            <Table
+                              striped
+                              tableData={[
+                                [<th>{t("label_date")}</th>,showDate(new_student.created_at)],
+                                [<th>{t("label_embassador_mentor")}</th>, new_student.studentgroup.group.embassador.first_name+ " "+ new_student.studentgroup.group.embassador.last_name],
+                                [<th>{t("label_group")}</th>,new_student.studentgroup.group.name],                              
+                              ]}
+                            />
+                        </SweetAlert> 
                       : ""}
                   </GridItem>
               </GridContainer>
@@ -307,6 +337,8 @@ NewForm = connect(
     editError: state.studentReducer.editError,
     successfull_edit:state.generalReducer.successfull_edit,
     show_student: state.studentReducer.show_student,
+    new_student: state.studentReducer.new_student,
+    error_new_user: state.generalReducer.error_new_user
   }),
   { loadShowStudent: showStudent, dispatchNewStudent: newStudent, dispatchErrorRequiredFields: errorRequiredFields, dispatchSuccessRequiredFields: successRequiredFields, dispatchDeleteSuccessful: deleteSuccessful, dispatchShowStudentRedirect: showStudentRedirect},
 )(NewForm);

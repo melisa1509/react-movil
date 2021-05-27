@@ -1,6 +1,7 @@
 import { STUDENT_LIST, SHOW_STUDENT, LOAD_FORM_STUDENT, DASHBOARD_STUDENT } from "constants/actionTypes";
 import { DELETE_STUDENT } from "constants/actionTypes";
 import { ERROR_EDIT_STUDENT } from "constants/actionTypes";
+import { VIDEO_PROMOTION } from "constants/actionTypes";
 import { SUCCESS_STORY } from "constants/actionTypes";
 import { EDIT_STUDENT } from "constants/actionTypes";
 import { NEW_STUDENT } from "constants/actionTypes";
@@ -11,6 +12,7 @@ const initialState = {
   student_list: [], 
   student_ambassador_list:[],
   success_story:[],
+  video_promotion:[],
   mbs_student_list:[],
   loading: true,
   editError: false,
@@ -45,9 +47,19 @@ const initialState = {
     country:"",
   },
   new_student:{
+    id:"",
     language: "es",
     country: "AFG",
-    id:""
+    created_at: new Date(),
+    studentgroup:{
+      group:{
+        embassador:{
+          first_name:"",
+          last_name:""
+        },
+        name:""
+      }
+    }
   },
   dashboard_student:{    
       progressMbs:{
@@ -145,6 +157,12 @@ export const studentReducer = (state = initialState, action) => {
       case SUCCESS_STORY:
         return Object.assign({}, state, {
           success_story: action.payload,
+          loading: false
+        });
+
+      case VIDEO_PROMOTION:
+        return Object.assign({}, state, {
+          video_promotion: action.payload,
           loading: false
         });
     }

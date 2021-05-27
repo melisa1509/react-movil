@@ -152,13 +152,9 @@ class FacilitateGroupsTab extends React.Component {
               {t("question_rule9")}
             </SuccessBold>
             <br/>
-            {
-              programsa.rule9.map((prop, key) => 
-              <MutedText>
-                {prop}
-              </MutedText>
-              )
-            }
+            <MutedText>
+              {programsa.rule9}
+            </MutedText>
             <br/>
             <SuccessBold>
               {t("question_rule10")}

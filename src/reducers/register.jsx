@@ -4,9 +4,19 @@ import { NEW_STUDENT, EVALUATION_PRE } from "constants/actionTypes";
 
 const initialState = { 
   new_student:{
+    id:"",
     language: "es",
     country: "AFG",
-    id:""
+    created_at: new Date(),
+    studentgroup:{
+      group:{
+        embassador:{
+          first_name:"",
+          last_name:""
+        },
+        name:""
+      }
+    }
   }
 }
 

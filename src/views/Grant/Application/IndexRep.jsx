@@ -18,6 +18,7 @@ import { showGrant } from "actions/grantActions.jsx";
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import { translate } from 'react-switch-lang';
 import { withRouter } from 'react-router-dom';
+import IndexTableDevelopment from "./IndexTableDevelopment.jsx";
 
 
 
@@ -45,11 +46,21 @@ class IndexRep extends React.Component {
           <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
-                <h4 className={classes.cardTitle}>{t("title_approved_grant_applications")}</h4>
+                <h4 className={classes.cardTitle}>{t("title_approved_grant_applications") + " " + t("state.approved")}</h4>
                 <p>{ show_grant.title + " / " + t(show_grant.language)}</p>
             </CardHeader>
             <CardBody>
               <IndexTableUpdates  />
+            </CardBody>
+          </Card>
+          <br/>
+          <Card>
+            <CardHeader color="info">
+                <h4 className={classes.cardTitle}>{t("title_approved_grant_applications") + " " + t("state.development")}</h4>
+                <p>{ show_grant.title + " / " + t(show_grant.language)}</p>
+            </CardHeader>
+            <CardBody>
+              <IndexTableDevelopment  />
             </CardBody>
           </Card>
       </div>

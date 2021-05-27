@@ -5,6 +5,7 @@ import ReactTable from "react-table";
 import { connect } from "react-redux";
 import { getGroupList } from "actions/groupActions.jsx";
 import { Link } from "react-router-dom";
+import { showDate } from 'assets/functions/general.jsx';
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -63,15 +64,10 @@ class AmbassadorTable extends React.Component {
     let { t } = this.props;
             
     const data = group_list.map((prop, key) => {
-      let i = 0;
-      let start_date=[];
-      for (i = 0; i < 10 ; i++) {
-         start_date[i]=prop.start_date[i]
-      }
       return {
         id: key, 
         full_name: prop.name,
-        date:start_date,
+        date:showDate(prop.start_date),
         modality: t(prop.modality),
         projects: (
           <div className="actions-left">
@@ -115,35 +111,29 @@ class AmbassadorTable extends React.Component {
                 {
                   Header: t("th_name"),
                   accessor: "full_name",
-                  width:300,
-                  resizable: false,
-                  sortable: false,
+                  width:300
                 },
                 {
                   Header: t("th_modality"),
                   accessor: "modality",
-                  width:150,
-                  resizable: false,
-                  sortable: false,
+                  width:200
                 },
                 {
                   Header: t("th_start_classes"),
                   accessor: "date",
-                  width:150,
-                  resizable: false,
-                  sortable: false,
+                  width:200,
+                  filterable: false
                 },
                 {
                   Header: t("th_actions"),
                   accessor: "projects",
                   width:200,
-                  resizable: false,
-                  sortable: false,
+                  sortable: false
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 20,
+                  width: 0,
                   resizable: false,
                   sortable: false,
                   

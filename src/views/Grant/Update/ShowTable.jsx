@@ -87,7 +87,8 @@ class ShowTable extends React.Component {
                         [<th>{t("label_date")}</th>, monthDate(show_grant_ambassador.created_at)],                        
                         [<th>{t("label_language")}</th>, t(show_grant.language)],
                         [<th>{t("label_ambassador")}</th>, show_grant_ambassador.ambassador.first_name + " " + show_grant_ambassador.ambassador.last_name],
-                        [<th>{t("label_number_participants_trained")}</th>, show_grant_ambassador.number],
+                        [<th>{show_grant.type === "state.scholarship" ? t("label_number_participants_trained") : t("question_startup_number")}</th>, show_grant_ambassador.number],
+                        [<th>{t("label_type_grant")}</th>, t(show_grant.type)],
                         [<th>{t("label_total_amount_approved")}</th>, show_grant_ambassador.amount],
                         
                       ]}
@@ -97,7 +98,7 @@ class ShowTable extends React.Component {
                   <br/>
                   <center><h4 >{t("title_groups_created")}</h4></center>
                   <GridContainer justify="center">
-                    <GridItem xs={12} sm={12} md={12}>
+                    <GridItem xs={12} sm={12} md={11}>
                         { active_user.roles.includes("ROLE_LANGUAGE_ADMIN") || active_user.roles.includes("ROLE_ADMIN") ?
                           <GroupTable/>
                           :

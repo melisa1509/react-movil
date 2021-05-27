@@ -13,6 +13,7 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import ShowForm from 'views/GrantAmbassador/Show/ShowForm.jsx';
+import ShowStartupForm from 'views/GrantAmbassador/Show/ShowStartupForm.jsx';
 
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import { translate } from 'react-switch-lang';
@@ -34,21 +35,20 @@ class ShowRep extends React.Component {
     let { t } = this.props;
     
     return (
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={12}>
+      <>
+            <br/><br/><br/><br/>
           <Card>
             <CardHeader color="info">
             <center>
-             <h4 className={classes.cardTitle}>{t("title_edit_grant")}</h4>
+            <h4 className={classes.cardTitle}>{show_grant.type === "state.scholarship" ? t("title_grant_application") : t("title_grant_application_startup")}</h4>
              <p>{ show_grant.title }</p>
              </center>
             </CardHeader>
             <CardBody>
-                <ShowForm  />
+                {show_grant.type === "state.scholarship" ? <ShowForm /> : <ShowStartupForm />}
             </CardBody>
           </Card>
-        </GridItem>
-      </GridContainer>
+      </>
     );
   }
 }

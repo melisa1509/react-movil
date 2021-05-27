@@ -104,9 +104,9 @@ class TypeSelect extends React.Component {
                                 root: classes.selectMenuItem,
                                 selected: classes.selectMenuItemSelected
                             }}
-                            value="state.schollarship"
+                            value="state.scholarship"
                         >
-                            {t("label_schollarship")}
+                            {t("label_scholarship")}
                         </MenuItem>                        
                     </Select>
                 </FormControl>

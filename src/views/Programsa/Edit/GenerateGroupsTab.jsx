@@ -81,11 +81,11 @@ class GenerateGroupsTab extends React.Component {
   }
 
   addRown = () => {    
-    this.props.pushArray('programsa', "generate_groups5", "");    
+    this.props.pushArray('programsa', "generate_groups3", "");    
   }
 
   removeRow = () => {    
-    this.props.popArray('programsa', "generate_groups5");          
+    this.props.popArray('programsa', "generate_groups3");          
   }
 
   render() {
@@ -114,23 +114,19 @@ class GenerateGroupsTab extends React.Component {
         <Card >
           <CardBody>
             <h3 className={classes.cardTitleCenter} >{t("title_generate_groups")}</h3>
-            <SuccessBold>
-              {t("question_generateGroups1")}
-            </SuccessBold>
-            <div>      
-                  {
-                      optionsGenerateGroups1.options.map((prop, key) => {
-                       
-                          return (
-                            <Field
-                              component={CustomCheckbox}
-                              name={prop.val}
-                              label={prop.label}                             
-                            />
-                            );
-                      })
-                  }
-              </div>
+            <Field
+                  labelText={t("question_generateGroups1")}
+                  component={CustomInputRedux}
+                  name="generate_groups1"
+                  success
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                  inputProps={{
+                    multiline: true,
+                    rows: 7,
+                  }}
+              />
             <br/>
               <Field
                   labelText={t("question_generateGroups2")}
@@ -147,22 +143,18 @@ class GenerateGroupsTab extends React.Component {
               />
             <br/>            
             <SuccessBold>
-              {t("question_generateGroups3")}
+                  {t("question_generateGroups3")}
             </SuccessBold>
-            <div>      
-                  {
-                      optionsGenerateGroups3.options.map((prop, key) => {
-                       
-                          return (
-                            <Field
-                              component={CustomCheckbox}
-                              name={prop.val}
-                              label={prop.label}                             
-                            />
-                            );
-                      })
-                  }
-              </div>
+            {             
+              <FieldArray name="generate_groups3" component={RenderList} />               
+            }
+            <br/>
+                  <Button simple color="tumblr" onClick={this.removeRow}>
+                    <RemoveCircle/>{t("button_remove_row")}
+                  </Button>
+                  <Button simple color="twitter" onClick={this.addRown}>
+                    <AddCircle/>{t("button_add_row")}
+                  </Button>                      
             <br/>
             <Field
                   labelText={t("question_generateGroups4")}
@@ -178,24 +170,10 @@ class GenerateGroupsTab extends React.Component {
                   }}
               />
             <br/>
-            <SuccessBold>
-                  {t("question_generateGroups5")}
-                </SuccessBold>
-                {             
-                  <FieldArray name="generate_groups5" component={RenderList} />               
-                }
-                <br/>
-                      <Button simple color="tumblr" onClick={this.removeRow}>
-                        <RemoveCircle/>{t("button_remove_row")}
-                      </Button>
-                      <Button simple color="twitter" onClick={this.addRown}>
-                        <AddCircle/>{t("button_add_row")}
-                      </Button>                      
-                <br/>
             <Field
-                  labelText={t("question_generateGroups6")}
+                  labelText={t("question_generateGroups5")}
                   component={CustomInputRedux}
-                  name="generate_groups6"
+                  name="generate_groups5"
                   success
                   formControlProps={{
                     fullWidth: true
@@ -204,23 +182,9 @@ class GenerateGroupsTab extends React.Component {
                     multiline: true,
                     rows: 7,
                   }}
-              />
+              />                     
             <br/>
-            <Field
-                  labelText={t("question_generateGroups7")}
-                  component={CustomInputRedux}
-                  name="generate_groups7"
-                  success
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    multiline: true,
-                    rows: 7,
-                  }}
-              />
-            <br/>           
-               
+           
             { programsa.revisionGenerateGroups !== undefined ?
               <div>
                 <br/>

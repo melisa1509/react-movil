@@ -52,11 +52,19 @@ const typographyStyle = {
   mutedText: {
     color: grayColor[1]
   },
+  mutedBoldText: {
+    color: grayColor[1],
+    fontWeight: "450"
+  },
   primaryText: {
     color: primaryColor[0]
   },
   infoText: {
     color: infoColor[0]
+  },
+  infoBoldText: {
+    color: infoColor[0],
+    fontWeight: "420"
   },
   successText: {
     color: successColor[0]

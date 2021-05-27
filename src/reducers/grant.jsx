@@ -1,7 +1,7 @@
 import { GRANT_LIST } from "constants/actionTypes";
 import { SHOW_GRANT } from "constants/actionTypes";
 import { LOAD_FORM_GRANT } from "constants/actionTypes";
-import { EDIT_GRANT, NEW_GRANT, GRANT_PROGRAM, DELETE_GRANT } from "constants/actionTypes";
+import { EDIT_GRANT, NEW_GRANT, CLEAN_NEW_GRANT_AMBASSADOR, DELETE_GRANT } from "constants/actionTypes";
 import { UPLOAD_IMAGE } from "constants/actionTypes";
 import { GET_PROJECT_PROGRESS } from "constants/actionTypes";
 import { MBS_IMAGE_ALERT , DELETE_IMAGE_ALERT} from "constants/actionTypes";
@@ -37,13 +37,15 @@ const initialState = {
     language:"",
     description:"",   
     state:"",
-    type:"",
+    type:"state.scholarship",
   },
   show_grant_update: [],
   show_grant_ambassador: {
     id:"",
     administrator:[],
-    ambassador:[],
+    ambassador:{
+      country:"USA"
+    },
     grant:[],
     number:"",
     code:"",
@@ -53,6 +55,7 @@ const initialState = {
     question4:"",
     question5:"",
     question6:"",
+    question12: "state.not",
     file:"",
   },
   new_grant:{
@@ -61,6 +64,35 @@ const initialState = {
     state:"state.available",
     type:"state.startup",
     description: ""
+  },
+  initial_grant:{
+    id:"",
+    language:"en",
+    state:"state.available",
+    type:"state.startup",
+    description: ""
+  },
+  new_grant_ambassador:{
+    id:"",
+    number:0,
+    question1:"",
+    question2:"",   
+    question3:"",
+    question4:"",
+    question5:"",
+    question6:"",
+    question7:"",
+    question8:"",   
+    question9:"",
+    question10:"",
+    question11:"",    
+    question12: "state.not",
+    question13:"",
+    question14:"",
+    question15:"",
+  },
+  edit_grant_ambassador:{
+    id:"",
   },
   correction_grant: {
     correction: ""
@@ -156,8 +188,14 @@ export const grantReducer = (state = initialState, action) => {
         });
       case NEW_GRANT_AMBASSADOR:
         return Object.assign({}, state, {
-          edit_grant_ambassador: action.payload
+          edit_grant_ambassador: action.payload,
+          new_grant_ambassador: action.payload
         });
+
+      case CLEAN_NEW_GRANT_AMBASSADOR:
+      return Object.assign({}, state, {
+        new_grant_ambassador: initialState.new_grant_ambassador
+      });
       case SHOW_GRANT_AMBASSADOR:
         return Object.assign({}, state, {
           show_grant_ambassador: action.payload,

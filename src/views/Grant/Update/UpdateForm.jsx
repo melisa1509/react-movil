@@ -126,7 +126,7 @@ class UpdateForm extends React.Component {
                   />                
                   <br/>
                   <InputLabel className={classes.label}>
-                      <SuccessBold className={classes.label}>{t("label_grant_file")}</SuccessBold>
+                      <SuccessBold className={classes.label}>{t("label_grant_file2")}</SuccessBold>
                   </InputLabel>                
                   <Field
                     component={FileUpload}

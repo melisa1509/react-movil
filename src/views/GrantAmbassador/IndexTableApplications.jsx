@@ -88,7 +88,6 @@ class IndexTableApplication extends React.Component {
             </Button>
           </Link>
             :
-            ( lastDayMonth(prop.created_at) === lastDayMonth(grant_deadline) ?
               <Link to={ "/grant/editambassador/" + prop.grant.id + "/" + prop.id }>
                 <Button
                   size="sm"
@@ -96,8 +95,7 @@ class IndexTableApplication extends React.Component {
                 >
                   {t('button_application')}
                 </Button>
-              </Link>: ""
-            )
+              </Link>
             }         
           </div>
         )

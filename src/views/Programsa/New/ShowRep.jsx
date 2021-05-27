@@ -33,6 +33,10 @@ const styles = {
 
 
 class ShowRep extends React.Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
  
 
   render() {
@@ -43,6 +47,7 @@ class ShowRep extends React.Component {
             <br/><br/><br/><br/><br/>
             <CardHeader color="info" >
                 <h4 className={classes.cardTitleCenter}>{t("title_program_sa")}</h4>
+                <center><p>{t("title_program_sa_subtitle")}</p></center>
             </CardHeader>
             <CardBody>
                 <ShowForm active={active} />      

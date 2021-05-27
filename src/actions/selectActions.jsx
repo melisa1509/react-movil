@@ -1,3 +1,5 @@
+import { UPDATE_CATEGORY_SELECT } from 'constants/actionTypes';
+import { UPDATE_YES_NOT_SELECT } from 'constants/actionTypes';
 import { UPDATE_LANGUAGE_SELECT, UPDATE_COUNTRY_SELECT, COUNTRY_LIST, UPDATE_MODALITY_SELECT, UPDATE_PROGRAM_SELECT, UPDATE_ROLE_SELECT } from 'constants/actionTypes.jsx';
 import { UPDATE_AMBASSADOR_SELECT, UPDATE_QUALITY1_SELECT, UPDATE_ACTIVE_SELECT, UPDATE_TYPE_SELECT } from 'constants/actionTypes.jsx';
 
@@ -47,9 +49,21 @@ export const updateProgramSelect = params => {
     }   
 }
 
+export const updateYesNotSelect = params => {
+    return (dispatch) => {
+            dispatch ({ type: UPDATE_YES_NOT_SELECT, payload: params });
+    }   
+}
+
 export const updateQuality1Select = params => {
     return (dispatch) => {
             dispatch ({ type: UPDATE_QUALITY1_SELECT, payload: params });
+    }   
+}
+
+export const updateCategorySelect = params => {
+    return (dispatch) => {
+            dispatch ({ type: UPDATE_CATEGORY_SELECT, payload: params });
     }   
 }
 

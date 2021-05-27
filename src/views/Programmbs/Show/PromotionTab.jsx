@@ -42,16 +42,13 @@ class PromotionTab extends React.Component {
       [" " + classes.whiteColor]: white
     });
     return (
+        <Card >
           <CardBody>
             <h3 className={classes.cardTitleCenter} >{t("title_promotion")}</h3>
             <br/>
             <SuccessBold>
               {t("question_promotion1")}
             </SuccessBold>
-            <br/>
-            <MutedText>
-              {programmbs.promotion1}
-            </MutedText>
             <br/>
             <SuccessBold>
               {t("question_promotion2")}
@@ -82,7 +79,7 @@ class PromotionTab extends React.Component {
             </SuccessBold>
             <br/>
             {
-                  programmbs.promotion5 !== undefined ?
+                  programmbs.promotion5 !== "undefined" && programmbs.promotion5 !== undefined ?
                   <a
                     href={BASE_URL +  "/web/file/"  + programmbs.promotion5}
                     target="_blank"
@@ -92,11 +89,72 @@ class PromotionTab extends React.Component {
                   ""
                 }
             <br/>
+            <br/>
+            <h3 className={classes.cardTitleCenter} >{t("title_worldwide_directory")}</h3>
+            <p className={classes.cardTitleCenter} >{t("label_worldwide_directory_explanation")}</p>
+            <br/>
+            <SuccessBold>
+              {t("question_promotion_product_name")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {programmbs.product_name}
+            </MutedText>
+            <br/>
+            <SuccessBold>
+              {t("question_promotion_product_description")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {programmbs.product_description}
+            </MutedText>
+            <br/>
+            <SuccessBold>
+              {t("question_promotion_product_contact")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {programmbs.product_phone}
+            </MutedText>
+            <br/>
+            <SuccessBold>
+              {t("label_category")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {t(programmbs.product_web)}
+            </MutedText>
+            <br/>
+            <SuccessBold>
+              {t("question_promotion6")}
+            </SuccessBold>
+            <br/>
+            {
+                  programmbs.promotion6 !== "undefined" && programmbs.promotion6 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.promotion6}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }
+            <br/>
+            <SuccessBold>
+              {t("question_promotion7")}
+            </SuccessBold>
+            <br/>
+            <MutedText>
+              {t(programmbs.promotion7)}
+            </MutedText>
+
+
             <RevisionForm name="revisionpromotion" labelText={t("label_revision_promotion")+ " *"} />
             <br/>
             <Controls/>
             <ControlNavigation previous={"price"} next={"paperwork"} />
           </CardBody>
+        </Card>
     );
   }
 }

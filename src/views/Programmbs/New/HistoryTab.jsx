@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import { Field, reduxForm } from 'redux-form';
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -13,8 +14,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import SuccessLabel from "components/Typography/SuccessLabel.jsx";
 import FileUpload from "components/CustomUpload/FileUpload.jsx";
 import SuccessBold from "components/Typography/SuccessBold.jsx";
-import Quote from "components/Typography/Quote.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 import Primary from "components/Typography/Primary.jsx";
+import CategorySelect from "views/Select/CategorySelect.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 // core components
 import Controls from './Controls.jsx';
@@ -67,7 +71,7 @@ class HistoryTab extends React.Component {
                 <br/>
                 <InputLabel className={classes.label}>
                     <SuccessLabel className={classes.label}>{t("question_history2")}</SuccessLabel>
-                </InputLabel>
+                </InputLabel>                
                 <Field
                   component={FileUpload}
                   name="history2"
@@ -91,7 +95,82 @@ class HistoryTab extends React.Component {
                     inputProps={{
                       type: "text"
                     }}
-                  />             
+                  />
+                  <br/>
+                  <h3 className={classes.cardTitleCenter} >{t("title_worldwide_directory")}</h3>
+                  <p className={classes.cardTitleCenter} >{t("label_worldwide_directory_explanation")}</p>
+                <br/>
+                <Field
+                    labelText={t("question_promotion_product_name")}
+                    component={CustomInputRedux}
+                    name="product_name"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      type: "text"
+                    }}
+                />
+                <br/>
+                <Field
+                    labelText={t("question_promotion_product_description")}
+                    component={CustomInputRedux}
+                    name="product_description"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      multiline: true,
+                      rows: 7,
+                    }}
+                />
+                <Field
+                    labelText={t("question_promotion_product_contact")}
+                    component={CustomInputRedux}
+                    name="product_phone"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      multiline: true,
+                      rows: 7,
+                    }}
+                />
+                <br/>
+                <GridContainer >
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Field
+                      component={CategorySelect}
+                      name="product_web"
+                    />
+                  </GridItem>
+                </GridContainer>
+                <br/>
+                <br/>
+                <SuccessBold>
+                  {t("question_promotion6")}
+                </SuccessBold>
+                <Field
+                  component={FileUpload}
+                  name="promotion6"
+                  changeFileName = {this.updateFileName2}
+                  inputProps={{
+                    type: "file",
+                  }}
+                />
+                <br/>
+                <br/>
+                <SuccessBold>
+                  {t("question_promotion7")}
+                </SuccessBold>
+                <Button color="facebook" onClick={this.handleFacebook} target="blank_" href="http://www.facebook.com/groups/interweavesolutionsmbsgroups">
+                  <i className="fab fa-facebook-square"/>{" "}
+                  {t("button_join_facebook_group")}
+                </Button>
+                <br/>             
             </form>         
             <br/>
             <Controls/>
@@ -111,7 +190,8 @@ HistoryTab = reduxForm({
 HistoryTab = connect(
   state => ({
     initialValues: state.programmbsReducer.data, 
-    form_programmbs: state.form.programmbs
+    form_programmbs: state.form.programmbs,
+    programmbs: state.programmbsReducer.programmbs
   }),
   { load: loadFormProgrammbs }, 
 )(HistoryTab);

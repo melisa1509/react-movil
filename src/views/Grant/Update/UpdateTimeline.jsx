@@ -92,7 +92,7 @@ class UpdateTimeline extends React.Component {
                     footer: (
                       <p>
                         {
-                          prop.file !== "undefined" ?
+                          prop.file !== "undefined" && prop.file !== undefined ?
                           <a
                             href={BASE_URL +  "/web/file/"  + prop.file}
                             target="_blank"
@@ -119,7 +119,7 @@ class UpdateTimeline extends React.Component {
                     footer: (
                       <p>
                         {
-                          prop.file !== "undefined" ?
+                          prop.file !== "undefined" && prop.file !== undefined ?
                           <a
                             href={BASE_URL +  "/web/file/"  + prop.file}
                             target="_blank"
@@ -147,7 +147,7 @@ class UpdateTimeline extends React.Component {
                     footer: (
                       <p>
                         {
-                          prop.file !== "undefined" ?
+                          prop.file !== "undefined" && prop.file !== undefined ?
                           <a
                             href={BASE_URL +  "/web/file/"  + prop.file}
                             target="_blank"
@@ -175,7 +175,7 @@ class UpdateTimeline extends React.Component {
                     footer: (
                       <p>
                         {
-                          prop.file !== "undefined" ?
+                          prop.file !== "undefined" && prop.file !== undefined ?
                           <a
                             href={BASE_URL +  "/web/file/"  + prop.file}
                             target="_blank"
@@ -203,7 +203,7 @@ class UpdateTimeline extends React.Component {
                     footer: (
                       <p>
                         {
-                          prop.file !== "undefined" ?
+                          prop.file !== "undefined" && prop.file !== undefined ?
                           <a
                             href={BASE_URL +  "/web/file/"  + prop.file}
                             target="_blank"

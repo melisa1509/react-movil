@@ -107,7 +107,7 @@ class GenerateGroupsTab extends React.Component {
               {t("question_generateGroups1")}
             </SuccessBold>
             <br/>
-            <CustomCheckbox data={optionsGenerateGroups1} />
+            {programsa.generate_groups1}
             <br/>
             <SuccessBold>
               {t("question_generateGroups2")}
@@ -121,7 +121,13 @@ class GenerateGroupsTab extends React.Component {
               {t("question_generateGroups3")}
             </SuccessBold>
             <br/>
-            <CustomCheckbox data={optionsGenerateGroups3} />
+            {
+              programsa.generate_groups3.map((prop, key) => 
+              <MutedText>
+                {prop}
+              </MutedText>
+              )
+            }
             <br/>
             <SuccessBold>
               {t("question_generateGroups4")}
@@ -134,29 +140,7 @@ class GenerateGroupsTab extends React.Component {
             <SuccessBold>
               {t("question_generateGroups5")}
             </SuccessBold>
-            {
-              programsa.generate_groups5.map((prop, key) => 
-              <MutedText>
-                {prop}
-              </MutedText>
-              )
-            }
-            <br/>
-            <SuccessBold>
-              {t("question_generateGroups6")}
-            </SuccessBold>
-            <br/>
-            <MutedText>
-              {programsa.generate_groups6}
-            </MutedText>
-            <br/>
-            <SuccessBold>
-              {t("question_generateGroups7")}
-            </SuccessBold>
-            <br/>
-            <MutedText>
-              {programsa.generate_groups7}
-            </MutedText>
+            {programsa.generate_groups5}
             <br/>
             <RevisionForm name="revisiongenerategroups" labelText={t("label_revision_generate_groups")} />
             <br/>

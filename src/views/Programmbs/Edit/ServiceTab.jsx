@@ -42,7 +42,8 @@ class ServiceTab extends React.Component {
     const { classes, programmbs } = this.props;
     let { t } = this.props;
     return (
-        <CardBody>
+        <Card >
+          <CardBody>
             <h3 className={classes.cardTitleCenter} >{t("title_service")}</h3>
             <br/>
             <form>
@@ -112,9 +113,10 @@ class ServiceTab extends React.Component {
                     rows: 7,
                   }}
                 />
+                
                 <br/>
                 {
-                  programmbs.service6 !== undefined ?
+                  programmbs.service6 !== "undefined" && programmbs.service6 !== undefined ?
                   <a
                     href={BASE_URL +  "/web/file/"  + programmbs.service6}
                     target="_blank"
@@ -149,7 +151,8 @@ class ServiceTab extends React.Component {
             <br/>
             <Controls/>
             <ControlNavigation previous={"quality"} next={"history"} />
-        </CardBody>
+          </CardBody>
+        </Card>
     );
   }
 }

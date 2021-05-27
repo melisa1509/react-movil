@@ -78,6 +78,20 @@ class SupportTab extends React.Component {
                     multiline: true,
                     rows: 7,
                   }}
+                /> 
+                <br/>
+                <Field
+                  labelText={t("question_support4")}
+                  component={CustomInputRedux}
+                  name="support4"
+                  success
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                  inputProps={{
+                    multiline: true,
+                    rows: 7,
+                  }}
                 />                
             </form>
             { programsa.revisionsupport !== undefined ?

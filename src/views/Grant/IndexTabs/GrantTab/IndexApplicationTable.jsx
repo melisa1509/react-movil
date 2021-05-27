@@ -62,7 +62,8 @@ class GrantTable extends React.Component {
     const {  loading, grant_ambassador_list, active_user } = this.props;
     let { t } = this.props;
 
-    const list = active_user.roles.includes("ROLE_LANGUAGE_ADMIN") ? grant_ambassador_list.filter(prop => active_user.language_grader.includes(prop.language) )  : grant_ambassador_list ;
+    const list = active_user.roles.includes("ROLE_LANGUAGE_ADMIN") ? grant_ambassador_list.filter(prop => active_user.language_grader.includes(prop.grant.language) )  : grant_ambassador_list ;
+            
             
     const data = list.map((prop, key) => {
       return {

@@ -13,6 +13,7 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import EditForm from 'views/GrantAmbassador/Edit/EditForm.jsx';
+import EditStartupForm from 'views/GrantAmbassador/Edit/EditStartupForm.jsx';
 
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import { translate } from 'react-switch-lang';
@@ -36,15 +37,15 @@ class EditRep extends React.Component {
     return (
       <>
             <br/><br/><br/><br/>
-          <Card>
+            <Card>
             <CardHeader color="info">
             <center>
-             <h4 className={classes.cardTitle}>{t("title_edit_grant")}</h4>
+            <h4 className={classes.cardTitle}>{show_grant.type === "state.scholarship" ? t("title_grant_application") : t("title_grant_application_startup")}</h4>
              <p>{show_grant.title}</p>
              </center>
             </CardHeader>
             <CardBody>
-                <EditForm  />
+            {show_grant.type === "state.scholarship" ? <EditForm /> : <EditStartupForm />}
             </CardBody>
           </Card>
       </>

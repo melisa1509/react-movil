@@ -2,7 +2,9 @@ import { STUDENT_LIST, SHOW_STUDENT, LOAD_FORM_STUDENT, DELETE_STUDENT, EDIT_STU
 import { EDIT_PASSWORD_STUDENT, SUCCESSFULL_EDIT_CLEAN, DASHBOARD_STUDENT, NEW_STUDENT } from 'constants/actionTypes';
 import { GET_STUDENT_AMBASSADOR, SUCCESSFULL_NEW, EVALUATION_PRE, EVALUATION_POST, MBS_STUDENT_LIST} from 'constants/actionTypes';
 import { BASE_URL} from 'constants/urlTypes.jsx';
-import { SUCCESS_STORY } from 'constants/actionTypes';
+import { SUCCESS_STORY, ALREADY_EXIST_USER } from 'constants/actionTypes';
+import { VIDEO_PROMOTION } from 'constants/actionTypes';
+import history from '../history';
 
 export const getStudentList = key => {
     
@@ -104,7 +106,16 @@ export const newStudent =() => {
         return fetch(BASE_URL + "/student/new?callback=foo", requestOptions)
         .then(response => response.json())
         .then(json => {
-            dispatch ({ type: NEW_STUDENT, payload: json.data });   
+            if(json.code === 600){
+                dispatch ({ type: NEW_STUDENT, payload: json.data });
+                dispatch ({ type: ALREADY_EXIST_USER });
+            }
+            else{
+                dispatch ({ type: NEW_STUDENT, payload: json.data });  
+                dispatch ({ type: SUCCESSFULL_NEW });  
+                return history.push( '/student/show/'+ json.data.id);
+                
+            }
         })
         .catch(json =>{
             dispatch({type:ERROR_EDIT_STUDENT})
@@ -321,6 +332,30 @@ export const successStory = (key) => {
         .then(response => response.json())
         .then(json => {
             dispatch ({ type: SUCCESS_STORY, payload: json.data });  
+        })
+    }
+};
+
+export const videoPromotion = (key) => {
+    return (dispatch,getState) => {
+        const reduxState = getState();
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        var urlencoded = new URLSearchParams();
+       
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+        };
+
+        return fetch(BASE_URL + "/student/videopromotion", requestOptions)
+        .then(response => response.json())
+        .then(json => {
+            dispatch ({ type: VIDEO_PROMOTION, payload: json.data });  
         })
     }
 };

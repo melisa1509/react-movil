@@ -7,11 +7,8 @@ import { connect } from "react-redux";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import Dashboard from "@material-ui/icons/Dashboard";
-import Icon from "@material-ui/core/Icon";
-import Face from "@material-ui/icons/Face";
-import Group from "@material-ui/icons/Group";
+
 import Equalizer from "@material-ui/icons/Equalizer";
-import School from "@material-ui/icons/School";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";

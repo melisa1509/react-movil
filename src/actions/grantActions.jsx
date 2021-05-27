@@ -20,6 +20,7 @@ import { GRANT_AMBASSADOR_APPLICATION } from 'constants/actionTypes';
 import { NEW_GRANT_GROUP, SHOW_GRANT_USER } from 'constants/actionTypes';
 import { SHOW_GRANT_GROUP_LIST, LOAD_FORM_GRANT_GROUP } from 'constants/actionTypes';
 import { SHOW_GRANT_STATISTIC } from 'constants/actionTypes';
+import { CLEAN_NEW_GRANT_AMBASSADOR } from 'constants/actionTypes';
 
 export const getGrantList= () => {
     return (dispatch, getState) => {
@@ -150,6 +151,7 @@ export const showGrantAmbassador = key => {
         .then(response => response.json())
         .then(json => {
             dispatch ({ type: SHOW_GRANT_AMBASSADOR, payload: json.data });
+            dispatch ({ type: NEW_GRANT_AMBASSADOR, payload: json.data });
             dispatch ({ type: LOAD_FORM_GRANT_AMBASSADOR, data: json.data });   
         })
 
@@ -217,6 +219,7 @@ export const showGrantUser = key => {
 };
 
 export const loadFormGrant = data => ({ type: LOAD_FORM_GRANT, data });
+export const cleanNewGrantAmbassador = () => ({ type: CLEAN_NEW_GRANT_AMBASSADOR });
 export const editGrant = ()=> {
     
     return (dispatch, getState) => {
@@ -269,8 +272,21 @@ export const editGrantAmbassador = ()=> {
         urlencoded.append("question5",reduxState.form.grantAmbassadorform.values.question5);
         urlencoded.append("question6",reduxState.form.grantAmbassadorform.values.question6);
         urlencoded.append("question7",reduxState.form.grantAmbassadorform.values.question7);
+        urlencoded.append("question8",reduxState.form.grantAmbassadorform.values.question8);
+        urlencoded.append("question9",reduxState.form.grantAmbassadorform.values.question9);
+        urlencoded.append("question10",reduxState.form.grantAmbassadorform.values.question10);
+        urlencoded.append("question11",reduxState.form.grantAmbassadorform.values.question11);
+        urlencoded.append("question12",reduxState.form.grantAmbassadorform.values.question12);
+        urlencoded.append("question13",reduxState.form.grantAmbassadorform.values.question13);
+        urlencoded.append("question14",reduxState.form.grantAmbassadorform.values.question14);
+        urlencoded.append("question15",reduxState.form.grantAmbassadorform.values.question15);
         urlencoded.append("file",reduxState.form.grantAmbassadorform.values.file);
         urlencoded.append("file2",reduxState.form.grantAmbassadorform.values.file2);
+        urlencoded.append("file3",reduxState.form.grantAmbassadorform.values.file3);
+        urlencoded.append("file4",reduxState.form.grantAmbassadorform.values.file4);
+        urlencoded.append("file5",reduxState.form.grantAmbassadorform.values.file5);
+        urlencoded.append("file6",reduxState.form.grantAmbassadorform.values.file6);
+        urlencoded.append("file7",reduxState.form.grantAmbassadorform.values.file7);
 
         var requestOptions = {
         method: 'PUT',
@@ -440,6 +456,7 @@ export const newGrantAmbassador = ()=> {
     var urlencoded = new URLSearchParams();
     urlencoded.append("id_ambassador",reduxState.loginReducer.active_user.id);
     urlencoded.append("id_grant", reduxState.grantReducer.show_grant.id);
+    urlencoded.append("id", reduxState.grantReducer.new_grant_ambassador.id);
     urlencoded.append("code",reduxState.form.grantAmbassadorNewform.values.code);
     urlencoded.append("number",reduxState.form.grantAmbassadorNewform.values.number);
     urlencoded.append("question1",reduxState.form.grantAmbassadorNewform.values.question1);
@@ -449,8 +466,21 @@ export const newGrantAmbassador = ()=> {
     urlencoded.append("question5",reduxState.form.grantAmbassadorNewform.values.question5);
     urlencoded.append("question6",reduxState.form.grantAmbassadorNewform.values.question6);
     urlencoded.append("question7",reduxState.form.grantAmbassadorNewform.values.question7);
+    urlencoded.append("question8",reduxState.form.grantAmbassadorNewform.values.question8);
+    urlencoded.append("question9",reduxState.form.grantAmbassadorNewform.values.question9);
+    urlencoded.append("question10",reduxState.form.grantAmbassadorNewform.values.question10);
+    urlencoded.append("question11",reduxState.form.grantAmbassadorNewform.values.question11);
+    urlencoded.append("question12",reduxState.form.grantAmbassadorNewform.values.question12);
+    urlencoded.append("question13",reduxState.form.grantAmbassadorNewform.values.question13);
+    urlencoded.append("question14",reduxState.form.grantAmbassadorNewform.values.question14);
+    urlencoded.append("question15",reduxState.form.grantAmbassadorNewform.values.question15);
     urlencoded.append("file",reduxState.form.grantAmbassadorNewform.values.file);
     urlencoded.append("file2",reduxState.form.grantAmbassadorNewform.values.file2);
+    urlencoded.append("file3",reduxState.form.grantAmbassadorNewform.values.file3);
+    urlencoded.append("file4",reduxState.form.grantAmbassadorNewform.values.file4);
+    urlencoded.append("file5",reduxState.form.grantAmbassadorNewform.values.file5);
+    urlencoded.append("file6",reduxState.form.grantAmbassadorNewform.values.file6);
+    urlencoded.append("file7",reduxState.form.grantAmbassadorNewform.values.file7);
     
     
     var requestOptions = {

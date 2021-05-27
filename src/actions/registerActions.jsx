@@ -1,6 +1,7 @@
 import { NEW_STUDENT, SUCCESSFULL_EDIT, EVALUATION_PRE, ERROR_EDIT_STUDENT  } from 'constants/actionTypes';
 import { BASE_URL} from 'constants/urlTypes.jsx';
 import { showGroup } from "actions/groupActions.jsx";
+import { ALREADY_EXIST_USER } from 'constants/actionTypes';
 
 export const newStudent =(redirect) => {
     return (dispatch,getState) => {
@@ -31,9 +32,16 @@ export const newStudent =(redirect) => {
         return fetch(BASE_URL + "/student/new?callback=foo", requestOptions)
         .then(response => response.json())
         .then(json => {
-            dispatch ({ type: NEW_STUDENT, payload: json.data });  
-            dispatch ( showGroup(reduxState.form.registerform.values.id_group));
-            redirect.push("/register/evaluation");
+            if(json.code === 600){
+                dispatch ({ type: NEW_STUDENT, payload: json.data });
+                dispatch ({ type: ALREADY_EXIST_USER });
+            }
+            else{
+                dispatch ({ type: NEW_STUDENT, payload: json.data });  
+                dispatch ( showGroup(reduxState.form.registerform.values.id_group));
+                redirect.push("/register/evaluation");
+            }
+            
         })
         .catch(json =>{
             dispatch({type:ERROR_EDIT_STUDENT})

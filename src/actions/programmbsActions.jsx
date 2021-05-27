@@ -1,6 +1,6 @@
 import { ADD_ROWN_P4, ERROR_SEND_REVISION_PROJECT, SUCCESSFULL_SEND_REVISION_PROJECT, SHOW_PROGRAMMBS, LOAD_FORM_PROGRAMMBS, SUCCESSFULL_EDIT_REVISION, ERROR_EDIT_REVISION, HIDE_REVISION_ALERT, SUCCESSFULL_APPROVE_PROJECT, ERROR_APPROVE_PROJECT } from 'constants/actionTypes.jsx';
 import { BASE_URL } from 'constants/urlTypes';
-import { jsonToArray } from "assets/functions/general.jsx";
+import { jsonToArray, checkArray } from "assets/functions/general.jsx";
 import { dashboardStudent } from "actions/studentActions.jsx";
 import { ACTIVE_TAB } from 'constants/actionTypes';
 import { RESET_SHOW_PROGRAMMBS } from 'constants/actionTypes';
@@ -80,8 +80,14 @@ export const newProgrammbs = (redirect) => {
         return fetch( BASE_URL + "/programmbs/new" +  "?callback=foo", requestOptions)
         .then(response => response.json())
         .then(json => {
-            dispatch({type:SUCCESSFULL_EDIT_REVISION})
-            dispatch(dashboardStudent())
+            if(json.code === 500){
+                dispatch({type:ERROR_EDIT_REVISION})
+            }
+            else{
+                dispatch({type:SUCCESSFULL_EDIT_REVISION})
+                dispatch(dashboardStudent())
+            }
+            
         })
         .catch(json =>{
             dispatch({type:ERROR_EDIT_REVISION})
@@ -114,8 +120,13 @@ export const editProgrammbs = (redirect) => {
         return fetch( BASE_URL + "/programmbs/edit/" + key + "?callback=foo", requestOptions)
         .then(response => response.json())
         .then(json => {
-            dispatch({type:SUCCESSFULL_EDIT_REVISION})
-            dispatch(dashboardStudent())
+            if(json.code === 500){
+                dispatch({type:ERROR_EDIT_REVISION})
+            }
+            else{
+                dispatch({type:SUCCESSFULL_EDIT_REVISION})
+                dispatch(dashboardStudent())
+            }
         })
         .catch(json =>{
             dispatch({type:ERROR_EDIT_REVISION})
@@ -344,6 +355,8 @@ const getValuesForm =  (urlencoded, reduxState) =>{
         urlencoded.append("promotion3", reduxState.form.programmbs.values.promotion3 !== undefined ? reduxState.form.programmbs.values.promotion3 : "");
         urlencoded.append("promotion4", reduxState.form.programmbs.values.promotion4 !== undefined ? reduxState.form.programmbs.values.promotion4 : "");
         urlencoded.append("promotion5", reduxState.form.programmbs.values.promotion5 !== undefined ? reduxState.form.programmbs.values.promotion5 : "");
+        urlencoded.append("promotion6", reduxState.form.programmbs.values.promotion6 !== undefined ? reduxState.form.programmbs.values.promotion6 : "");
+        urlencoded.append("promotion7", reduxState.form.programmbs.values.promotion7 !== undefined ? reduxState.form.programmbs.values.promotion7 : "");
         urlencoded.append("process1", reduxState.form.programmbs.values.process1 !== undefined ? reduxState.form.programmbs.values.process1 : "");
         urlencoded.append("process2", reduxState.form.programmbs.values.process2 !== undefined ? reduxState.form.programmbs.values.process2 : "");
         urlencoded.append("process3", reduxState.form.programmbs.values.process3 !== undefined ? reduxState.form.programmbs.values.process3 : "");
@@ -351,11 +364,19 @@ const getValuesForm =  (urlencoded, reduxState) =>{
         urlencoded.append("paperwork1", reduxState.form.programmbs.values.paperwork1 !== undefined ? reduxState.form.programmbs.values.paperwork1 : "");
         urlencoded.append("paperwork2", reduxState.form.programmbs.values.paperwork2 !== undefined ? reduxState.form.programmbs.values.paperwork2 : "");
         urlencoded.append("paperwork3", jsonToArray(reduxState.form.programmbs.values.paperwork3));
+
+        reduxState.form.programmbs.values.paperwork4.p4_array = checkArray(reduxState.form.programmbs.values.paperwork4.p4_array);
+        reduxState.form.programmbs.values.paperwork5.p5_array = checkArray(reduxState.form.programmbs.values.paperwork5.p5_array);
+        reduxState.form.programmbs.values.paperwork6.p6_array = checkArray(reduxState.form.programmbs.values.paperwork6.p6_array);
+        reduxState.form.programmbs.values.paperwork7.p7_array = checkArray(reduxState.form.programmbs.values.paperwork7.p7_array);
+        reduxState.form.programmbs.values.paperwork8.p8_array = checkArray(reduxState.form.programmbs.values.paperwork8.p8_array);
         urlencoded.append("paperwork4", reduxState.form.programmbs.values.paperwork4 !== undefined ? JSON.stringify(reduxState.form.programmbs.values.paperwork4) : "");
         urlencoded.append("paperwork5", reduxState.form.programmbs.values.paperwork5 !== undefined ? JSON.stringify(reduxState.form.programmbs.values.paperwork5) : "");
         urlencoded.append("paperwork6", reduxState.form.programmbs.values.paperwork6 !== undefined ? JSON.stringify(reduxState.form.programmbs.values.paperwork6) : "");
         urlencoded.append("paperwork7", reduxState.form.programmbs.values.paperwork7 !== undefined ? JSON.stringify(reduxState.form.programmbs.values.paperwork7) : "");
         urlencoded.append("paperwork8", reduxState.form.programmbs.values.paperwork8 !== undefined ? JSON.stringify(reduxState.form.programmbs.values.paperwork8) : "");
+
+
         urlencoded.append("quality_p1", reduxState.form.programmbs.values.quality_p1 !== undefined ? reduxState.form.programmbs.values.quality_p1 : "");
         urlencoded.append("quality_p2", reduxState.form.programmbs.values.quality_p2 !== undefined ? reduxState.form.programmbs.values.quality_p2 : "");
         urlencoded.append("quality_p3", reduxState.form.programmbs.values.quality_p3 !== undefined ? reduxState.form.programmbs.values.quality_p3 : "");
@@ -388,4 +409,9 @@ const getValuesForm =  (urlencoded, reduxState) =>{
         urlencoded.append("service6", reduxState.form.programmbs.values.service6 !== undefined ? reduxState.form.programmbs.values.service6 : "");
         urlencoded.append("history1", reduxState.form.programmbs.values.history1 !== undefined ? reduxState.form.programmbs.values.history1 : "");
         urlencoded.append("history2", reduxState.form.programmbs.values.history2 !== undefined ? reduxState.form.programmbs.values.history2 : "");
+
+        urlencoded.append("productName", reduxState.form.programmbs.values.product_name !== undefined ? reduxState.form.programmbs.values.product_name : "");
+        urlencoded.append("productDescription", reduxState.form.programmbs.values.product_description !== undefined ? reduxState.form.programmbs.values.product_description : "");
+        urlencoded.append("productWeb", reduxState.form.programmbs.values.product_web !== undefined ? reduxState.form.programmbs.values.product_web : "");
+        urlencoded.append("productPhone", reduxState.form.programmbs.values.product_phone !== undefined ? reduxState.form.programmbs.values.product_phone : "");
 }

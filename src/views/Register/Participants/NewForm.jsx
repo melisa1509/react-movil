@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // react component for creating dynamic tables
 import { connect } from "react-redux";
 import { Field, reduxForm } from 'redux-form';
-import { store } from "store";
+import Table from "components/Table/Table.jsx";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -16,15 +16,18 @@ import SnackbarContent from "components/Snackbar/SnackbarContent";
 import Danger from "components/Typography/Danger.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
+import SweetAlert from "react-bootstrap-sweetalert";
 import CustomInputRedux from 'components/CustomInput/CustomInputRedux.jsx'; 
 import { showStudent } from "actions/studentActions.jsx";
 import { newStudent } from "actions/registerActions.jsx"; 
 import { errorRequiredFields } from "actions/generalActions.jsx";
 import { successRequiredFields } from "actions/generalActions.jsx";
 import { deleteSuccessful } from "actions/generalActions.jsx";
+import { showDate } from "assets/functions/general.jsx";
 import { verifyChange } from "assets/validation/index.jsx";
 import LanguageSelect from "views/Select/LanguageSelect.jsx";
 import CountrySelect from "views/Select/CountrySelect.jsx";
+import sweetAlertStyle from "assets/jss/material-dashboard-pro-react/views/sweetAlertStyle.jsx";
 
 // style for this view
 import validationFormsStyle from "assets/jss/material-dashboard-pro-react/views/validationFormsStyle.jsx";
@@ -48,7 +51,8 @@ const style = {
       color:"red"
     },
     ...customSelectStyle,
-    ...validationFormsStyle
+    ...validationFormsStyle,
+    ...sweetAlertStyle
 };
 
 
@@ -64,6 +68,11 @@ class NewForm extends React.Component {
             password: ""
         };
         this.saveClick = this.saveClick.bind(this);
+        this.deleteClick= this.deleteClick.bind(this);
+      }
+
+      deleteClick(){
+        this.props.dispatchDeleteSuccessful();
       }
      
       saveClick() {
@@ -85,12 +94,10 @@ class NewForm extends React.Component {
         if (this.state.passowordState === "") {
           this.setState({ passwordState: "error" });
         }
-        if(this.state.usernameState === "error" || this.state.first_nameState === "error" || this.state.last_nameState === "error"){
-          const stateRedux = store.getState();
+        if(this.state.passowordState === "error" || this.state.whatsappState === "error" || this.state.usernameState === "error" || this.state.first_nameState === "error" || this.state.last_nameState === "error"){
           this.props.dispatchErrorRequiredFields();
         }
-        if(this.state.usernameState === "success" && this.state.first_nameState === "success"&& this.state.last_nameState === "success"){
-          const reduxState = store.getState();
+        if(this.state.passowordState === "success" || this.state.whatsappState === "success" || this.state.usernameState === "success" && this.state.first_nameState === "success"&& this.state.last_nameState === "success"){
           this.props.dispatchNewStudent(this.props.history);
           this.props.dispatchSuccessRequiredFields();
         }
@@ -99,7 +106,7 @@ class NewForm extends React.Component {
       
 
     render() {
-        const { classes, editError, errorRequired, successRequired, new_student} = this.props;
+        const { classes, editError, errorRequired, successRequired, new_student, error_new_user} = this.props;
         let { t } = this.props;
         return (
           <GridContainer justify="center">
@@ -115,6 +122,31 @@ class NewForm extends React.Component {
                         close
                         color="danger"
                       />
+                      : ""}
+                  </GridItem>
+              </GridContainer>
+              <GridContainer justify="center">
+                  <GridItem xs={12} sm={12} md={12}>
+                      { error_new_user ?      
+                        <SweetAlert
+                          style={{ display: "block", marginTop: "-100px", close:true }}
+                          onConfirm={() => this.deleteClick()}
+                          confirmBtnCssClass={
+                              this.props.classes.button + " " + this.props.classes.success
+                          }
+                          confirmBtnText={t("button_continue")}
+                          >
+                          <h6>{t("label_user_alredy_exist")}</h6>
+                          
+                            <Table
+                              striped
+                              tableData={[
+                                [<th>{t("label_date")}</th>,showDate(new_student.created_at)],
+                                [<th>{t("label_embassador_mentor")}</th>, new_student.studentgroup.group.embassador.first_name+ " "+ new_student.studentgroup.group.embassador.last_name],
+                                [<th>{t("label_group")}</th>,new_student.studentgroup.group.name],                              
+                              ]}
+                            />
+                        </SweetAlert> 
                       : ""}
                   </GridItem>
               </GridContainer>
@@ -295,11 +327,12 @@ NewForm = reduxForm({
 
 NewForm = connect(
   state => ({
+    new_student: state.registerReducer.new_student, 
     errorRequired:state.generalReducer.errorRequired,
     successRequired:state.generalReducer.successRequired,
     editError: state.studentReducer.editError,
     successfull_edit:state.generalReducer.successfull_edit,
-    new_student: state.registerReducer.new_student, 
+    error_new_user: state.generalReducer.error_new_user
   }),
   { loadShowStudent: showStudent, dispatchNewStudent: newStudent, dispatchErrorRequiredFields: errorRequiredFields, dispatchSuccessRequiredFields: successRequiredFields, dispatchDeleteSuccessful: deleteSuccessful},
 )(NewForm);

@@ -220,7 +220,7 @@ NewForm = connect(
     successRequired:state.generalReducer.successRequired,
     successfull_new:state.generalReducer.successfull_new,
     new_grant: state.grantReducer.new_grant,
-    initialValues: state.grantReducer.new_grant
+    initialValues: state.grantReducer.initial_grant
   }),
   { dispatchNewGrant: newGrant, dispatchErrorRequiredFields: errorRequiredFields, dispatchSuccessRequiredFields: successRequiredFields, dispatchDeleteSuccessful: deleteSuccessful, dispatchShowGrantRedirect: showGrantRedirect },
 )(NewForm);

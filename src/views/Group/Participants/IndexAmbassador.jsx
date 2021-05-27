@@ -15,7 +15,7 @@ import { evaluationPre } from "actions/evaluationActions.jsx";
 import { evaluationPost } from "actions/evaluationActions.jsx";
 import { deleteAlert } from "actions/evaluationActions.jsx";
 import { deleteImageAlert } from "actions/groupActions.jsx";
-import { deleteSuccessful } from "actions/generalActions.jsx";
+import { deleteSuccessful, errorEvaluation } from "actions/generalActions.jsx";
 import { uploadImage } from "actions/groupActions.jsx";
 
 import SweetAlert from "react-bootstrap-sweetalert";
@@ -72,6 +72,7 @@ class IndexTable extends React.Component {
     this.evaluationPostAlert = this.evaluationPostAlert.bind(this);
     this.evaluationPre = this.evaluationPre.bind(this);
     this.deleteAlert = this.deleteAlert.bind(this);
+    this.errorEvaluation = this.errorEvaluation.bind(this);
   }
 
   onFilteredChange(filtered) {
@@ -130,6 +131,10 @@ class IndexTable extends React.Component {
     this.props.dispatchDeleteSuccessful();
   }
 
+  errorEvaluation(){
+    this.props.dispatchErrorEvaluation();
+  }
+
   deleteAlert(){
     this.props.dispatchDeleteAlert();
     this.props.dispatchDeleteSuccessful();
@@ -138,7 +143,7 @@ class IndexTable extends React.Component {
   }
  
   render() {
-    const { certificate_list, image_alert, pre_alert,post_alert, successfull_edit, classes} = this.props;
+    const { certificate_list, image_alert, pre_alert,post_alert, successfull_edit, error_evaluation} = this.props;
     let { t } = this.props;
     let id_student=""
     let approved = certificate_list.filter(prop => prop.student.programmbs == undefined || prop.student.programmbs.modality == "option.modality1" )
@@ -182,7 +187,7 @@ class IndexTable extends React.Component {
         projects: (
           <div className="actions-left">
               <Button
-                onClick={() => this.imageAlert(prop.student.id)}
+                onClick={ buttonEvaluationPost ? () => this.imageAlert(prop.student.id) : () => this.errorEvaluation() }
                 size="sm"
                 color={buttonMbs==true ? "default" : "warning" }
               >
@@ -335,6 +340,19 @@ class IndexTable extends React.Component {
                 </GridItem>
             </SweetAlert>
           : ""}
+          { error_evaluation ?      
+            <SweetAlert
+              warning
+              style={{ display: "block", marginTop: "-100px", close:true }}
+              onConfirm={() => this.deleteClick()}
+              confirmBtnCssClass={
+                  this.props.classes.button + " " + this.props.classes.success
+              }
+              confirmBtnText={t("button_continue")}
+              >
+              <h4>{t("label_error_evaluation")}</h4>
+            </SweetAlert> 
+          : ""}
         <CustomInput
           inputProps={{
             placeholder: "Search",
@@ -454,6 +472,7 @@ const mapStateToProps = state => ({
       post_alert: state.evaluationReducer.post_alert,
       active_user: state.loginReducer.active_user,
       successfull_edit:state.generalReducer.successfull_edit,
+      error_evaluation: state.generalReducer.error_evaluation,
 });
 
 const mapDispatchToPropsActions = dispatch => ({
@@ -467,7 +486,8 @@ const mapDispatchToPropsActions = dispatch => ({
   dispatchDeleteAlert:()=> dispatch(deleteAlert()),
   dispatchDeleteSuccessful: () => dispatch(deleteSuccessful()),
   dispatchDeleteImageAlert: () => dispatch(deleteImageAlert()),
-  dispatchDeleteSuccessful: ()=> dispatch(deleteSuccessful()),
+  dispatchDeleteSuccessful: () => dispatch(deleteSuccessful()),
+  dispatchErrorEvaluation: () => dispatch(errorEvaluation())
 });
 
 const IndexTableComponent = translate(withStyles(styles)(IndexTable));

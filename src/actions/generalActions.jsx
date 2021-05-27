@@ -2,6 +2,10 @@ import {  SUCCESSFULL_EDIT, ERROR_REQUIRED_FIELDS,SUCCESS_REQUIRED_FIELDS, SUCCE
 import { DISMATCH_PASSWORD, SUCCESSFULL_NEW,DELETE_SUCCESSFUL, UPDATE_FILE_NAME } from 'constants/actionTypes';
 import { SUCCESSFULL_ACTIVE_USER } from 'constants/actionTypes';
 import { CHANGE_ACTIVE_TAB } from 'constants/actionTypes';
+import { IDLE_TIMER } from 'constants/actionTypes';
+import { ERROR_SUBMIT } from 'constants/actionTypes';
+import { SUCCESS_SUBMIT } from 'constants/actionTypes';
+import { ERROR_EVALUATION } from 'constants/actionTypes';
 
 export const successfulEdit =() => ({ type: SUCCESSFULL_EDIT})
 export const successfulNew =(redirect) => {
@@ -33,8 +37,12 @@ export const successfulDelete =() => ({ type: SUCCESSFUL_DELETE})
 export const errorRequiredFields =() => ({ type: ERROR_REQUIRED_FIELDS})
 export const successRequiredFields =() => ({ type: SUCCESS_REQUIRED_FIELDS})
 export const dismatchPassword =() => ({ type: DISMATCH_PASSWORD})
+export const idleTimerAlert =() => ({ type: IDLE_TIMER})
 export const updateFileName = (key) => ({ type: UPDATE_FILE_NAME, payload: key})
 export const changeActiveTab = (key) => ({ type: CHANGE_ACTIVE_TAB, payload: key})
+export const errorSubmit = () => ({ type: ERROR_SUBMIT})
+export const successSubmit = () => ({ type: SUCCESS_SUBMIT})
+export const errorEvaluation = () => ({ type: ERROR_EVALUATION})
 
 
 

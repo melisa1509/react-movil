@@ -33,6 +33,10 @@ const styles = {
 
 
 class ShowRep extends React.Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
  
 
   render() {

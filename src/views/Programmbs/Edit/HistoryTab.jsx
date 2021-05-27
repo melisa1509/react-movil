@@ -14,8 +14,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import SuccessLabel from "components/Typography/SuccessLabel.jsx";
 import FileUpload from "components/CustomUpload/FileUpload.jsx";
 import SuccessBold from "components/Typography/SuccessBold.jsx";
-import Quote from "components/Typography/Quote.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 import Primary from "components/Typography/Primary.jsx";
+import CategorySelect from "views/Select/CategorySelect.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 // core components
 import Controls from './Controls.jsx';
@@ -44,7 +47,8 @@ class HistoryTab extends React.Component {
     const { classes, programmbs, form_programmbs } = this.props;
     let { t } = this.props;
     return (
-        <CardBody>
+        <Card >
+          <CardBody>
             <h3 className={classes.cardTitleCenter} >{t("title_history")}</h3>
             <br/>
             <SuccessBold>
@@ -63,10 +67,10 @@ class HistoryTab extends React.Component {
                     multiline: true,
                     rows: 12,
                   }}
-                />                
+                />  
                 <br/>
                 {
-                  programmbs.history2 !== undefined ?
+                  programmbs.history2 !== "undefined" && programmbs.history2 !== undefined ?
                   <a
                     href={BASE_URL +  "/web/file/"  + programmbs.history2}
                     target="_blank"
@@ -102,12 +106,100 @@ class HistoryTab extends React.Component {
                     inputProps={{
                       type: "text"
                     }}
-                  />             
+                  />
+                  <br/>
+                  <h3 className={classes.cardTitleCenter} >{t("title_worldwide_directory")}</h3>
+                  <p className={classes.cardTitleCenter} >{t("label_worldwide_directory_explanation")}</p>
+                <br/>
+                <Field
+                    labelText={t("question_promotion_product_name")}
+                    component={CustomInputRedux}
+                    name="product_name"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      type: "text"
+                    }}
+                />
+                <br/>
+                <Field
+                    labelText={t("question_promotion_product_description")}
+                    component={CustomInputRedux}
+                    name="product_description"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      multiline: true,
+                      rows: 7,
+                    }}
+                />
+                <Field
+                    labelText={t("question_promotion_product_contact")}
+                    component={CustomInputRedux}
+                    name="product_phone"
+                    success
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      multiline: true,
+                      rows: 7,
+                    }}
+                />
+                <br/>
+                <GridContainer >
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Field
+                      component={CategorySelect}
+                      name="product_web"
+                    />
+                  </GridItem>
+                </GridContainer>
+                <br/>
+                <br/>
+                <br/>
+                {
+                  programmbs.promotion5 !== "undefined" && programmbs.promotion6 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.promotion6}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }                
+                <br/>
+                <SuccessBold>
+                  {t("question_promotion6")}
+                </SuccessBold>
+                <Field
+                  component={FileUpload}
+                  name="promotion6"
+                  changeFileName = {this.updateFileName2}
+                  inputProps={{
+                    type: "file",
+                  }}
+                />
+                <br/>
+                <br/>
+                <SuccessBold>
+                  {t("question_promotion7")}
+                </SuccessBold>
+                <Button color="facebook" onClick={this.handleFacebook} target="blank_" href="http://www.facebook.com/groups/interweavesolutionsmbsgroups">
+                  <i className="fab fa-facebook-square"/>{" "}
+                  {t("button_join_facebook_group")}
+                </Button>
+                <br/>             
             </form>         
             <br/>
             <Controls/>
             <ControlNavigation previous={"service"} next={"plan"} />
-        </CardBody>
+          </CardBody>
+        </Card>
     );
   }
 }

@@ -90,7 +90,7 @@ class ServiceTab extends React.Component {
             </SuccessBold>
             <br/>
             {
-                  programmbs.service6 !== undefined ?
+                  programmbs.service6 !== "undefined" && programmbs.service6 !== undefined ?
                   <a
                     href={BASE_URL +  "/web/file/"  + programmbs.service6}
                     target="_blank"
