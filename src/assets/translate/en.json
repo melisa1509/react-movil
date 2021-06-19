@@ -325,6 +325,9 @@
     "label_message_require_fields":      "Your application could not be submitted because it is not complete. Please go through each of the sections and make sure that all of the information is filled out. If you have any questions, please contact team@interweavesolutions.org.",
     "label_worldwide_directory_explanation": "if you decide to complete this section you will be added to the worldwide MBS business directory where the whole world will be able to know about your business.",
     "label_category":                    "Business Category",
+    "label_error_evaluation":            "You need to complete the pre- and post-evaluation of the participant before uploading the file.",
+    "label_admin_messages":              "Email Messages",
+    "label_choose_picture":              "Choose a Picture",
 
 
     "link_administrator":               "Administrator",
@@ -361,6 +364,10 @@
     "link_video_tutorial":              "Video Tutorials",
     "link_help":                        "Help",
     "link_live_support":                "Live Support",
+    "link_participant_follow_up":       "Student Follow Up",
+    "link_ambassador_follow_up":        "Ambassador Follow Up",
+    "link_participant_timeline":        "Ambassador Timeline",
+    "link_student_timeline":            "Student Timeline",
     
     "option_quality5":                    "5. I am very happy with this area of my life.",
     "option_quality4":                    "4. Normally, I am happy with the area of my life.",
@@ -496,6 +503,8 @@
     "title_program_sa_subtitle":        "Please write your business plan for your Success Ambassador Business using the 6P’s",
     "title_business_statement_video":   "MBS Alumni / business Statement Video",
     "title_worldwide_directory":        "Worldwide MBS Business Directory",
+    "title_ambassador_timeline":        "Ambassador Timeline",
+    "title_participant_timeline":       "Participant Timeline",
 
     "message_approved_project" :         "Congratulations! Your Project has been approved.",
 

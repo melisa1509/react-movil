@@ -49,6 +49,7 @@ import StudentGroup from 'views/Group/Participants/Index.jsx';
 import CourseNew from 'views/Course/New/New.jsx';
 
 //Programmbs
+import IndexProgramMbs from 'views/Programmbs/Index.jsx';
 import ProgramMbs from 'views/Programmbs/Show/Show.jsx';
 import NewProgramMbs from 'views/Programmbs/New/Show.jsx';
 import NewPlanProgramMbs from 'views/Programmbs/New/NewPlan.jsx';
@@ -160,6 +161,7 @@ ReactDOM.render(
           <Route path="/table" component={ReactTable} />
           <Route path="/age" component={Age} />
           <Route path="/login" component={Login} />
+          <Route path="/login/:lang" component={Login} exact />
           <Route path="/app" component={App} />
           <Route path="/student" component={Student} exact />
           <Route path="/student/new/:id" component={NewStudent} exact />
@@ -169,6 +171,7 @@ ReactDOM.render(
           <Route path="/student/postevaluation" component={PostEvaluationStudent} exact />
           <Route path="/student/editpassword/:id" component={StudentChangePassword} exact /> 
           <Route path="/course/new" component={CourseNew} />
+          <Route path="/programmbs" component={IndexProgramMbs} exact/>
           <Route path="/programmbs/new" component={NewProgramMbs} exact/>
           <Route path="/programmbs/new/plan" component={NewPlanProgramMbs} exact/>
           <Route path="/programmbs/new/product" component={NewProductProgramMbs} exact/>
@@ -249,6 +252,7 @@ ReactDOM.render(
           <Route path="/admin/edit/:id" component={EditAdmin} exact />
           <Route path="/admin/editpassword/:id" component={AdminPassword} exact /> 
           <Route path="/register" component={Register} exact /> 
+          <Route path="/register/:lang" component={Register} exact />
           <Route path="/register/new/:id" component={RegisterStudent} exact /> 
           <Route path="/register/evaluation" component={RegisterEvaluation} exact /> 
           <Route path="/password" component={newPassword} exact /> 

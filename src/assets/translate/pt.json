@@ -76,6 +76,8 @@
     "button_return":                     "Voltar",
     "button_send_correction":            "Submeter para correção",
     "button_download_pdf":               "Baixar PDF",
+    "button_join_facebook_group":        "Junte-se ao grupo facebook",
+    "button_download_video":             "Baixar vídeo ",
 
     
   
@@ -325,7 +327,11 @@
     "label_not":                         "Não",
     "label_only_numbers":                "(Apenas números)",
     "label_message_require_fields":      "Seu Aplicação não foi aprovado porque está incompleto. Por favor, verifique cada uma das seções e certifique-se de que todas as informações foram preenchidas. Se você tiver alguma dúvida, mande um e-mail para team@interweavesolutions.org.",
-
+    "label_worldwide_directory_explanation": "Se decidir completar esta secção será adicionado ao directório mundial de empresas MBS onde o mundo inteiro poderá saber mais sobre o seu negócio",
+    "label_category":                    "Categoria de negócio",
+    "label_error_evaluation":            "Você precisa completar a pré-avaliação e a pós-avaliação do participante antes de enviar o arquivo.",
+    "label_admin_messages":              "Mensagens de correio electrónico",
+    "label_choose_picture":              "Escolha uma fotografia ",
 
     "link_administrator":               "Administrador",
     "link_ambassador_student":          "Assinatura do mentor",
@@ -490,6 +496,8 @@
     "title_grant_applications":	        "Iniciar Aplicação para o pedido de Subsídio",
     "title_grant_application_startup":  "Aplicação para subsídio inicial",
     "title_program_sa_subtitle":        "Escreva seu Plano de Negócios como Embaixador de Sucesso usando os 6 P´s de Negócios",
+    "title_worldwide_directory":        "Diretório mundial de negócios do MBS",
+
 
     "message_approved_project":         "Parabéns! Seu Projeto foi aprovado.",
   
@@ -624,6 +632,11 @@
     "question_startup_number":           "Quantos grupos você pretende treinar nos próximos 6 meses?",
     "question_startup_amount":           "Total da quantia solicitada à Interweave Solutions",
     "question_support4":                 "4. Quais são suas obrigações para continuar sendo um Embaixador de Sucesso?",
+    "question_promotion6":               "Adicione um vídeo de 30 segundos falando sobre sua Declaração de Negócios",
+    "question_promotion7":               "Como você está recebendo seu certificado MBS, agora você está autorizado a se juntar ao Grupo MBS no Facebook. Este grupo tem vídeos semanais ao vivo com a equipe da Interweave Solutions e eles responderão a quaisquer perguntas comerciais que você possa ter. Você pode se conectar com outros graduados da MBS de todo o mundo, assim como você. Vocês podem aprender uns com os outros sobre o que fazer para crescer seus negócios. Para se juntar ao grupo, clique no link abaixo.. ",
+    "question_promotion_product_name":   "Nome do negócio",
+    "question_promotion_product_description": "O que você aprendeu com o curso MBS?",
+    "question_promotion_product_contact": "Informação de contato",
   
     "th_actions":                "Ações",
     "th_id":                     "ID",
@@ -969,7 +982,12 @@
         "program1":                    "Mestrado em Negócios de Rua",
         "program2":                    "Embaixador de Sucesso",
         "program3":                    "MBS e Embaixador de Sucesso",
-        "program4":                    "Mestrado em Negócios de Rua Jr."
+        "program4":                    "Mestrado em Negócios de Rua Jr.",
+        "clothing":                    "Vestuário",
+        "food":                        "Alimentação",
+        "technology":                  "Tecnologia",
+        "household":                   "Produtos para o lar",
+        "health":                      "Saúde"
     }
   
   }

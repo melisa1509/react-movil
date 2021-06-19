@@ -330,6 +330,11 @@
         "label_not":                         "Non",
         "label_only_numbers":                "(Seulement les chiffres)",
         "label_message_require_fields":      "Votre application n'a pas pu être soumis parce qu'il n'est pas complet. Veuillez passer en revue chacune des sections et vous assurer que tous les renseignements sont complets. Si vous avez des questions, veuillez contacter equipe@interweavesolutions.org.",
+        "label_worldwide_directory_explanation": "si vous décidez de remplir cette section, vous serez ajouté à l'annuaire mondial des entreprises MBS, où le monde entier pourra connaître votre entreprise.",
+        "label_category":                    "catégorie entreprise",
+        "label_error_evaluation":            "here it is: Vous devez remplir la pré-évaluation et la post-évaluation du participant avant de télécharger le fichier.",
+        "label_admin_messages":              "Messages électroniques",
+        "label_choose_picture":              "Choisir une image ",
 
        "link_administrator":               "Administrateur",
        "link_ambassador_student":          "Assigner Mentor",
@@ -500,6 +505,7 @@
         "title_grant_applications":	    "Mon Application de Bourse",
         "title_grant_application_startup":  "Application pour la Bourse de Démarrage",
         "title_program_sa_subtitle":        "Veuillez rédiger le plan d'affaires de votre entreprise en tant que Ambassadeur du Succès en utilisant les 6P.",
+        "title_worldwide_directory":        "Liste mondiale des entreprises MBS",
 
         "message_approved_project":         "Félicitations ! Votre projet a été approuvé.",
 
@@ -634,6 +640,11 @@
         "question_startup_number":           "Combien de groupes pensez-vous former au cours des 6 prochains mois ?",
         "question_startup_amount":           "Montant total demandé à Interweave Solutions :",
         "question_support4":                 "4. Quelles sont vos obligations pour conserver le statut d'Ambassadeur du Succès ?",
+        "question_promotion6":               "Une vidéo de 30 secondes de votre déclaration d'activité",
+        "question_promotion7":               "Parce que vous recevez votre certificat MBS, vous êtes maintenant autorisé à rejoindre le groupe Facebook des diplômés MBS. Ce groupe a des vidéos hebdomadaires live avec le personnel d'Interweave Solutions. Ils aident à répondre à toutes les questions commerciales que vous pourriez avoir. Vous pouvez entrer en contact avec d'autres diplômés MBS du monde entier, tout comme vous. Vous pouvez apprendre les uns des autres comment vous pouvez développer votre entreprise. Pour rejoindre le groupe, cliquez sur le lien ci-dessous.",
+        "question_promotion_product_name":   "Nom de l'entreprise ",
+        "question_promotion_product_description": "Qu'avez-vous appris du cours MBS. ?",
+        "question_promotion_product_contact": "Informations de contact",
 
 
         "th_actions":                "Actions",
@@ -986,7 +997,12 @@
                 "program1":                    "Maîtrise en Administration des Affaires dans la Rue",
                 "program2":                    "Ambassadeur du Succès",
                 "program3":                    "MBS et Ambassadeur du Succès",
-                "program4":                    "Maîtrise en Administration des Affaires dans la Rue Junior"
+                "program4":                    "Maîtrise en Administration des Affaires dans la Rue Junior",
+                "clothing":                    "Vêtements",
+                "food":                        "Alimentation",
+                "technology":                  "Technologie",
+                "household":                   "Produits pour la maison",
+                "health":                      "Santé"
         }
   
    

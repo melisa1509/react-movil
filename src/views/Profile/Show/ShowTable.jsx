@@ -12,10 +12,12 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Table from "components/Table/Table.jsx";
 import { Link } from "react-router-dom";
+import { BASE_URL } from 'constants/urlTypes';
 
 // style for this view
 import validationFormsStyle from "assets/jss/material-dashboard-pro-react/views/validationFormsStyle.jsx";
 import customSelectStyle from "assets/jss/material-dashboard-pro-react/customSelectStyle.jsx";
+import defaultImage from "assets/img/default-avatar.png";
 
 import { withRouter } from 'react-router-dom';
 
@@ -51,6 +53,15 @@ class ShowTable extends React.Component {
         return (
           <GridContainer>
             <GridItem xs={12}>
+            <div className="picture-container">
+                <div className="picture">
+                  <img
+                    src={active_user.picture === "NULL" || active_user.picture === "undefined" || active_user.picture === undefined ? defaultImage : BASE_URL +  "/web/file/"  + active_user.picture }
+                    className="picture-src"
+                    alt="..."
+                  />
+                </div>
+              </div>
             <Table
               striped
               tableHead={[]}

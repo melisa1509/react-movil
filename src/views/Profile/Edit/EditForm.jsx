@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Field, reduxForm } from 'redux-form';
 import { store } from "store";
+import { BASE_URL } from 'constants/urlTypes';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -29,6 +30,8 @@ import { deleteSuccessful } from "actions/generalActions.jsx";
 import { verifyChange } from "assets/validation/index.jsx";
 import LanguageSelect from "views/Select/LanguageSelect.jsx";
 import CountrySelect from "views/Select/CountrySelect.jsx";
+import FileUpload from "components/CustomUpload/FileUpload.jsx";
+import defaultImage from "assets/img/default-avatar.png";
 
 // style for this view
 import sweetAlertStyle from "assets/jss/material-dashboard-pro-react/views/sweetAlertStyle.jsx";
@@ -66,7 +69,8 @@ class EditForm extends React.Component {
             first_nameState: "success",
             last_nameState: "success",
             cityState: "success",
-            whatsappState: "success"
+            whatsappState: "success",
+            picture: defaultImage
         };
         this.saveClick = this.saveClick.bind(this);
         this.deleteClick = this.deleteClick.bind(this);
@@ -106,6 +110,11 @@ class EditForm extends React.Component {
       componentDidMount() {
         this.props.loadShowStudent(this.props.active_user.id);
       }
+
+      updateFile = (key) => {
+        this.props.change('picture', key);
+        this.setState({picture: BASE_URL +  "/web/file/"  + key});
+      }
       
     render() {
         const { classes, successfull_edit, editError, errorRequired, successRequired, show_student, active_user } = this.props;
@@ -142,6 +151,29 @@ class EditForm extends React.Component {
                         <h4>{t("label_save_success")}</h4>
                       </SweetAlert>     
                     : ""}
+                  </GridItem>
+              </GridContainer>
+              <GridContainer >
+                  <GridItem xs={12} sm={12} md={12}>
+                      <div className="picture-container">
+                        <div className="picture">
+                          <img
+                            src={active_user.picture === "NULL" ? this.state.picture : ( this.state.picture !== defaultImage ? this.state.picture : BASE_URL +  "/web/file/"  + active_user.picture ) }
+                            className="picture-src"
+                            alt="..."
+                          />
+                        </div>
+                      </div>
+                    <br/>
+                    <SuccessLabel>{t("label_choose_picture")}</SuccessLabel>
+                  <Field
+                    component={FileUpload}
+                    name="picture"
+                    changeFileName = {this.updateFile}
+                    inputProps={{
+                      type: "file",
+                    }}
+                  />
                   </GridItem>
               </GridContainer>
               <GridContainer >

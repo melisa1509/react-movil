@@ -317,7 +317,11 @@
     "label_not":                         "No",
     "label_only_numbers":                "(Solo números)",
     "label_message_require_fields":      "No es posible enviar su aplicación debido a que no ha completado el 100% de información requerida. Si tiene alguna pregunta use el boton de ayuda para contactar con un administrador.",
-    
+    "label_worldwide_directory_explanation": "Si decide completar esta sección será añadido al directorio mundial de empresas MBS donde todo el mundo podrá conocer su negocio..",
+    "label_category":                    "Categoría de Negocio",
+    "label_error_evaluation":            "Usted necesita completar la Pre y la Post evaluación de este participante antes de poder subir los archivos del projecto MBS.",
+    "label_admin_messages":              "Mensajes de Email",
+    "label_choose_picture":              "Elija una Imagen",
 
     "link_admins":                      "Administradores",
     "link_administrator":               "Administrador",
@@ -484,6 +488,7 @@
     "title_grant_applications":         "Mis Aplicaciones",
     "title_grant_application_startup":  "Aplicación Subvención Inicio de Negocio",
     "title_program_sa_subtitle":        "Por favor escriba su plan de Negocio como Embajador de Éxito usando las 6P’s",
+    "title_worldwide_directory":        "Directorio Mundial de Negocios MBS",
 
 
     "message_pending_correction" :       "El siguiente alumno tiene un proyecto con correcciones pendientes.",
@@ -614,6 +619,11 @@
     "question_startup_number":           "¿Cuántos grupos prevé formar en los próximos 6 meses?",
     "question_startup_amount":           "Cantidad Total en USD solicitada a Interweave Solutions:",
     "question_support4":                 "4. ¿Cuáles son sus obligaciones para seguir siendo Embajador del Éxito?",
+    "question_promotion6":               "Un video de 30 segundos donde usted diga su descripción de Negocio",
+    "question_promotion7":               "Debido a que usted está recibiendo su certificado MBS ahora está autorizado a unirse al Grupo de Facebook de ex alumnos MBS. Este grupo tendra videos semanales en vivo con el personal de Interweave Solutions. Ellos le ayudarán a responder cualquier pregunta de negocios que pueda tener. Podrá conectar con otros graduados de MBS de todo el mundo como tú. Podrán aprender unos de otros en diferentes temas de cómo hacer crecer tu negocio. Para unirse al grupo, haga clic en el siguiente enlace.",
+    "question_promotion_product_name":   "Nombre del Negocio",
+    "question_promotion_product_description": "Que ha aprendido del curso Mbs ?",
+    "question_promotion_product_contact": "Información de contacto",
 
     "th_actions":          "Acciones",
     "th_id":               "ID",
@@ -965,7 +975,12 @@
             "program1":                  "Maestría de Negocios",
             "program2":                  "Embajador de Éxito",
             "program3":                  "Maestría + Embajador",
-            "program4":                  "Maestría de Negocios Junior"
+            "program4":                  "Maestría de Negocios Junior",
+            "clothing":                    "Ropa",
+            "food":                        "Comida",
+            "technology":                  "Tecnología",
+            "household":                   "Productos para el Hogar",
+            "health":                      "Salud"
         }
 
 

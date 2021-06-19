@@ -140,6 +140,7 @@ export const editStudent =() => {
             urlencoded.append("country",reduxState.form.studentform.values.country);
             urlencoded.append("city",reduxState.form.studentform.values.city );
             urlencoded.append("whatsapp",reduxState.form.studentform.values.whatsapp );
+            urlencoded.append("picture",reduxState.form.studentform.values.picture );
       
             var requestOptions = {
               method: 'PUT',
