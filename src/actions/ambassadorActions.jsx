@@ -46,6 +46,7 @@ export const editAmbassador =() => {
             urlencoded.append("city",reduxState.form.ambassadorform.values.city );
             urlencoded.append("whatsapp",reduxState.form.ambassadorform.values.whatsapp );
             urlencoded.append("code",reduxState.form.ambassadorform.values.code );
+            urlencoded.append("picture",reduxState.form.ambassadorform.values.picture );
       
             var requestOptions = {
               method: 'PUT',

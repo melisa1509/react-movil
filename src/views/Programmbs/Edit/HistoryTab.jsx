@@ -26,6 +26,7 @@ import ControlNavigation from './ControlNavigation.jsx';
 
 import { translate } from 'react-switch-lang';
 import { loadFormProgrammbs } from "actions/programmbsActions.jsx";
+import Danger from "components/Typography/Danger.jsx";
 
 
 const styles = {
@@ -111,6 +112,31 @@ class HistoryTab extends React.Component {
                   <h3 className={classes.cardTitleCenter} >{t("title_worldwide_directory")}</h3>
                   <p className={classes.cardTitleCenter} >{t("label_worldwide_directory_explanation")}</p>
                 <br/>
+                <SuccessBold>
+                  {t("question_promotion6")}
+                </SuccessBold>
+                <Field
+                  component={FileUpload}
+                  name="promotion6"
+                  changeFileName = {this.updateFileName2}
+                  inputProps={{
+                    type: "file",
+                  }}
+                />
+                <br/>
+                {
+                  programmbs.promotion6 !== "undefined" && programmbs.promotion6 !== undefined ?
+                  <a
+                    href={BASE_URL +  "/web/file/"  + programmbs.promotion6}
+                    target="_blank"
+                  >
+                      {t("label_download_file")}
+                  </a>:
+                  ""
+                }                
+                <br/>
+                <br/>
+                <Danger>{t("label_warning_worldwide_directory")}</Danger>
                 <Field
                     labelText={t("question_promotion_product_name")}
                     component={CustomInputRedux}
@@ -159,31 +185,6 @@ class HistoryTab extends React.Component {
                     />
                   </GridItem>
                 </GridContainer>
-                <br/>
-                <br/>
-                <br/>
-                {
-                  programmbs.promotion5 !== "undefined" && programmbs.promotion6 !== undefined ?
-                  <a
-                    href={BASE_URL +  "/web/file/"  + programmbs.promotion6}
-                    target="_blank"
-                  >
-                      {t("label_download_file")}
-                  </a>:
-                  ""
-                }                
-                <br/>
-                <SuccessBold>
-                  {t("question_promotion6")}
-                </SuccessBold>
-                <Field
-                  component={FileUpload}
-                  name="promotion6"
-                  changeFileName = {this.updateFileName2}
-                  inputProps={{
-                    type: "file",
-                  }}
-                />
                 <br/>
                 <br/>
                 <SuccessBold>

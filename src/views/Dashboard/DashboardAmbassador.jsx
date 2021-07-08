@@ -58,64 +58,85 @@ class DashboardAmbassador extends React.Component {
     
     return (
       <GridContainer>
-
+        <br/><br/>
         <GridItem xs={6} sm={6} md={3} lg={3}>
+        <br/><br/>
         <Link to={"/group"} className={classes.dropdownLink} >
-          <Card>
+          <div>
             <CardHeader color="primary" stats icon>
               <CardIcon color="primary">
                 <Icon>group</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}>{t("link_groups")}</p>
-                <br/>
-                <Muted><h3>{dashboard_ambassador.global_groups}</h3></Muted>
-            </CardHeader>            
-          </Card>
+              </CardIcon>    
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                  <Muted><h5>{t("link_groups") + " " + dashboard_ambassador.global_groups}</h5></Muted>
+                  <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>
+          </div>
           </Link>
         </GridItem>
 
         <GridItem xs={6} sm={6} md={3} lg={3}>
         <Link to={"/student"} className={classes.dropdownLink} >
-          <Card>
+          <div>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>how_to_reg</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}>{t("link_participants")}</p>
-                <br/>
-                <Muted><h3>{dashboard_ambassador.global_participants}</h3></Muted>
-            </CardHeader>            
-          </Card>
+              </CardIcon>    
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                  <Muted><h5>{t("link_participants") + " " + dashboard_ambassador.global_participants}</h5></Muted>
+                  <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>
+          </div>
           </Link>
         </GridItem>
 
         <GridItem xs={6} sm={6} md={3} lg={3}>
         <Link to={"/certificate"} className={classes.dropdownLink} >
-          <Card>
+          <div>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <Icon>school</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}>{t("link_certificates")}</p>
-                <br/>
-                <Muted><h3>{dashboard_ambassador.global_certificates}</h3></Muted>
-            </CardHeader>            
-          </Card>
+                <Icon>how_to_reg</Icon>
+              </CardIcon>    
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                  <Muted><h5>{t("link_certificates") + " " + dashboard_ambassador.global_certificates}</h5></Muted>
+                  <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>
+          </div>
           </Link>
         </GridItem>
 
         <GridItem xs={6} sm={6} md={3} lg={3}>
         <Link to={"/"} className={classes.dropdownLink} >
-          <Card>
+          <div>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-                <Icon>face</Icon>
-              </CardIcon>
-                <p className={classes.cardCategory}>{t("link_success_stories")}</p>
-                <br/>
-                <Muted><h3>{dashboard_ambassador.global_stories}</h3></Muted>
-            </CardHeader>            
-          </Card>
+                <Icon>how_to_reg</Icon>
+              </CardIcon>    
+            </CardHeader>  
+            <GridContainer>
+              <GridItem>
+                <CardHeader>
+                  <Muted><h5>{t("link_success_stories") + " " + dashboard_ambassador.global_stories}</h5></Muted>
+                  <br/>
+                </CardHeader>
+              </GridItem>
+            </GridContainer>
+          </div>
           </Link>
         </GridItem>
         

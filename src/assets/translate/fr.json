@@ -335,6 +335,7 @@
         "label_error_evaluation":            "here it is: Vous devez remplir la pré-évaluation et la post-évaluation du participant avant de télécharger le fichier.",
         "label_admin_messages":              "Messages électroniques",
         "label_choose_picture":              "Choisir une image ",
+        "label_warning_worldwide_directory": "Attention, si vous ne téléchargez pas une vidéo de déclaration d'activité de 30 secondes, les informations que vous avez fournies pour l'annuaire mondial du MBS n'apparaîtront pas sur le site web. Veuillez fournir votre vidéo de présentation de votre entreprise de 30 secondes pour qu'elle soit affichée sur le site Web.",
 
        "link_administrator":               "Administrateur",
        "link_ambassador_student":          "Assigner Mentor",

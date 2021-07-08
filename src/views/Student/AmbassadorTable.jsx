@@ -183,27 +183,36 @@ class AmbassadorTable extends React.Component {
               columns={[
                 {
                   Header: t("label_name"),
-                  accessor: "full_name"
+                  accessor: "full_name",
+                  width:250,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("label_state"),
-                  accessor: "state"
+                  accessor: "state",
+                  width:150,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("th_projects"),
-                  accessor: "projects"
+                  accessor: "projects",
+                  width:200,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("th_actions"),
                   accessor: "actions",
+                  width:200,
+                  resizable: false,
                   sortable: false,
-                  filterable: false,
-                  width: 150,
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 0,
+                  width: 20,
                   resizable: false,
                   sortable: false,
                   

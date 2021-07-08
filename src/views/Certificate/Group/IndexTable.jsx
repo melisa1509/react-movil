@@ -112,25 +112,35 @@ class IndexTable extends React.Component {
                 {
                   Header: t("th_name"),
                   accessor: "full_name",
+                  width:300,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("th_embassador_mentor"),
                   accessor: "AmbassadorMentor",
+                  width:300,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("th_start_classes"),
                   accessor: "date",
-                  filterable: false
+                  width:150,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: "",
                   accessor: "projects",
-                  sortable: false
+                  width:250,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 0,
+                  width: 20,
                   resizable: false,
                   sortable: false,
                   

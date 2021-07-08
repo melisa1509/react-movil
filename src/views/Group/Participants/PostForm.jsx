@@ -9,14 +9,16 @@ import { Field, reduxForm } from 'redux-form';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputLabel from "@material-ui/core/InputLabel";
-import Success from "components/Typography/Success.jsx";
+import Danger from "components/Typography/Danger.jsx";
 
 // core components
 import CustomRadioRedux from 'components/CustomRadio/CustomRadioRedux.jsx';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 
+
 import { newGroup } from "actions/groupActions.jsx"; 
+import { errorRequiredFields } from "actions/generalActions.jsx";
 
 // style for this view
 import SnackbarContent from "components/Snackbar/SnackbarContent";
@@ -76,7 +78,7 @@ class PostForm extends React.Component {
     }
 
     render() {
-        const { classes, successfull_edit, group_list} = this.props;
+        const { classes, errorRequired, group_list} = this.props;
         let { t } = this.props;  
         const radios = {         
           options:[
@@ -103,7 +105,7 @@ class PostForm extends React.Component {
               <div className={classes.scroll}>       
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                    <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question1") : t("question_evaluation_question1")}
                     </InputLabel>
                     <Field
@@ -115,7 +117,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question2") : t("question_evaluation_question2")}
                     </InputLabel>
                     <Field
@@ -127,7 +129,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question3") : t("question_evaluation_question3")}
                     </InputLabel>
                     <Field
@@ -139,7 +141,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question4") : t("question_evaluation_question4")}
                     </InputLabel>
                     <Field
@@ -151,7 +153,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question5") : t("question_evaluation_question5")}
                     </InputLabel>
                     <Field
@@ -163,7 +165,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question6") : t("question_evaluation_question6")}
                     </InputLabel>
                     <Field
@@ -175,7 +177,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question7") : t("question_evaluation_question7")}
                     </InputLabel>
                     <Field
@@ -187,7 +189,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question8") : t("question_evaluation_question8")}
                     </InputLabel>
                     <Field
@@ -199,7 +201,7 @@ class PostForm extends React.Component {
                 </GridContainer>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}> 
-                    <InputLabel className={classes.label}>
+                  <InputLabel  className={errorRequired ? classes.labelError : classes.label }>
                     { group === "option.program4" ? t("question_jr_evaluation_question9") : t("question_evaluation_question9")}
                     </InputLabel>
                     <Field
@@ -225,12 +227,12 @@ PostForm = reduxForm({
 
 PostForm = connect(
   state => ({
-    initialValues: state.evaluationReducer.data,
     initialValues: state.evaluationReducer.evaluation_post,
     evaluation_post: state.evaluationReducer.evaluation_post,
     group_list:state.groupReducer.group_list,
+    errorRequired:state.generalReducer.errorRequired,
   }),
-  { dispatchNewGroup: newGroup},
+  { dispatchNewGroup: newGroup, dispatchErrorRequiredFields: errorRequiredFields},
 )(PostForm);
 
 export default  withRouter(translate(withStyles(style)(PostForm)));

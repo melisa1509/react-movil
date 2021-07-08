@@ -328,6 +328,7 @@
     "label_error_evaluation":            "You need to complete the pre- and post-evaluation of the participant before uploading the file.",
     "label_admin_messages":              "Email Messages",
     "label_choose_picture":              "Choose a Picture",
+    "label_warning_worldwide_directory": "Warning, If you do not upload a 30 second statement video the information you provided for the MBS worldwide directory will not show on the website. Please provide your 30 second business statement video for it to be shown on the website.",
 
 
     "link_administrator":               "Administrator",

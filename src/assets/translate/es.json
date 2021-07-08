@@ -322,6 +322,7 @@
     "label_error_evaluation":            "Usted necesita completar la Pre y la Post evaluación de este participante antes de poder subir los archivos del projecto MBS.",
     "label_admin_messages":              "Mensajes de Email",
     "label_choose_picture":              "Elija una Imagen",
+    "label_warning_worldwide_directory": "Advertencia, si no subes un vídeo de 30 segundos de declaración de empresa, la información que has proporcionado para el directorio mundial de MBS no se mostrará en el sitio web. Por favor, proporcione su video de 30 segundos de declaración de negocios para que se muestre en el sitio web. Gracias",
 
     "link_admins":                      "Administradores",
     "link_administrator":               "Administrador",

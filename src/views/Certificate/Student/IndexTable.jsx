@@ -177,38 +177,44 @@ class IndexTable extends React.Component {
               columns={[
                 {
                   Header: t("th_name"),
-                  accessor: "full_name",
+                  accessor: "full_name",                 
+                  width:250,
                   resizable: false,
-                  width: 250,
+                  sortable: false,
                 },
                 {
                   Header: t("th_status"),
                   accessor: "status",
+                  width:200,
                   resizable: false,
-                  width: 200,
+                  sortable: false,
                 },
                 {
                   Header: t("th_approval_date"),
                   accessor: "date",
+                  width:150,
                   resizable: false,
-                  width: 150,
+                  sortable: false,
                 },
                 {
                   Header: t("th_certificate_mbs"),
                   accessor: "MBScertificate",
-                  width: 200
+                  width:200,
+                  resizable: false,
+                  sortable: false,
                 },
                 {
                   Header: t("th_certificate_ambassador"),
                   accessor: "SAcertificate",
-                  width: 250,
-                  filterable: false,
+                  width:250,
+                  resizable: false,
+                  sortable: false,
                 
                 },
                 {
                   Header: "",
                   id: 'all',
-                  width: 0,
+                  width: 20,
                   resizable: false,
                   sortable: false,
 

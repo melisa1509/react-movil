@@ -3,6 +3,8 @@ import { BASE_URL} from 'constants/urlTypes.jsx';
 import { PRE_ALERT } from 'constants/actionTypes';
 import { SHOW_EVALUATION, REDIRECT_GROUP} from 'constants/actionTypes';
 import { LOAD_FORM_EVALUATION, GET_CERTIFICATE_LIST } from 'constants/actionTypes';
+import { ERROR_REQUIRED_FIELDS } from 'constants/actionTypes';
+import { SUCCESS_REQUIRED_FIELDS } from 'constants/actionTypes';
 
 export const evaluationPre = ()=> {
     return (dispatch, getState) => {
@@ -71,6 +73,79 @@ export const evaluationPost = ()=> {
             dispatch ({ type: EVALUATION_POST, payload: json.data });
             dispatch ({ type: SUCCESSFULL_EDIT});  
         })
+
+    }
+};
+
+export const evaluationPostPopup = ()=> {
+    return (dispatch, getState) => {
+    const reduxState = getState();
+
+    var myHeaders = new Headers();
+    var error = false;
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    if(reduxState.form.postform.values.postquestion1 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion2 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion3 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion4 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion5 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion6 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion7 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion8 === undefined){
+        error = true;
+    }
+    if(reduxState.form.postform.values.postquestion9 === undefined){
+        error = true;
+    }
+   
+    var urlencoded = new URLSearchParams();
+        urlencoded.append("id_student", reduxState.evaluationReducer.id_student);
+        urlencoded.append("postquestion1", reduxState.form.postform.values.postquestion1);
+        urlencoded.append("postquestion2", reduxState.form.postform.values.postquestion2);
+        urlencoded.append("postquestion3", reduxState.form.postform.values.postquestion3);
+        urlencoded.append("postquestion4", reduxState.form.postform.values.postquestion4);
+        urlencoded.append("postquestion5", reduxState.form.postform.values.postquestion5);
+        urlencoded.append("postquestion6", reduxState.form.postform.values.postquestion6);
+        urlencoded.append("postquestion7", reduxState.form.postform.values.postquestion7);
+        urlencoded.append("postquestion8", reduxState.form.postform.values.postquestion8);
+        urlencoded.append("postquestion9", reduxState.form.postform.values.postquestion9);
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: urlencoded,
+      redirect: 'follow'
+    };
+
+    if(error){
+        dispatch({ type: ERROR_REQUIRED_FIELDS});
+    }
+    else{
+        return fetch(BASE_URL + "/evaluation/post", requestOptions)
+        .then(response => response.json())
+        .then(json => {
+            dispatch ({ type: EVALUATION_POST, payload: json.data });
+            dispatch ({ type: SUCCESSFULL_EDIT});  
+            dispatch ({ type: SUCCESS_REQUIRED_FIELDS});
+        })
+    }
+    
+        
 
     }
 };
